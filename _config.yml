@@ -6,17 +6,19 @@ pygments:         true
 permalink:        pretty
 
 # Setup
-title:            Poole
-tagline:          The Jekyll Butler
-url:              http://getpoole.com
-paginate:         1
-baseurl:          /
+title:            Data Science with R
+tagline:          'by Garrett Grolemund'
+description:      "Data Science with R is a new book by O'Reilly Media. Preorder your copy at <a href='http://shop.oreilly.com/product/0636920028574.do#'>shop.oreilly.com</a>."
+url:              http://garrettgman.github.io
+baseurl:          '/'
+paginate:         5
+
 author:
-  name:           Mark Otto
-  url:            https://twitter.com/mdo
-  email:          markdotto@gmail.com
+  name:           'Garrett Grolemund'
+  url:            https://twitter.com/StatGarrett
 
 # Custom vars
 version:          1.0.0
+
 github:
-  repo:           https://github.com/poole/poole
+  repo:           https://github.com/garrettgman/garrettgman.github.io

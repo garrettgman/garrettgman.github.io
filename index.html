@@ -1,37 +1,31 @@
 ---
 layout: default
-title: Home
+title: Table of Conten
 ---
 
 <div class="posts">
-  {% for post in paginator.posts %}
-  <div class="post">
-    <h1 class="post-title">
-      <a href="{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </h1>
+  <h3>Foundations</h3>
+    <ul><a href="/science">Science</a></ul>
 
-    <span class="post-date">{{ post.date | date_to_string }}</span>
+  <h3>Practicum</h3>
+    <ul>Data Carpentry with R</ul>
+    <ul>Data Wrangling</ul>
+    <ul>Data Visualization</ul>
 
-    {{ post.content }}
-  </div>
-  {% endfor %}
+  <h3>Understanding Data</h3>
+    <ul>Exploratory Data Analysis</ul>
+    <ul>Cluster Analysis</ul>
+
+  <h3>Reasoning with Data</h3>
+    <ul>Machine Learning</ul>
+    <ul>Statistical Modeling</ul>
+    <ul>Probability</ul>
+
+  <h3>Testing Hypotheses</h3>
+    <ul>Tests</ul>
+
+  <h3>Reporting</h3>
+    <ul>Reproducible Reports</ul>
+    <ul>Interactive Reports</ul>
 </div>
 
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
-    {% else %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">Newer</a>
-    {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
-</div>
