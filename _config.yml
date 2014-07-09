@@ -8,7 +8,7 @@ permalink:        pretty
 # Setup
 title:            Data Science with R
 tagline:          'by Garrett Grolemund'
-description:      "Data Science with R is a new book by O'Reilly Media. Preorder your copy at <a href='http://shop.oreilly.com/product/0636920028574.do#'>shop.oreilly.com</a>."
+description:      "Data Science with R is a new book by O'Reilly Media. Pre-order your copy at <a href='http://shop.oreilly.com/product/0636920028574.do#'>shop.oreilly.com</a>."
 url:              http://garrettgman.github.io
 baseurl:          '/'
 paginate:         5

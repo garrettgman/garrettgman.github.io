@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Science
+title: Foundations of Data Science
 ---
 
 Fields like physics, chemistry, and computer science use scientific techniques to study a single subject, but not so with data science. Data science is a _method_ of science, not a _branch_ of science. 
