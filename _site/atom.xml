@@ -4,7 +4,7 @@
  <title>Data Science with R</title>
  <link href="http://garrettgman.github.io/atom.xml" rel="self"/>
  <link href="http://garrettgman.github.io/"/>
- <updated>2014-07-09T18:47:36-05:00</updated>
+ <updated>2014-07-18T11:59:51-04:00</updated>
  <id>http://garrettgman.github.io</id>
  <author>
    <name>Garrett Grolemund</name>
@@ -15,7 +15,7 @@
  <entry>
    <title>Introducing Lanyon</title>
    <link href="http://garrettgman.github.io/2014/01/02/introducing-lanyon/"/>
-   <updated>2014-01-02T00:00:00-06:00</updated>
+   <updated>2014-01-02T00:00:00-05:00</updated>
    <id>http://garrettgman.github.io/2014/01/02/introducing-lanyon</id>
    <content type="html">&lt;p&gt;Lanyon is an unassuming &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; theme that places content first by tucking away navigation in a hidden drawer. It&amp;#39;s based on &lt;a href=&quot;http://getpoole.com&quot;&gt;Poole&lt;/a&gt;, the Jekyll butler.&lt;/p&gt;
 
@@ -60,7 +60,7 @@
  <entry>
    <title>Example content</title>
    <link href="http://garrettgman.github.io/2014/01/01/example-content/"/>
-   <updated>2014-01-01T00:00:00-06:00</updated>
+   <updated>2014-01-01T00:00:00-05:00</updated>
    <id>http://garrettgman.github.io/2014/01/01/example-content</id>
    <content type="html">&lt;div class=&quot;message&quot;&gt;
   Howdy! This is an example blog post that shows several types of HTML content supported in this theme.
@@ -191,7 +191,7 @@
  <entry>
    <title>What's Jekyll?</title>
    <link href="http://garrettgman.github.io/2013/12/31/whats-jekyll/"/>
-   <updated>2013-12-31T00:00:00-06:00</updated>
+   <updated>2013-12-31T00:00:00-05:00</updated>
    <id>http://garrettgman.github.io/2013/12/31/whats-jekyll</id>
    <content type="html">&lt;p&gt;&lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; is a static site generator, an open-source tool for creating simple yet powerful websites of all shapes and sizes. From &lt;a href=&quot;https://github.com/mojombo/jekyll/blob/master/README.markdown&quot;&gt;the project&amp;#39;s readme&lt;/a&gt;:&lt;/p&gt;
 
