@@ -43,9 +43,9 @@ As a graduate student, and then instructor, I've been dismayed to see data scien
 This method of instruction is limiting in two ways.
 
 1. Students must study for an exceptionally long time before they know enough techniques to be competent in the wild. In the meantime, students face a great temptation to pretend that the techniques that they do know will be reliable in the situations that they encounter.
-2. It fetishizes modelling techniques. Students come to see models as black boxes that deliver answers. In reality, modelling techniques are a small tool in a much larger reasoning process. This reasoning process—and not the technique—determines whether the results are useful.
+2. This method of instruction fetishizes modelling techniques. Students come to see models as black boxes that deliver answers. In reality, modelling techniques are a small tool in a much larger reasoning process. This reasoning process—and not the technique—determines whether the results are useful.
 
-The traditional way of teaching data science also tends to overstate the role of math in data science.
+The traditional way of teaching data science also tends to overstate the role of math in scientific exploration.
 
 <!---
 
@@ -89,11 +89,11 @@ You'll also make rapid progress by avoiding mathematical minutiae that is no lon
 
 ## The role of programming
 
-What role should computer programming play in data science? A large one. You can do little as a data scientist without knowing how to program. As a data scientist, you will use computers to 
+This is a book on data science, which means it is also a book on computer programming. You can do little as a data scientist without knowing how to program. As a data scientist, you will use computers to 
 
 1. store more information than you could otherwise remember
 2. manipulate large data sets without making careless errors
-3. do boring or repetitive tasks much more quickly than you could on your own
+3. do boring or repetitive tasks that you could not do on your own
 
 Unfortunately, computer programming is a field as broad and as deep as data science itself. It would be a folly to try to learn both how to program and how to do data science at the same time.
 
@@ -105,15 +105,15 @@ This book will teach you the bare minimum of programming that you'll need to kno
 
 I've designed the book to be easy to read if you have never worked with a computer before. The book relies on a user-friendly computer language, R, and emphasizes easy to use R tools. These tools are specifically designed to make it easier and more intuitive to do good data science. The tools are designed by people I know and work closely with—people who are already well known in the field of statistical computing, such as Hadley Wickham, Winston Chang, Joe Cheng, Yihui Xie, and JJ Allaire.
 
-That said, you will do best if you already have some experience doing basic data manipulations with R, the computer language I use in this book. There are some wonderful, free online tutorials that can teach you the basics of R. I particularly recommend the tutorial [tryr.codeschool.com](http://tryr.codeschool.com/). It guides you through the basic R syntax with a series of interactive lessons that provide instant feedback.
+That said, you will do best if you already have some experience doing basic data manipulations with R, the computer language I use in this book. There are some wonderful, free online tutorials that can teach you the basics of R. I particularly recommend the tutorial at [tryr.codeschool.com](http://tryr.codeschool.com/). It guides you through the basic R syntax with a series of interactive lessons that provide instant feedback.
 
-If you would like a deeper understanding of the R language, read the companion volume to this book, [_Hands-On Programming with R_](http://shop.oreilly.com/product/0636920028574.do). _Hands-On Programming with R_ teaches you how to use all of R's programming capabilities. It is organized around a series of concrete projects, and I wrote it with data science in mind.
+If you would like a deeper understanding of omputer programming or R, read the companion volume to this book, [_Hands-On Programming with R_](http://shop.oreilly.com/product/0636920028574.do). _Hands-On Programming with R_ teaches you how to use all of R's programming capabilities. It is organized around a series of concrete projects, and I wrote it with data science in mind.
 
 ### R
 
-I recommend the R programming language for doing data science. R was designed specifically for data scientists and has evolved in a university setting to be very friendly to new programmers. Plus, R is completely free and open source. Don't be afraid if you've never used a computer language before; R is really quite simple. In the beginning, you can use R as if it were a fancy calculator. As you progress, you'll find that you can use R to solve each of the logistical, tactical, and strategic problems of data science.
+I recommend the R programming language for doing data science. R was designed specifically for data scientists and has evolved in a university setting to be very friendly to new programmers. Plus, R is completely free and open source. Don't be afraid if you've never used a computer language before; R is really quite simple. In the beginning, you can use R as if it were a fancy calculator. As you progress, you'll find that you can use R to do everything that you'll do as a data scientist.
 
-As an R user, you can also take advantage of RStudio, a third party program that makes R even easier to use. RStudio amplifies many of R's abilities and provides a host of shortcuts that make R easier to use (and learn). I'll use RStudio throughout this book because it provides a uniform interface to R for Windows, Mac, and Linux users. This will help me match the book to your experience. Also, (in full disclosure) I work for RStudio. This gives me a first hand knowledge of the program that I hope to pass on to you.
+As an R user, you can also take advantage of RStudio, a third party program that makes R even easier to use. RStudio amplifies many of R's abilities and provides a host of shortcuts that make R easier to use (and learn). I'll use RStudio throughout this book because it provides a uniform interface to R for Windows, Mac, and Linux users. This will help me match the book to your experience. Also, I work for RStudio as a trainer and a data scientist. This gives me a first hand knowledge of the program that I hope to pass on to you.
 
 I wrote this book with both new and old R users in mind. If you've never used R, you'll be able to learn as you go. If you have used R, you'll learn how to use it to analyze data. 
 
@@ -133,9 +133,9 @@ Shiny apps are new on the R scene, but they are changing how researchers explore
 
 #### Automated reporting
 
-The [knitr](http://yihui.name/knitr/) R package created by Yihui Xie, also of RStudio, lets you embed R results inside of text documents, such as pdfs, blogs, and webpages. You write R code in your document wherever you want results to appear. With the click of a button, knitr will execute the R code and replace it with its results (which can be a number, a table, a graph, or anything). 
+The [rmarkdown](http://rmarkdown.rstudio.com) R package created by JJ Allaire and Yihui Xie, also of RStudio, lets you embed R results inside of text documents, such as pdfs, web pages, and slideshows. You write R code in your document wherever you want results to appear. With the click of a button, rmarkdown will execute the R code and replace it with its results (which can be a number, a table, a graph, or anything). 
 
-Why would you do this? It lets you write reports that can be automatically updated as new data comes in. You'll learn how to write knitr reports in Chapter 11.
+Why would you do this? It lets you write reports that can be automatically updated as new data comes in. You'll learn how to write rmarkdown reports in Chapter 11.
 
 #### Reproducible Research
 
@@ -149,8 +149,8 @@ Learning to program in R is not hard, and I will make it as easy as I can for yo
 
 ## Acknowledgements
 
-Although this book is not yet written, I have many people to thank. _Data Science with R_ is part of a larger project that has already led to [_Hands-On Programming with R_](http://shop.oreilly.com/product/0636920028574.do), a book that teaches how to program with R. My two editors Courtney Nash and Julie Steele have been indispensible to the project, as has Ann Spencer my de facto O'Reilly liason over the past few months.
+Although this book is not yet written, I have many people to thank. _Data Science with R_ is part of a larger project that has already led to [_Hands-On Programming with R_](http://shop.oreilly.com/product/0636920028574.do), a book that teaches how to program with R. My two editors Courtney Nash and Julie Steele have been indispensible to the project, as has Ann Spencer, my de facto O'Reilly liason over the past few months.
 
-I would also like to thank Hadley Wickham, Winston Chang, Stephanie Hicks, and Jaime Ramos, who I regularly discuss data science with; as well as O'Reilly Media and RStuido, who have helped make this book and this website possible.
+I would also like to thank Hadley Wickham, Winston Chang, Stephanie Hicks, and Jaime Ramos, who I regularly discuss data science with; as well as O'Reilly Media and RStudio, who have helped make this book and this website possible.
 
 A more personal thanks goes to my supportive wife, Kristin, and to the many readers who have provided early comments on the book. Thank you.
