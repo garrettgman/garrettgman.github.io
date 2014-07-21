@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Foundations of Data Science
-weight: 2
+weight: 3
 ---
 
 Data science is a _method_ of science. This sets it apart from other fields that are _branches_ of science. A branch of science uses scientific techniques to study a single subject. For example, physicists study physical systems, chemists study chemical systems, and computer scientists study computation. But data science is different.  

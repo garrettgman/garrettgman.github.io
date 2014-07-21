@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Back Cover
-weight: 3
+weight: 1
 ---
 
 We all know what _Science_ is: the scholarly way of learning that depends on reasoning and observation. A scientist conducts experiments, makes measurements and thereby learns about the world. But what is _Data Science_?
