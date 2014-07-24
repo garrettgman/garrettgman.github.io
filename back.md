@@ -13,7 +13,7 @@ This book will teach you how to work with that uncertainty and how to capture th
 * **Data Carpentry** - You now have a history of observations to keep track of. How do you do it?
 * **Data Wrangling** - Your data sets contain more information than they display. How do you access it?
 * **Data Visualization** - Patterns are easy to miss in data, but easy to spot in graphs. How do you draw them?
-* **Exploratory Data Analysis** - Your measurments may contain evidence of relationships, but what should you look for?
+* **Exploratory Data Analysis** - Your measurments may contain evidence of relationships. What should you look for?
 * **Modelling** - If your values disagree how do you estimate the "truth?" How do you predict the next value? 
 * **Reports** - How do you decipher your findings for people who do not understand data science and its methods?
 
