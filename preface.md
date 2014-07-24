@@ -44,7 +44,7 @@ This method of instruction is limiting in three ways.
 
 1. Students must study for an exceptionally long time before they know enough techniques to be competent in the wild. In the meantime, students face a great temptation to pretend that the techniques that they do know will be reliable in the situations that they encounter.
 2. This method of instruction fetishizes modelling techniques. Students come to see models as black boxes that deliver answers. In reality, modelling techniques are a small tool in a much larger reasoning process. This reasoning process—and not the technique—determines whether the results are useful.
-3. The traditional way of teaching data science also tends to overstate the role of math in scientific exploration. Math is a useful tool once you choose a set of assumptions, or discover a plausible hypothesis to test. But to use math, you must know how to spot set of assumptions that accurately describes reality. You must also know how to discover plausible hypotheses to test. These are scientific concerns, not mathematical ones.
+3. The traditional way of teaching data science also tends to overstate the role of math in scientific exploration. Math is a useful tool once you choose a set of assumptions, or discover a plausible hypothesis to test. But to use math, you must know how to spot assumptions that accurately describe reality. You must also know how to discover plausible hypotheses to test. These are scientific concerns, not mathematical ones.
 
 <!---
 
