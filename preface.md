@@ -46,6 +46,21 @@ This method of instruction is limiting in three ways.
 2. This method of instruction fetishizes modelling techniques. Students come to see models as black boxes that deliver answers. In reality, modelling techniques are a small tool in a much larger reasoning process. This reasoning process—and not the technique—determines whether the results are useful.
 3. The traditional way of teaching data science also tends to overstate the role of math in scientific exploration. Math is a useful tool once you choose a set of assumptions, or discover a plausible hypothesis to test. But to use math, you must know how to spot assumptions that accurately describe reality. You must also know how to discover plausible hypotheses to test. These are scientific concerns, not mathematical ones.
 
+I think the current method of instruction is responsible for the lack luster results of modern data science (see below), and I think we can do better. This book is an attempt to do better.
+
+****
+### Dangerous data
+
+Data science is about detective work, which is risky business. You may be surprised at how risky. We are starting to learn that most published data science findings may be wrong. In 2012, Amgen determined that _only_ 6 of  53 "landmark" medical studies had results that could be reproduced. From a scientific point of view, that means these studies should be considered unreliable, if not wrong. In 2011, the Bayer company found it could only reproduce 25% of published findings in cardiovascular disease, cancer, and women's health studies. Bayer shelved development of  two thirds of its new drug projects as a result. 
+
+Data science goes wrong in other fields too. The 2008 Financial Crisis was enabled by a misapplication of the Gaussian copula, a data analysis technique. In another case, NASA analyzed global ozone data for seven years without noticing the hole in the ozone layer. The most famous data analysis failure probably happened in 1983. Engineers at Morton Thiokol, the builder of space shuttle booster rockets, predicted that the _Challenger_ would explode on launch. They had a chance to prevent the launch, but changed their minds after misreading data that proved them right.
+
+Even famous statisticians can get data wrong. Sir Ronald Fisher invented much of modern statistics, but he spent the end of his career using data to show that cigarettes do not cause cancer. 
+
+This doesn't mean you should avoid data. Looking at data will always create better understanding than ignoring it, but remember that data is not a cure-all. Good science also requires good reasoning and skepticism. As data scientists, we think of ourselves as detectives. Perhaps we should think of data as the mysterious blonde who walks into our office: sexy on the surface, murky and treacherous beneath. 
+
+**** 
+
 <!---
 
 ## The role of math
