@@ -4,33 +4,162 @@ title: Foundations of Data Science
 weight: 3
 ---
 
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+
 Data science is a _method_ of science. This sets it apart from other fields that are _branches_ of science. A branch of science uses scientific techniques to study a single subject. For example, physicists study physical systems, chemists study chemical systems, and computer scientists study computation. But data science is different.  
 
 Data scientists study a method that anyone can use to solve scientific problems. You can think of data science as a complement to experimental science. Experimental scientists use the experimental method to solve scientific problems, and data scientists use the data science method. Many scientists use both.
 
 This chapter will describe the problems that data scientists attempt to solve, as well as the methods that they use to solve them. It introduces data science as a specific method of reasoning that addresses the questions "What can you know?" and "How can you know it?" This method of reasoning guides the techniques that you will learn in later chapters—techniques like machine learning, statistical modelling, and visualization.
 
-### Science
+## Summary
 
-Data science is a method of reasoning that is guided by the general features of science. Scientists study and answer questions about the natural world, which makes them experts in a specific type of problem.
+Data science is a method of science that complements Experimenal science. Data scientists discover possible hypotheses, which can be further explored and tested with experimental methods. Specifically, data science matches the structure of data sets to the structure of scientific laws. If a law exists between two variables, it will appear as a pattern in the data. These patterns can be described, modelled, and used to make predictions.
 
-Consider a statement like, "All bachelors are unmarried." Is the statement true? How can you tell? 
+Like much of science, data science deals with uncertain information. Data science findings are never logically proven. At best, they are the most reasonable and the most pragmatic beliefs to hold. In short, data science methods _do not_ prove their results. This is the most important distinction between data science and math, which data science methods are sometimes mistaken for.
 
-You can reason about some statements by analyzing the concepts and relationships that they deal with. Bachelors are unmarried by definition, which means that the statement must be true.
+Although you cannot be certain about your results, you can be certain about your methods. The chapters that follow will show you how to make your results more certain by using methods that are reliable, reproducible, and have high predictive accuracy. You will also learn to quantify some types of uncertainty with probability.
 
-The same type of reasoning applies to the mathematical statement, $\sum mx = m \sum x$. You can determine the truth of the statement by analyzing the terms and relationships within the statement. 
+While each of these tactics makes data science findings more useful, they do not overcome the central paradox of data science: data science attempts to unveil unobservable a posteriori knowledge, knowledge that can only be proven by empirical observation. Always respect this paradox by maintaining an attitude of skepticism and curiosity.
 
-This type of reasoning is known as _a priori_ reasoning, reasoning that does not rely on observation or experience. The statements are examples of _a priori_ knowledge, knowledge that can be proven without looking at evidence from observation or experience. Philosphers and mathematicians specialize in a priori reasoning, but it is not what scientists do. Scientists may use a priori reasoning from time to time, but they specialize in a more daring type of reasoning.
+To do data science, you'll need to know a little about computers and programming. [Data Carpentry](/data-carpentry.md) will get you started loading and manipulating data with the R programming language.
 
-Consider a statement like, "There is a hole in the ozone layer." Is there anything about the statement that implies that it is true or false? No. The ozone layer _could_ have a hole in it, but it also _could not_. The definition of the ozone layer does not mention holes. 
+## Test yourself
 
-Since the statement describes an aspect of the real world, its truth will depend on the real world. If the statement accurately describes the world, it is true. If it does not accurately describe the world it is false. You will need to examine the real world to know which is the case.
+<!---
 
-Statements like _"There is a hole in the ozone layer"_ are not a priori. They are _a posteriori_. A posteriori knowledge is knowledge that can only be proven by observing the real world. 
+### Scientific reasoning
+
+This is a book on data science, which means it is also a book on reasoning. At its heart, data science is a reasoning task. A data scientist draws conclusions from a set of facts (what we call data). This process is guided by the rules of logic, but applied to concrete observations. 
+
+Data science, or at least a major branch of it—statistics—is often thought of as a type of math, but that is incorrect. Data science picks up where math leaves off. You can think of data science as applied philosophy or epistemological engineering.
+
+Logic used to be one of the three R's (the `rhithmetic in reading, writing, and arithmetic) and the lynchpin of a liberal arts education. But we also used to think that the world was flat and TV screens were round. Those days are long behind us, so you may not be familiar with the basic principles of logic.
+
+The basic principles are very simple and you should be acquainted with them. They explain what is, and is not, proof. Don't worry about becoming bored; we'll soon encounter a paradox that proves that almost everything you ever thought is wrong.
+
+Logic is the study of arguments, and its goal is to identify arguments that have true conclusions. Logic comes in handy because everything you know is based on an argument. If you can't prove a piece of knowledge with an argument, then it is not a piece of knowledge. It is a guess.
+
+You can divide every argument into two parts: a set of premises, which are given, and a conclusion, which you want to prove. Logicians tend to write out arguments like this
+
+Premise 1  
+Premise 2  
+Therefore, conclusion  
+
+Or, a real argument
+
+Hal Varian thinks statisticians are sexy.  
+I'm a statistician.  
+Therefore, Hal Varian thinks I'm sexy.  
+
+The premises should provide evidence that the conclusion is true, but they do not have to. An argument can be plain wrong. In fact, there are two ways for an argument to go wrong. First, the premises may not prove that the conclusion is true, in that case the argument is _invalid_. Second, the premises may themselves be false. In that case, even a valid argument could lead to an incorrect conclusion.
+
+If the premises of an argument are true _and_ the premises prove the conclusion, then the conclusion must also be true. 
+
+What do you need to know about all of this? Just one thing. Actually two. First, an argument fails if its premises are false, which raises an important question: How do you prove that the premises of an argument are true? You prove it with a second argument. This creates a problem because the second argument will have its own premises, which will require a third argument to prove, and so on. It's turtles all the way down: 
+
+Premise 1  
+Premise 2  
+Therefore, conclusion  
+
+Proto-premise A  
+Proto-premise B  
+Therefore, premise 1  
+
+Proto-proto-premise i
+Proto-proto-premise ii
+Therefore, proto-premise A
+
+and so on...
+
+Scientists avoid this conundrum by using observations as premises. This adheres to a school of thought known as _empiricism_. Empiricism asserts that observations are the most trustworthy way to learn about the world. In other words, in science, you can base your arguments on observations. Observations are considered reasonably reliable facts.
+
+The second thing that you need to know is that only certain types of facts can be logically proven (i.e. proven with a logically valid argument). Consider these two facts:
+
+1. \(\sum mx = m \sum x\)
+2. The sun appears yellow
+
+The first describes abstract ideas and the second describes concrete things. The first is much easier to prove. Why? It depends solely on the definition of the concepts involved. As long as you are familiar with the definition, you can reason about the statement. Moreover, the statement will presumably be true in any universe that shares the definition. This means the statement is true if you live in a universe that has a yellow sun, and it is true if you live in a universe that has a red sun. 
+
+Philosophers call this type of reasoning a priori reasoning (because you can figure it out prior to getting up from your arm chair to see what universe you live in). As a general rule, a priori statements can be proven or disproven with logical certainty. For example, 
+
+\(\sum mx = mx_{1} + mx_{2} + mx_{3} ...\)  
+\(mx_{1} + mx_{2} + mx_{3} ... = m (x_{1} + x_{2} + x_{3} ...)\)  
+\(m (x_{1} + x_{2} + x_{3} ...) = m \sum x\)  
+Therefore, \(\sum mx = m \sum x\)
+
+Philosphers and mathematicians specialize in reasoning about a priori facts, but not scientists. Scientists specialize in a more daring type of fact, facts like statement 2.
+
+Statement 2 describes something concrete, the color of the sun. As a result, the statement will be true in some universes (universes that have a yellow sun) and false in other universes (universes that have a red sun, sorry Kryptonians). To see whether the statement is true in _this universe_, you need to check to see what color the sun is in this universe.
+
+Philosophers describe this type of fact as a posteriori (because to prove it you need to get up off your posterior and examine the universe). Proving a posteriori facts is a plain affair. Only one premise can prove the fact and that premise must be an observation of the concrete thing described.
+
+The sun is yellow (observation)  
+Therefore, the sun is yellow (fact)  
+
+All of this means that if a statement describes something in the real world, you _must_ observe that thing if you want to prove or disprove the statement with logical certainty.
+
+Here's where things get weird.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--->
+
+
+
+
+<!---
+
+Scientists study questions about the natural world, which makes them experts in a specific type of reasoning. Consider a statement like 
+
+<center>_All bachelors are unmarried._</center>
+
+Is the statement true? How can you tell? 
+
+You can reason about some statements by analyzing the concepts and relationships that they deal with. For example, bachelors are unmarried by definition, which means that the statement _All bachelors are unmarried_ must be true.
+
+The same type of reasoning applies to mathematical statements, like
+
+<p><span class="math">\[\sum mx = m \sum x\]</span></p>
+
+You do not need to collect empirical evidence to determine whether these statements are true. You only need to know the definitions of the terms involved and what those definitions imply.
+
+This type of reasoning is known as _a priori reasoning_, reasoning that does not rely on observation or experience. The statements above are examples of _a priori knowledge_, knowledge that can be proven without looking at evidence from observation or experience. Philosphers and mathematicians specialize in a priori reasoning, but not scientists. Scientists use a priori reasoning from time to time, but they specialize in a more daring type of reasoning.
+
+Consider a statement like
+
+<center>_There is a hole in the ozone layer._<center>
+
+There is nothing in the statement that implies that it is true or false. The ozone layer _could_ have a hole in it, but it also _could not_. The definition of the ozone layer does not mention holes. How then could you tell if the statement is true?
+
+Since _There is a hole in the ozone layer_ describes an aspect of the real world, its truth will depend on the real world. If the statement accurately describes the real world, it is true. If it does not, it is false. You will need to examine the real world to know which is the case.
+
+Statements like _There is a hole in the ozone layer_ are not a priori. They are _a posteriori_. A posteriori knowledge is knowledge that can only be proven by observing the real world. A posteriori reasoning is reasoning that relies on collecting and examining empirical evidence.
 
 ***
 If the difference between a priori and a posteriori knowledge confuses you, focus on the meaning of _prior_ (before) and _posterior_ (after). You can prove a priori knowledge before you look at empirical evidence, but you cannot prove a posteriori knowledge until after you look at empirical evidence.
 ***
+
+The distinction between a priori and a posteriori is important because scientists specialize in a posteriori reasoning. Moreover, you cannot use a priori reasoning to prove an a posteriori fact (nor vice versa). 
 
 A posteriori knowledge poses several challenges. 
 
@@ -54,6 +183,7 @@ This creates a problem of discovery: how can you identify potential answers to a
 ***
 
 Science is a method of acquiring a posteriori knowledge, knowledge that cannot be known without empirical observation.
+-->
 
 <!--
 . Like all scientists, data scientists try to learn about the natural world. To do this they study a specific type of knowledge, a posteriori knowledge. 
