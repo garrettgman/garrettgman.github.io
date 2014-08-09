@@ -4,25 +4,23 @@ title: Foundations of Data Science
 weight: 3
 ---
 
-Data science is a _method_ of science. This sets it apart from other fields that are _branches_ of science. A branch of science uses scientific techniques to study a single subject. For example, physicists study physical systems, chemists study chemical systems, and biologists study living systems. But data science is different.  
+We all know what _Science_ is: the scholarly way of learning that depends on reasoning and observation. A scientist conducts experiments, makes measurements and thereby learns about the world. But what is _Data Science_?
 
-Data scientists study a method that anyone can use to solve scientific problems. You can think of data science as a complement to experimental science. Experimental scientists use the experimental method to solve scientific problems, and data scientists use the data science method. Many scientists use both.
+Data science begins with the second measurement. Whenever you measure the same thing twice—provided you measure it precisely enough—you will get two results. This phenomenon creates uncertainy, and it creates opportunity.
 
-This chapter will describe the problems that data scientists attempt to solve, as well as the methods that they use to solve them. It introduces data science as a way to acquire knowledge in the face of uncertainty: data scientists acquire knowledge by matching the structure of data to the structure of scientific laws. 
+This chapter will describe the causes of uncertainty and the principles that data scientists use to overcome it. Data science is a method for reasoning about uncertain information. This reasoning guides the techniques that you will learn in later chapters—techniques like machine learning, statistical modelling, and visualization.
 
-Uncertainty will be your constant companion as a data scientist. The principles laid out in this chapter explain where uncertainty comes from and how you can mitigate it. These principles guide the techniques that you will learn in later chapters—techniques like machine learning, statistical modelling, and visualization.
+## Uncertainty
 
-## Proof
+Uncertainty is an unpleasant fact of life. We do not know for certain many of the most interesting things to know.  For example, the structure of quarks, the origins of life, or the phone number of your attractive classmate.
 
-Data science may be the boldest of scientific pursuits. Its mission is both simple and impossible: to discover true knowledge that cannot be proven true. This creates a condition of uncertainty that follows the results of data science. To excel at data science you must become an expert at spotting and managing uncertainty.
+This uncertainty is more than a matter of bad luck. The nature of knowledge dictates that some things _cannot_ be known. At all. To see why this is consider some basic principles of logic.
 
-Why take on such a task? Different types of knowledge must be proven in different ways. Some of the most useful types of knowledge cannot be proven at all. 
-
-Logic is the study of arguments, and its goal is to identify arguments that prove their conclusions. Logic comes in handy because everything you know is based on an argument. If you can't prove a piece of knowledge with an argument, then it is not a piece of knowledge. It is a guess.
+Logic is the study of arguments, and its goal is to identify arguments that prove their conclusions. Logic comes in handy because everything you know is based on an argument. If you cannot prove a piece of knowledge with an argument, then it is not a piece of knowledge. It is a guess, and you do not know it for certain.
 
 Logic used to be one of the three R's (the `rhithmetic in reading, writing, and arithmetic) and the lynchpin of a liberal arts education. But we also used to think that the world was flat and TV screens were round. Those days are long behind us, so you may not be familiar with the basic principles of logic.
 
-The principles are very simple and you should be acquainted with them. They explain what is, and is not, proof. Don't worry about becoming bored; we'll soon encounter the paradox that motivates all of data science.
+The principles are very simple and you should be acquainted with them. They explain what is, and is not, proof. They also reveal the fundamental source of uncertainty that motivates all of data science.
 
 You can divide every argument into two parts: a set of premises, which are given, and a conclusion, which you want to prove. Logicians tend to write out arguments like this
 
@@ -38,45 +36,57 @@ Therefore, Hal Varian thinks I'm sexy.
 
 The premises should provide evidence that the conclusion is true, but they do not have to. An argument can be plain wrong. In fact, there are two ways for an argument to go wrong. First, the premises may not prove that the conclusion is true, in that case the argument is _invalid_. Second, the premises may themselves be false. In that case, even a valid argument could lead to an incorrect conclusion.
 
-What do you need to know about all of this? Just one thing. An argument proves its conclusion if
+On the other hand, if an argument is organized in such a way that the conclusion must be true if the premises are true _and_ the premises are actually true, then the argument proves its conclusion. This first condition is a mouthful, so logicians defined a word to describe it: an argument is _valid_ if its premises imply its conclusion.
 
-1. The premises imply the conclusion (e.g. if the premises are true the conclusion must be true).
+These two conditions are important so I'll list them clearly. An argument proves its conclusion if
+
+1. The argument is valid
 2. The premises are true
 
-When an argument meets the firat requirement, it is said to be a _valid_ argument. It is not always easy to see if an argument is valid. The fields of logic and mathematics are devoted to spotting and using valid arguments. Each lays out a system of rules that can be used to determine what is, and what is not implied by a set of premises. Logic tends to deal with general premises that involve classes, properties, and relationships. Math deals with premises that involve quantitative information. EXAMPLE.
+Arguments provide a way to know information for certain. A piece of information is certain if you can prove it with a valid argument that uses true premises. Otherwise, a piece of information is uncertain.
 
-Math and logic can guarantee that the conclusion of an argument is true if the premises are true. But how do you determine if the premises are true? You must establish the truth of different types of premises in different ways.
+It is not always easy to show that an argument is valid (or that its premises are true). However, there are many tools that can help you. The fields of logic and mathematics are devoted to spotting and using valid arguments. Each lays out a system of rules that can be used to determine what is, and what is not implied by a set of premises. Logic tends to deal with general premises that involve classes, properties, and relationships. Math deals with premises that involve quantitative information. 
 
-Many premises can be proven by arguments that treat the premise as the conclusion and prove that it is implied by more simple premises. However, two types of foundational premises cannot be proven by arguments.
+EXAMPLE.
 
-First, definitions cannot be proven or disproven (because they are neither true nor false). A definition is simply a convention that is either accepted or not accepted. Statements about ideas can be proven or disproven by analyzing the definitions of the concepts referred to in the statements. Each definition defines a class of objects that have common properties and are related to other classes of objects. EXAMPLE.
+Math and logic can guarantee that the conclusion of an argument is true if the premises are true. But how do you determine if the premises are true? 
 
-Philosophers call statements about ideas _a priori_ knowledge (because you can figure it out prior to getting up from your arm chair to see what universe you live in). As long as you are familiar with the definitions involved, you can reason about a priori statements. Moreover, the statement will presumably be true in any universe that shares the definition. This means the statement is true if you live in a universe that has a yellow sun, and it is true if you live in a universe that has a red sun. 
+You must establish the truth of different types of premises in different ways.
 
-As a general rule, a priori statements can be proven or disproven with logical certainty. For example, 
+Many premises can be proven by arguments of their own. A supporting argument will treat the premise as a conclusion and prove that it is implied by more simple (and true) premises. 
+
+At some point, however, supporting premises will become so simple that they cannot be proven by arguments. You cna divide these "foundational" premises into two types: definitions and descriptions.
+
+A definition defines a concept or abstract idea. You cannot prove or disprove a definition (because definitions are neither true nor false). They are merely agreed upon. Definitions usually define a class of objects that have common properties and are related to other classes of objects in specific ways. 
+
+Any statement that deals only with abstract ideas relies entirely upon definitions. You can prove that the statement is true or false by analyzing the definitions and relationships reffered to in the statement.
+
+For example, you can prove most mathematical statements (which describe abstract ideas like numbers, sets, and operations) by analyzing the definitions of the numbers, sets, and operations that they mention.
 
 \(\sum mx = mx_{1} + mx_{2} + mx_{3} ...\)  
 \(mx_{1} + mx_{2} + mx_{3} ... = m (x_{1} + x_{2} + x_{3} ...)\)  
 \(m (x_{1} + x_{2} + x_{3} ...) = m \sum x\)  
 Therefore, \(\sum mx = m \sum x\)
 
+Philosophers call statements about abstract ideas _a priori_ knowledge, because you can prove or disprove the statements _prior_ to getting up from your arm chair (to do something like collect data). A priori statements are a rich source of certain knowledge, but they do not actually tell you anything about the physical world. They only ensure that your beliefs are coherent with the definitions you have adopted. To ensure that your beliefs correspond to reality, you need a more daring type of premise, premises that describe concrete things.
+
+A description describes an arrangement that exists in the physical world. Descriptions are not a matter of custom or convention. A description is true if it corresponds with the way the world really is. A description is false if it does not. To see which is the case, you must observe the part of the world that the description describes.
+
+For example, consider the statement, "There is a hole in the ozone layer." 
+
+There is nothing in the statement that suggests whether it is true or false. The ozone layer _could_ have a hole in it, but it also _could not_. The definition of the ozone layer does not mention holes. 
+
+Since the statement describes an aspect of the real world, its truth will depend on the real world. If the real ozone layer has a hole, the statement will be true. If the real ozone layer does not have a hole, the statement will be false. You must observe the real world to prove whether or not the statement is true.
+
+Statements like _"There is a hole in the ozone layer"_ are not a priori. Philosophers call this type of statement _a posteriori_ because to prove it you need to get up off your _posterior_ and examine the universe. In other words, a posteriori knowledge is knowledge that can only be proven by observing the part of the world that the knowledge describes.
 
 ***
 #### Tip
 
-Data science, or at least a major branch of it—statistics—is often thought of as a type of math, but that is incorrect. Data science picks up where math leaves off. Math proves knowledge that can be known with certainty. Data science reveals information that is beyond the horizon of what you can and cannot know.
+If a statement describes something in the real world, you _must_ observe that thing if you want to prove or disprove the statement (and any conclusion based on it) with logical certainty. 
 ***
 
-Philosphers and mathematicians specialize in reasoning about a priori facts, but not scientists. Scientists specialize in a more daring type of premise, premises that describe concrete things.
-
-Statement 2 describes something concrete, the color of the sun. As a result, the statement will be true in some universes (universes that have a yellow sun) and false in other universes (universes that have a red sun, sorry Kryptonians). To see whether the statement is true in _this universe_, you need to check to see what color the sun is in this universe.
-
-Philosophers describe this type of fact as a posteriori (because to prove it you need to get up off your posterior and examine the universe). Proving a posteriori facts is a plain affair. Only one premise can prove the fact and that premise must be an observation of the concrete thing described.
-
-The sun is yellow (observation)  
-Therefore, the sun is yellow (fact)  
-
-All of this means that if a statement describes something in the real world, you _must_ observe that thing if you want to prove or disprove the statement with logical certainty. Science is a toolkit for demonstrating and reasoning with a poseriori premises.
+Philosophers and mathematicians specialize in reasoning about a priori facts, but not scientists. Scientists specialize in reasoning about a posteriori facts. And data scientists specialize in reasoning about a specific subset of a posteriori facts.
 
 ***
 #### Tip
@@ -84,23 +94,44 @@ All of this means that if a statement describes something in the real world, you
 If the difference between a priori and a posteriori knowledge confuses you, focus on the meaning of _prior_ (before) and _posterior_ (after). You can prove a priori knowledge before you look at empirical evidence, but you cannot prove a posteriori knowledge until after you look at empirical evidence.
 ***
 
-## Science
+Here's where things get weird.
 
-A posteriori premises create a problem. Many a posteriori statements describe parts of the world that cannot be observed. These premises _cannot_ be proven. Arguments that rely on them _cannot_ be proven.
-
-Some a posteriori statements can be confirmed by making an observation, but many a posteriori statments describe things that cannot be easily observed. For example, what observations can you make (today) to prove the statements below are true beyond the shadow of a doubt?
+Some a posteriori statements can be confirmed by making an observation, but many a posteriori statments describe things that cannot be easily observed. For example, what observations can you make (today) to prove that the statements below are true beyond the shadow of a doubt?
 
 * A meteor impact killed the dinosaurs.
 * The universe is expanding.
 * All of the ice in Greenland will melt by 2080.
 
-In short, many a posteriori statements cannot be proved at all. Here is a list of features that make an a posteriori statement unprovable. An a posteriori statement cannot be proved if it describes:
+These descriptions each describe something that you cannot observe, which means that you _cannot_ prove that the statements are true. Nor can you prove that any conclusions that rely on them are true.
+
+In short, many a posteriori statements cannot be proved at all. Here is a short list of features that make an a posteriori statement unprovable. An a posteriori statement cannot be proved if it describes:
 
 1. A future event
 2. A past event (that you did not observe)
 3. A present event (that you are not currently observing)
 
-An a posteriori statement is also unprovable if it asserts a general rule. Such statements describe _every_ instance of the rule. To prove that the rule is universal, you must observe every instance, but some instances will fall into one of the unobservable groups above.
+An a posteriori statement also cannot be proved if it describes
+
+1. A general rule (because general rules describe an infinite number of instances, some of which fall into the categories above), or
+2. Causation (because causation cannot be directly observed, just inferred from associations)
+
+In other words, almost every description of the world describes something that cannot be proven. At all. Almost everything we believe about the world is uncertain.
+
+Data scientists attempt to reduce this insurmountable source of uncertainty. Like the Norse gods at Ragnarok, data scientists are fated to fail—this uncertainty cannot be completely reasoned away. However, data scientists can mitigate the uncertainty enough to create very useful results.
+
+To recap, information cannot be known for certain if it deals with unobservable parts of the real world. This means that most of our beliefs, including ideas about the past, the future, uniformities, and causation will always be uncertain conjectures.
+
+This is an uncomfortable position to be in. Let's start fighting back. Science provides a general strategy for reasoning about uncertain a posteriori knowledge. Data science provides a specific tactic.
+
+***
+#### Tip
+
+Data science, or at least a major branch of it—statistics—is often thought of as a type of math, but that is incorrect. Data science picks up where math leaves off. Math proves a priori knowledge that can be known with certainty. Data science reveals a posteriori information that is beyond the horizon of what you can and cannot know.
+***
+
+## Science
+
+Although we cannot know what the future holds in store, we can notice that the universe is pretty well behaved. Cause and effect seems to occur. Unobserved events seem to be similar to similar observed events. Scientists act as if we can take these things for granted.
 
 Scientists use a general pattern of reasoning to reason about a posteriori statements that describe unobservable things. Scientists act as if the outcome of every measurable event can be predicted by a set of input conditions. In other words, scientists treat the universe as if it behaves according to deterministic cause and effect laws. The relationship between input conditions and outcomes can be stated precisely as a law, like $f = ma$, or generally as an explanation, such as smoking causes lung cancer.
 
