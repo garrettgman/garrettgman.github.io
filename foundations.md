@@ -198,6 +198,26 @@ Hence, testing leaves the explanation as a hypothesis (i.e. uncertain).
 
 Finally, scientists use deduction to make a prediction about unobserved events. Deduction is a valid form of reasoning. If a set of premises is true, deduction will reveal a conclusion that must also be true. However, in this case, we cannot prove that our premises are true. Our premise is our hypothesis which is an unprovable a posteriori statement.
 
+Scientific reasoning ultimately fails to overcome epistemological uncertainty, but is it useless? I do not think so. You may have noticed that scientists have racked up some very impressive achievements over the past few centuries. Why should this be?
+
+Several mechanisms within scientific reasoning provide "partial justification" for scientific results. These mechanisms do not remove uncertainty, but reveal a path forward nonetheless. As a method of science, data science does the same. It applies these mechanisms to a specific tool: data.
+
+What are the mechanisms and how do they help scientists reason in the face of uncertainty?
+
+First, it is pragmatic to act as if the universe is deterministic. To see why this may be, consider two scenarios. In each scenario, you wish to learn about event A, which is similar to events B, C, and D.
+
+In Scenario 1, the universe _is_ deterministic. By selecting the explanation that best explains events like A, B, C, and D, you maximize your chances of making correct predictions about A.
+
+In Scenario 2, the universe _is not_ deterministic, which means the outcome of event A cannot be predicted. Scientific reasoning will do no better than any other method of reasoning—including random guesses. But scientific reasoning will also do no worse.
+
+So if you act as if the universe is deterministic, you have something to gain and nothing to lose.
+
+Second, under certain conditions, inference to the best explanation ensures that you have the most to gain by acting as if the universe is deterministic. What are those conditions? When you select the explanation that has the best predictive accuracy. In other words, if you wish to select an explanation that describes new events, the most pragmatic thing to do is to select the explanation that makes the most accurate predictions about new events. You can test predictive accuracy by observing new events, but there are other ways to test predictive accuracy as well.
+
+Third, enumerative induction provides a method of reasoning that is a priori reasonable.
+
+Third, testing ensures that the results are at least not obviously wrong. And scientific testing goes beyond hypothesis testing. Scientific research is distributed in a way that makes it reproducible.
+
 
 ### Observation
 
@@ -269,7 +289,10 @@ Sometimes you do not even need to speculate abotu a causal mechanism. You can ju
 
 ## Data Science
 
+A data set is a collection of measurements. A measurement is.
+When you measure obsevations, causal processes can be described as relationships between mathematical variables.
 
+When you measure something twice, the measurement changes. Why should this be? Because the intitial conditions changed. This provides a clue to the relationship. If you measure enough points, the relationship will appear as a pattern in your data. 
 
 
 
