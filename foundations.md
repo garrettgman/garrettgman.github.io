@@ -1,3 +1,8 @@
+---
+layout: page
+title: Foundations of Data Science
+weight: 3
+---
 
 # What is data science?
 
