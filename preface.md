@@ -127,7 +127,7 @@ If you would like a deeper understanding of computer programming or R, read the 
 
 I recommend the R programming language for doing data science. R was designed specifically for data scientists and has evolved in a university setting to be very friendly to new programmers. Plus, R is completely free and open source. Don't be afraid if you've never used a computer language before; R is really quite simple. In the beginning, you can use R as if it were a fancy calculator. As you progress, you'll find that you can use R to do everything that you'll do as a data scientist.
 
-As an R user, you can also take advantage of RStudio, a third party program that makes R even easier to use. RStudio amplifies many of R's abilities and provides a host of shortcuts that make R easier to use (and learn). I'll use RStudio throughout this book because it provides a uniform interface to R for Windows, Mac, and Linux users. This will help me match the book to your experience. Also, I work for RStudio as a trainer and a data scientist. This gives me a first hand knowledge of the program that I hope to pass on to you.
+As an R user, you can also take advantage of RStudio, a third party program that makes R even easier to use. RStudio amplifies many of R's abilities and provides a host of shortcuts that make R easier to use (and learn). I'll use RStudio throughout this book because it provides a uniform interface to R for Windows, Mac, and Linux users. This will help me match the book to your experience. Also, I work for RStudio as an instructor and a data scientist. This gives me a first hand knowledge of the program that I hope to pass on to you.
 
 I wrote this book with both new and old R users in mind. If you've never used R, you'll be able to learn as you go. If you have used R, you'll learn how to use it to analyze data. 
 
@@ -163,7 +163,7 @@ Learning to program in R is not hard, and I will make it as easy as I can for yo
 
 ## Acknowledgements
 
-Although this book is not yet written, I have many people to thank. _Data Science with R_ is part of a larger project that has already led to [_Hands-On Programming with R_](http://shop.oreilly.com/product/0636920028574.do), a book that teaches how to program with R. My two editors Courtney Nash and Julie Steele have been indispensible to the project, as has Ann Spencer, my de facto liason at O'Reilly over the past few months.
+Although this book is not yet written, I have many people to thank. _Data Science with R_ is part of a larger project that has already led to [_Hands-On Programming with R_](http://shop.oreilly.com/product/0636920028574.do), a book that teaches how to program with R. My three editors, Courtney Nash, Julie Steele, and Marie Beaugureau have been indispensible to the project, as has Ann Spencer, my de facto liason at O'Reilly over the past few months.
 
 I would also like to thank Hadley Wickham, Winston Chang, Stephanie Hicks, and Jaime Ramos, who I regularly discuss data science with; as well as O'Reilly Media and RStudio, who have helped make this book and this website possible.
 

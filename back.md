@@ -4,9 +4,9 @@ title: Back Cover
 weight: 1
 ---
 
-We all know what _Science_ is: the scholarly way of learning that depends on reasoning and observation. A scientist conducts experiments, makes measurements and thereby learns about the world. But what is _Data Science_?
+"We all know what _Science_ is: the scholarly way of learning that depends on reasoning and observation. A scientist conducts experiments, makes measurements and thereby learns about the world. But what is _Data Science_?
 
-Data science begins with the second measurement. Whenever you measure the same thing twice—provided you measure it precisely enough—you will get two results. This phenomenon creates uncertainy, and it creates opportunity.
+Data science begins with the second measurement. Whenever you measure the same thing twice—provided you measure it precisely enough—you will get two results. This phenomenon creates uncertainy, and it creates opportunity."
 
 This book will teach you how to work with that uncertainty and how to capture those opportunities. It will also teach you how to handle the other things that come along with the second measurement (and all the measurements that follow). Things like:
 
