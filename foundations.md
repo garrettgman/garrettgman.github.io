@@ -8,24 +8,24 @@ Data science is a _method_ of science. This sets it apart from other fields that
 
 Data scientists study a method that anyone can use to solve scientific problems. You can think of data science as a complement to experimental science. Experimental scientists use the experimental method to solve scientific problems, and data scientists use the data science method. Many scientists use both.
 
+The data science method relies on data, a tool that makes it easy to discover scientific relationships. However, as a tool, data can be misleading. Data creates specific illusions that you must be able to recognize and work with to make progress.
+
 This chapter will describe the problems that data scientists attempt to solve, as well as the methods that they use to solve them. It introduces data science as a specific method of reasoning that matches the structure of data to the structure of scientific laws. This method of reasoning guides the techniques that you will learn in later chapters—techniques like machine learning, statistical modelling, and visualization.
 
 ## The data science worldview
 
 Science is based on a simple idea, that the best way to learn about the world is to observe it. Data scientists extend this idea by studying measurements, a specifc type of observation. A _measurement_ is an observation that is 
 
-1. made with a reproducible method and 
-2. recorded in a precise way. 
+1. made with a reproducible method 
+2. recorded in a precise way 
 
 Every measurement creates a _value_, a piece of information that describes a specific part of the world at a specific time. 
 
-### Variation
+The rigor of measurement reveals a surprising phenomenon: if you measure the same quantity twice, you will observe two different values, so long as you measure precisely enough. This is true of any quantity that you choose to measure. Data scientists call this phenomenon _variation_, and it completely shapes how we learn about the world. 
 
-Measurements let us compare observations in a rigorous way. You might think that this would simplify science, but it does the opposite. The rigor of measurement reveals a surprising phenomenon: if you measure the same thing twice, you will observe two different values, so long as you measure precisely enough. 
+Variation occurs for two reasons. First, the universe changes constantly. For example, the temperature of the air changes from time to time, and the salinity of the sea changes from place to place. Any pair of precise measurements will reflect these changes, even if the changes are minute.
 
-This is true of any quantity or quality that you choose to measure. Many things will vary from measurement to measurement due to natural reasons. For example, the temperature of the air will vary from time to time, and the salinity of the sea will vary from place to place. 
-
-Other things seem to be constant in theory, but will vary when measured due to small measurement errors. You can see this variation in the earliest measurements of the speed of light, which are displayed in the table below. The speed of light is a universal constant that should never vary, but the measurements of the speed of light vary greatly.
+Second, tiny measurement errors occur each time you make a measurement. Your hand may shake slightly, a glass lens may swell, and so on. As a result, it is very difficult to make two measurements under the exact same conditions. You can see the effect of these errors when you measure something that should be constant. The table below shows the earliest reliable measurements of the speed of light. The speed of light is a universal constant that should never vary, but the measurements of the speed of light vary greatly due to measurement errors.
 
 |------------|------------|------------|------------|------------|------------|------------|------------|------------|------------
 | 299,850|    299,740|    299,900|    300,070|    299,930 |    299,800| 299,850|    299,880|    299,900|    299,840
@@ -36,7 +36,13 @@ Other things seem to be constant in theory, but will vary when measured due to s
 
 _50 measurements of the speed of light (km/s) observed by Michelson in 1879._
 
-Unfortunately, when measuring constants it is not clear which measurements should be trusted and which are affected by errors. As a result, data scientists treat everything that can be measured as a _variable_, a quantity or quality whose value can vary from measurement to measurement. 
+Unfortunately, when measuring constants it is not clear which measurements should be trusted and which are affected by errors. 
+
+### The goal of data science
+
+Variation creates a goal for data scientists. Data scientists try to discover the causes of variation in the natural world. In particular, data scientists try to understand, predict, and control the outcomes of events and processes that vary. For example, a data scientist may try to determine why annual rainfall in the midwest varies from year to year. Or a data scientist may try to determine why some automobiles produce more $SO_{2}$ than others, and then make recommendations for lowering the $SO_{2}$ emissions of all cars.
+
+To do this, data scientists treat everything that can be measured as a _variable_, a quantity or quality whose value can vary from measurement to measurement. Data scientists then try to predict which values a variable will take under specific sets of conditions.
 
 It is important to understand the difference between a variable and a value. A variable is a general quantity or quality that you can measure, such as height, weight, or the outcome of an event. A value is a state that a variable can have when you measure it. For example, the variable height can have values like 60 inches and 61.3 inches. A variable that describes a coin flip (which is an event) can have the values "heads" and "tails." 
 
@@ -48,9 +54,7 @@ But if we measure $H$ a second time, we might expect it to be equal to a differe
 
 $$H = h_{2}$$
 
-Variation creates a huge source of uncertainty for scientists. How can you know anything certain about the universe if the universe constantly changes? How can you learn anything from your measurements if even constants change each time you measure them? 
-
-This is the primary problem that data scientists try to solve, i.e. how to build reliable knowledge in the face of uncertainty. To solve the problem, data scientists rely on a second phenomenon also revealed by measurement.
+The goal of data science is to understand when a variable like $H$ will equal the value $h$, and when it will equal the value $h_{2}$. Data scientists reduce the uncertainty associated with a variable by describing how it varies and predicting its value. To do this, data scientists rely on a second phenomenon also revealed by measurement.
 
 ### Covariation
 
