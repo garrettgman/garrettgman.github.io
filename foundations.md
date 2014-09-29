@@ -14,7 +14,23 @@ This chapter will describe the problems that data scientists attempt to solve, a
 
 ## The data science worldview
 
-Science is based on a simple idea, that the best way to learn about the world is to observe it. Data scientists extend this idea by studying measurements, a specifc type of observation. A _measurement_ is an observation that is 
+Science is based on a simple idea, that the best way to learn about the world is to observe it. However, observation reveals that everything in the world varies. Quantities like the temperature of the air and the salinity of the sea change from moment to moment and from place to place. If you closely observe the same quantity twice, you will notice these changes, even if the changes are minute.
+
+This natural variation creates a dilemma for scientists. The things we observe are true for a specific time and place. A scientist must make additional observations to collect reliable information about other times and other places. To learn about the universe at large, a scientist would need to make an infinite number of observations, which is an impossible task.
+
+Scientists get around this dilemma by acting as if the world behaves according to laws of cause and effect. According to this view, the outcome of every event is determined by a set of causes, which are themselves determined by a set of causes, and so on. This behavior would explain natural variation. The value of every quantity is determined by a set of causes, or initial conditions. These conditions vary from place to place and moment to moment, which makes the quantity vary.
+
+This view also suggests that patterns of variation provide evidence about the cause and effect laws that cause the variation. Scientists study patterns of variation to discover these laws. For example, use experiments to control isolate the causes that cause a measurable quantity to vary. So far this worldview has been tremendously productive.
+
+***
+
+
+
+
+
+
+
+Data scientists extend this idea by studying measurements, a specifc type of observation. A _measurement_ is an observation that is 
 
 1. made with a reproducible method 
 2. recorded in a precise way 
