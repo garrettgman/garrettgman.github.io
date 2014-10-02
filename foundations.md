@@ -18,7 +18,7 @@ A natural law is a law like relationship between _variables_, which are quantiti
 
 Natural laws explain how the values of variables relate to each other, which can help scientists understand, control, and make predictions about natural processes.
 
-$E = Mc^2$ states that the energy content of a system ($E$) is always equal to the mass of the system ($M$) multiplied by the speed of light squared ($c^{2}$), which suggests that mass can be converted into energy, an insight that led to nuclear power. $F = MA$ explains that the force exerted upon an object ($F$) is equal to the mass of the object ($M$) multiplied by its acceleration ($A$), an insight that has many applications in the field of physics. 
+$E = Mc^2$ states that the energy content of a system ($E$) is always equal to the mass of the system ($M$) multiplied by the speed of light squared ($c^{2}$), an insight that helped explain nuclear power. $F = MA$ explains that the force exerted upon an object ($F$) is equal to the mass of the object ($M$) multiplied by its acceleration ($A$), an insight that has many applications in the field of physics. 
 
 You can think of science as a collection of methods that use observations to discover natural laws. Data science is one of those methods. It uses a specific property of observations to reveal natural laws, and that property is variation.
 
@@ -26,27 +26,45 @@ You can think of science as a collection of methods that use observations to dis
 
 _Variation_ is the natural tendency for a property to change from measurement to measurement. Quantities like the temperature of the air and the salinity of the sea change from moment to moment and from place to place. Properties of objects, like height, weight, or volume, change from object to object. If you look closely at the same quantity twice, you will notice these changes, even if the changes are small.
 
-Variation creates uncertainty for scientists: you cannot know what value you will observe when you measure a quantity—even if you have measured the quantity before. However, variation also contains information.
+Variation creates uncertainty for scientists because it implies that you cannot know what value you will observe when you measure a quantity—even if you have measured the quantity before. However, variation also contains information.
 
-The value of each variable that you can measure is determined by a natural law. This law affects how the variable can vary, and fingerprints of the law appear in the variable's pattern of variation.
+The values of each variable are determined by a natural law that affects how the variable can vary. For example, the acceleration of a particle can vary, but the acceleration will always be related to the mass of the particle and the forces acting on the particle (according to $F = MA$). 
 
-Take, for example, a simple variable, like the acceleration of a particle in space. You can measure the particle's acceleration under different conditions. Sometimes the particle will be acclerating rapidly, sometimes it will be slowing down, sometimes it will not be accelerating at all. In other words, the acceleration can vary widely as different forces act on the particle. However, 
+This law will leave fingerprints on the pattern of variation displayed by acceleration. If you measure both the acceleration of the particle and the forces acting on it, you may notice that the values of the two variables correspond in a systematic way. The value of $A$ will be high wheneever the value of $F$ is high, and the value of $A$ will be low when the value of $F$ is low.
 
-Variation is not haphazard, but has structure. If you examine multiple measurements of the same variable, you will notice that some values appear more often than others. For example, if you measure the heights of adult men, you will notice that many men are roughly 5' 9&rdquo; (~175 cm). A much smaller number of men are a foot taller (6' 9&rdquo;) or a foot shorter (4' 9&rdquo;), and almost nobody is two feet taller (7' 9&rdquo;) or two feet shorter (3' 9&rdquo;).
+You will observe an even more striking relationship if you also measure the particle's mass. Whenever you measure the acceleration, force, and mass simultaneously, their values will display the relationship $F = MA$.
 
-For every variable, some values will seem typical; some values will seem rare but plausible; and other values will seem downright impossible. In other words, the possible values of each variable are distributed in a structured way. You can improve your predictions about a variable if you identify the distribution of values associated with the variable.
+Data scientists use variation and _covariation_, the correspondence between values of different variables, to reveal unknown natural laws. To do this, they use a tool perfectly suited to the job: data.
 
-If you collect multiple measurements of _several_ variables, you may notice a second type of structure. The values of one variable may correspond to the values of another variable in a systematic way. For example, if you measured the heights and weights of children, you may notice that children with large heights also tend to have large weights, and vice versa. 
+## Data
 
-This correspondence between variables is known as _covariation_, and it provides a way to discover natural laws. If two variables are related through a natural law, the relationship described in the law will appear whenever you measure the two variables together. As a result, the values of the variables will covary.
+A data set is a collection of measurements that have been organized in a specific way. Each value in a data set is associated with a variable and an observation. 
 
+We use "variable" and "observation" in everyday speech, but the terms have a technical meaning when associated with data.
 
+* A _variable_ is a quantity, quality, or property that can be measured. 
 
-Data reveals this structure. The structure of data parallels natural laws. As a result, laws appear as patterns in data.
+* An _observation_ is a set of measurments that are made under similar (ideally identical conditions). 
+
++You can think of an observation as a snap shot of the world. An obseration shows what a group of variables looked like together for a brief moment before they went on changing. 
+
+#### Measurement
+***
+ A _measurement_ is an observation that is 
+
+1. made with a reproducible method 
+2. recorded in a precise way 
+
+Every measurement creates a _value_, a piece of information that describes a specific part of the world at a specific time. 
+
+Measurements make it easy to quantify variation because they provide a rigorous way to observe the world. 
+***
+
+The structure of data parallels the structure of natural laws. Natural laws contain variables whose values correspond when the variables are measured under identical conditions. Each observation in a data set contains variables whose values have been measured under identical conditions. As a result, natural laws appear as patterns in data. 
+
+This provides a way to discover natural laws. You can search for patterns in raw data, or visualize the data to make patterns more apparent. You can also search through your data with computerized pattern recogition algorithms or function estimation techniques.
 
 A concrete example, the dice game.
-
-You can visualize these patterns, or find them with a function estimation algorithm.
 
 But data is a tricky subject that creates very well documented illusions. You'll need to spot and work around these. 
 
