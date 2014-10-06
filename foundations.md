@@ -12,61 +12,75 @@ This chapter will describe the problems that data scientists attempt to solve, a
 
 ## The data science worldview
 
-Science is based on two simple ideas. First, that the best way to learn about the word is to observe it. And second, that the universe operates according to _natural laws_. 
+As a method of science, data science is based on two simple ideas. First, that the best way to learn about the word is to observe it. And second, that the universe operates according to _natural laws_. 
 
-A natural law is a law like relationship between _variables_, which are quantities or qualities whose values can change from measurement to measurement. So, for example, $E = Mc^{2}$ and $F = MA$ are both natural laws. In theses laws, the quantities $E$, $M$, $F$, and $A$ are all variables. The quantity $c$ is a constant value.
+A natural law is a law-like relationship between _variables_, which are quantities or qualities whose values can change from measurement to measurement. So, for example, $E = Mc^{2}$ and $F = MA$ are both natural laws. In theses laws, the quantities $E$, $M$, $F$, and $A$ are all variables. The quantity $c$ is a constant value.
 
 Natural laws explain how the values of variables relate to each other, which can help scientists understand, control, and make predictions about natural processes.
 
-$E = Mc^2$ states that the energy content of a system ($E$) is always equal to the mass of the system ($M$) multiplied by the speed of light squared ($c^{2}$), an insight that helped explain nuclear power. $F = MA$ explains that the force exerted upon an object ($F$) is equal to the mass of the object ($M$) multiplied by its acceleration ($A$), an insight that has many applications in the field of physics. 
+$E = Mc^2$ states that the energy content of a system ($E$) is always equal to the mass of the system ($M$) multiplied by the speed of light squared ($c^{2}$). $F = MA$ explains that the force exerted upon an object ($F$) is equal to the mass of the object ($M$) multiplied by its acceleration ($A$), an insight that has many applications in the field of physics. 
 
 You can think of science as a collection of methods that use observations to discover natural laws. Data science is one of those methods. It uses a specific property of observations to reveal natural laws, and that property is variation.
 
 ## Variation
 
-_Variation_ is the natural tendency for a property to change from measurement to measurement. Quantities like the temperature of the air and the salinity of the sea change from moment to moment and from place to place. Properties of objects, like height, weight, or volume, change from object to object. If you look closely at the same quantity twice, you will notice these changes, even if the changes are small.
+_Variation_ is the natural tendency for a quantity to change from measurement to measurement. Quantities like the temperature of the air and the salinity of the sea change from moment to moment and from place to place. Properties of objects, like height, weight, or volume, change from object to object. If you look closely at the same quantity twice, you will notice these changes, even if the changes are small.
 
 Variation creates uncertainty for scientists because it implies that you cannot know what value you will observe when you measure a quantity—even if you have measured the quantity before. However, variation also contains information.
 
-The values of each variable are determined by a natural law that affects how the variable can vary. For example, the acceleration of a particle can vary, but the acceleration will always be related to the mass of the particle and the forces acting on the particle (according to $F = MA$). 
+The values of variables are constrained by natural laws that affect how variables can vary. For example, the acceleration of a particle can vary, but the acceleration will always be related to the mass of the particle and the forces acting on the particle (according to $F = MA$). 
 
-This law will leave fingerprints on the pattern of variation displayed by acceleration. If you measure both the acceleration of the particle and the forces acting on it, you may notice that the values of the two variables correspond in a systematic way. The value of $A$ will be high wheneever the value of $F$ is high, and the value of $A$ will be low when the value of $F$ is low.
+This law will leave fingerprints on the pattern of variation displayed by acceleration. If you measure both the acceleration of a particle and the force acting on it, you may notice that the values of the acceleration and the force correspond in a systematic way. The value of $A$ will be high whenever the value of $F$ is high, and the value of $A$ will be low when the value of $F$ is low.
 
-You will observe an even more striking relationship if you also measure the particle's mass. Whenever you measure the acceleration, force, and mass simultaneously, their values will display the relationship $F = MA$.
+You will observe an even more striking relationship if you also measure the particle's mass. Whenever you measure the acceleration, force, and mass simultaneously, you will observe values that display the relationship $F = MA$.
 
-Data scientists use variation and _covariation_, the correspondence between values of different variables, to reveal unknown natural laws. To do this, they use a tool perfectly suited to the job: data.
+Correspondence between values of different variables is known as _covariation_. Data scientists use variation and covariation to reveal unknown natural laws. To do this, they use a tool perfectly suited to the job: data.
 
 ## Data
 
-A data set is a collection of measurements that have been organized in a specific way. Each value in a data set is associated with a variable and an observation. 
-
-We use "variable" and "observation" in everyday speech, but the terms have a technical meaning when associated with data.
+A data set is a collection of measurements that have been organized in a specific way. Each value in a data set is associated with a _variable_ and an _observation_. We use "variable" and "observation" in everyday speech, but the terms have a technical meaning when associated with data.
 
 * A _variable_ is a quantity, quality, or property that can be measured. 
 
-* An _observation_ is a set of measurments that are made under similar (ideally identical conditions). 
+* An _observation_ is a set of measurements that are made under similar (ideally identical conditions). 
 
-+You can think of an observation as a snap shot of the world. An obseration shows what a group of variables looked like together for a brief moment before they went on changing. 
+You can think of an observation as a snap shot of the world. An observation shows what a group of variables looked like together for a brief moment before they changed. 
 
-#### Measurement
-***
- A _measurement_ is an observation that is 
+Both of these definitions rely on the idea of measurement, so let's be specific about what a measurement is. A _measurement_ is an observation that is 
 
 1. made with a reproducible method 
 2. recorded in a precise way 
 
-Every measurement creates a _value_, a piece of information that describes a specific part of the world at a specific time. 
+Notice that here I'm using the word "observation" in its general, everyday sense. 
 
-Measurements make it easy to quantify variation because they provide a rigorous way to observe the world. 
-***
+Every measurement creates a _value_, a piece of information that describes a specific part of the world at a specific time. Measurements make it easy to quantify variation because they provide a rigorous way to observe the world. 
 
-The structure of data parallels the structure of natural laws. Natural laws contain variables whose values correspond when the variables are measured under identical conditions. Each observation in a data set contains variables whose values have been measured under identical conditions. As a result, natural laws appear as patterns in data. 
+Measurements, variables, and observations give data sets a structure that parallels the structure of natural laws. Natural laws contain variables whose values correspond when the variables are measured under identical conditions. 
 
-This provides a way to discover natural laws. You can search for patterns in raw data, or visualize the data to make patterns more apparent. You can also search through your data with computerized pattern recogition algorithms or function estimation techniques.
+$$F = MA$$
+
+Each observation in a data set contains values of different variables that have been measured under different conditions. For example, if you simultaneously measure the force, mass and acceleration of a particle you will have an observation that looks like this.
+
+$$f_{1}, m_{1}, a_{1}$$
+
+If a natural law exists between the variables in an observation, the values of the observation will display the law. In our case, $f_{1}$ will equal $m_{1}$ times $a_{1}$, e.g.
+
+$$f_{1} = m_{1} \times a_{1}$$
+
+If you collect many different observations, this relationship will appear as a pattern of covariation in your data.
+
+$F$     | $M$     | $A$    
+------- | ------- | -------
+$f_{1}$ | $m_{1}$ | $a_{1}$
+$f_{2}$ | $m_{2}$ | $a_{2}$
+$f_{3}$ | $m_{3}$ | $a_{3}$
+$f_{4}$ | $m_{4}$ | $a_{4}$ 
+
+This provides a way to discover natural laws. You can search for patterns in raw data, or visualize the data to make patterns more apparent. You can also search through your data with computerized pattern recognition algorithms, like those of statistical modelling and machine learning.
 
 A concrete example, the dice game.
 
-But data is a tricky subject that creates very well documented illusions. You'll need to spot and work around these. 
+However, data can be a tricky ally. Data creates several illusions that are well known to scientists and statisticians. To make the most of data you will need to be able to spot these illusions and work around them.
 
 # Probability and Randomness
 
