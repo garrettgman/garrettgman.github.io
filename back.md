@@ -4,7 +4,7 @@ title: Back Cover
 weight: 1
 ---
 
-"We all know what _Science_ is: the scholarly way of learning that depends on reasoning and observation. A scientist conducts experiments, makes measurements and thereby learns about the world. But what is _Data Science_?
+We all know what _Science_ is: the scholarly way of learning that depends on reasoning and observation. A scientist conducts experiments, makes measurements and thereby learns about the world. But what is _Data Science_?
 
 Data science begins with the second measurement. Whenever you measure the same thing twice—provided you measure it precisely enough—you will get two results. This phenomenon creates uncertainy, and it creates opportunity.
 
