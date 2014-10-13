@@ -4,13 +4,13 @@ title: Foundations of Data Science
 weight: 3
 ---
 
-Data science is a term too successful for its own good. O'Reilly publishes nine books on data science and one of them is named "What is Data Science?" When you open any of them you should ask yourself, what am I getting into? 
+Data science has several meanings. O'Reilly publishes nine books on data science and one of them is named "What is Data Science?" When you open any of them you should ask yourself, what am I getting into? 
 
-At one level, data science is a _branch_ of science. A branch of science uses scientific techniques to study a single subject. For example, physicists study physical systems, chemists study chemical systems, and biologists study living systems. Data scientists study data. That's not as strange as it sounds. Data is its own thing with its own behaviors. If you want to make the most of it, you need to know how to approach it (visualization anyone?). I'll teach you how to visualize data, but this is not the type of data science that we'll cover here.
+At one level, data science is a _branch_ of science. A branch of science uses scientific techniques to study a single subject. For example, physicists study physical systems, chemists study chemical systems, and biologists study living systems. Data scientists study data. This is not as strange as it sounds. Data is its own thing with its own behaviors. If you want to make the most of it, you need to know how to approach it (visualization and statistics anyone?). I'll teach you how to visualize data and do statistics, but this is not the type of data science that we'll cover here.
 
 At another level, data science is a _body of knowledge_, a collection of useful information related to a specific task. For example, library science collects the best ways to run a library, managerial science collects the best ways to manage a business, and computer science collects the best ways to program a computer. Bodies of knowledge usually have the word "science" in their title, so its no surprise that the term "data science" came to be used this way. Data scientists collect the best ways to store, retrieve, and manage data. Or some of them do. This is useful information, but its not the type of data science that I will teach you.
 
-At its most fundamental level, data science is a _method_ of science. Data scientists study a method that anyone can use to solve scientific problems. You can think of data science as a complement to experimental science. Experimental scientists use the experimental method to solve scientific problems, and data scientists use the data science method. Many scientists use both. 
+At the final level, data science is a _method_ of science. Data scientists study a method that anyone can use to solve scientific problems. You can think of data science as a complement to experimental science. Experimental scientists use the experimental method to solve scientific problems, and data scientists use the data science method. Many scientists use both. 
 
 The method of data science motivates every other aspect of the field. Data scientists study data, and how to work with it, because data opens new doors of scientific discovery. _This_ is the data science that you will learn here. This book will teach you how to use data to make and justify scientific discoveries. I won't teach you how to run programs on a hadoop cluster or how to set up the latest type of non-relational database. These are useful things for a data scientist to know, for sure, but to study them now would be like putting the cart before the horse.
 
@@ -50,9 +50,9 @@ A data set is a collection of measurements that have been organized in a specifi
 
 * An _observation_ is a set of measurements that are made on multiple variables under similar (ideally identical) conditions. 
 
-You can think of an observation as a snap shot of the world. An observation shows what a group of variables looked like together for a brief moment before they changed. 
+You can think of an observation as a snapshot of the world. An observation shows what a group of variables looked like together for a brief moment before they changed. 
 
-Both of these definitions rely on the idea of measurement, so let's be specific about what a measurement is. To define measurement, I'll use the word "observation" in its general, everyday sense. A _measurement_ is an observation that is 
+Both of these definitions rely on the idea of measurement, so let's define that word too. To define measurement, I'll use the word "observation" in its general, everyday sense (as in "to observe"). A _measurement_ is an observation that is 
 
 1. made with a reproducible method 
 2. recorded in a precise way 
@@ -104,7 +104,7 @@ obs | $D$ | $S$
 9   | 1 | 7
 10  | 5 | 23 
 
-Unless the game is random, the values of $D$ and $S$ must be connected by some type of relationship, even if you do not know yet what the relationship is. 
+Unless the game is random, the values of $D$ and $S$ must be connected by some type of relationship, even if you do not know yet what the relationship is. The relationship between $D$ and $S$ is akin to a natural law. 
 
 The data gives you clues about the relationship. When you rearrange the values, you can see strong covariation. For example, the score increases as the die value increases. Also, everytime you roll a 1, the score is 7 and everytime you roll a 5 the score is 23. 
 
@@ -125,17 +125,19 @@ You can plot the data to make the relationship even more clear. This reveals tha
 
 [](/images/dice-plot.png)[](/images/dice-fit.png)
 
-Since the relationship is linear, you can model it with linear regression, which returns an exact formula for the relationship, $S = 3 + 4D$. You now know all you need to play the game. This formula acts as a natural law between $S$ and $D$; the score will always equal three plus four times the die amount, unless someone is cheating. 
+Since the relationship is linear, you can model it with linear regression, which returns an exact formula for the relationship, $S = 3 + 4D$. You now know all you need to play the game. This formula acts as a law between $S$ and $D$; the score will always equal three plus four times the die amount, unless someone is cheating. 
 
-So the basic idea of data science is simple: to search for patterns of covariation that reveal natural laws. However, the practice of data science is somewhat complicated. Data creates several illusions that are well known to scientists and statisticians. To make the most of data you will need to be able to spot these illusions and work around them.
+So the basic idea of data science is simple: to search for patterns of covariation in data that reveal natural laws. However, the practice of data science is more complicated than that. Data creates several illusions that are well known to scientists and statisticians. To make the most of data, you will need to spot these illusions and work around them. 
 
-# Probability and Randomness
+The first illusion is caused by studying too few variables. You can handle it with a technique known as _modelling_.
 
-With enough data, the workings of the universe become clear. Unfortunately, as data scientists, we never get to work with enough data. As a rule, we must make inferences from too few variables or too few observations, which introduces the chance for error.
+# Modelling
 
-It is especially common to work with too few variables when studying new relationships. First, it takes time and money to collect data. Sometimes you do not even get to collect data, you inherit it. In both cases, you are unlikely to measure every variable that you want to.
+Unfortunately, in practice, you will never get to work with enough data. As a rule, you must make inferences from too few variables or too few observations, which introduces the chance for error and illusion.
 
-Second, you probably do not know ahead of time which variables you should measure. Natural laws explain natural behavior in terms of variables, but you cannot know which variables are in a law until _after_ you discover the law.
+It is especially common to work with too few variables when studying a natural law. Natural laws explain natural behavior in terms of variables, but you cannot know which variables are in a law until _after_ you discover the law. This makes it difficult to collect relevant data.
+
+Second, it takes time and money to collect data. Sometimes you do not even get to collect data, you inherit it. In both cases, you are unlikely to measure every variable that you want to.
 
 Third, many physical systems are quite complicated and involve many variables. Consider flipping a coin.
 
@@ -153,7 +155,7 @@ Consider what happens however, if you only collect data on $D_{1}$. However, you
 
 In many scientific analysis, things are similar but better. Suppose we modify the dice game, so your dice has the numbers 101 to 200 on it and your friends dice still has the numbers 1 to 6 on it. Now the effect of $D_{2}$ is small compared to the effect of $D_{1}$. It still appears as noise in the data, but it doesn't overwhelm the partial relationship between $S$ and $D_{1}$. We can make pretty accurate guesses about the partial relationship.
 
-Data scientists deal with unmeasured variables by modelling the relationships (or partial relationships) that are revealed in the data. A model is an estimate of a relationship that divides the variation in the y variable into variation that can be explained by the x variables and variation that cannot be explained by the x variables, which is know nas _unexplained variation_. For example, we can model the dice data as
+Data scientists deal with unmeasured variables by modelling the relationships (or partial relationships) that are revealed in the data. A model is an estimate of a relationship that divides the variation in the y variable into variation that can be explained by the x variables and variation that cannot be explained by the x variables, which is known as _unexplained variation_. For example, we can model the dice data as
 
 Data scientists use the greek letter epsilon, $\epsilon$, to symbolize the unexplained variation in a model. You can treat this unexplained variation as random noise. So the estimate that your model would give is y plus some random noise. But be aware that there's no reason to think that this noise is random. As you saw in the dice example, the unexplained variation can be caused by unmeasured variables that have a small influence on the outcome.
 
