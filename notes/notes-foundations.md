@@ -27,3 +27,9 @@ Data science has a dual nature, which is part of its confusion. On the one hand,
 ## Method vs branch
 
 Data science is a _method_ of science. This sets it apart from other fields that are _branches_ of science. A branch of science uses scientific techniques to study a single subject. For example, physicists study physical systems, chemists study chemical systems, and biologists study living systems. But data science is different.  
+
+## Modelling
+
+In practice, you will not have enough variables or observations to clearly identify a natural law. Instead, you must estimate laws—often incomplete laws—with a model.
+
+As a data scientist, you will not know ahead of time which variables are in a natural law. This makes it difficult to collect relevant data. As a result, you might not collect data on each variable in the law. You also will not have enough observations to clearly identify a law.

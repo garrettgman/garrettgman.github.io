@@ -127,7 +127,9 @@ You can plot the data to make the relationship even more clear. This reveals tha
 
 Since the relationship is linear, you can model it with linear regression, which returns an exact formula for the relationship, $S = 3 + 4D$. You now know all you need to play the game. This formula acts as a law between $S$ and $D$; the score will always equal three plus four times the die amount, unless someone is cheating. 
 
-So the basic idea of data science is simple: to search for patterns of covariation in data that reveal natural laws. However, the practice of data science is more complicated than that. Data creates several illusions that are well known to scientists and statisticians. To make the most of data, you will need to spot these illusions and work around them. 
+So the basic idea of data science is simple: to search for patterns of covariation in data that reveal natural laws. However, the practice of data science is more complicated than that. With enough data, the laws of the universe become clear; but data scientists rarely get to work with enough data. As a general rule, you will work with data sets that cover too few variables and too few observations to easily reveal natural laws.
+
+Under these conditions, data creates several illusions that are well known to scientists and statisticians. To make the most of real world data, you will need to spot these illusions and work around them. 
 
 The first illusion is caused by studying too few variables. You can handle it with a technique known as _modelling_.
 
