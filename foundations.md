@@ -8,11 +8,11 @@ Data science has several meanings. O'Reilly publishes nine books on data science
 
 At one level, data science is a _branch_ of science. A branch of science uses scientific techniques to study a single subject. For example, physicists study physical systems, chemists study chemical systems, and biologists study living systems. Data scientists study data. This is not as strange as it sounds. Data is its own thing with its own behaviors. If you want to make the most of it, you need to know how to approach it (visualization and statistics anyone?). I'll teach you how to visualize data and do statistics, but this is not the type of data science that we'll cover here.
 
-At another level, data science is a _body of knowledge_, a collection of useful information related to a specific task. For example, library science collects the best ways to run a library, managerial science collects the best ways to manage a business, and computer science collects the best ways to program a computer. Bodies of knowledge usually have the word "science" in their title, so its no surprise that the term "data science" came to be used this way. Data scientists collect the best ways to store, retrieve, and manage data. Or some of them do. This is useful information, but its not the type of data science that I will teach you.
+At another level, data science is a _body of knowledge_, a collection of useful information related to a specific task. For example, you've probably heard of other bodies of knowledge. Library science collects the best ways to run a library, managerial science collects the best ways to manage a business, and computer science collects the best ways to program a computer. Bodies of knowledge usually have the word "science" in their title, so its no surprise that the term "data science" came to be used this way. Data scientists collect the best ways to store, retrieve, and manage data. Or some of them do. This is useful information—and it is probably what most people think of when they think of "data science", but it is not the type of data science that I will teach you.
 
 At the final level, data science is a _method_ of science. Data scientists study a method that anyone can use to solve scientific problems. You can think of data science as a complement to experimental science. Experimental scientists use the experimental method to solve scientific problems, and data scientists use the data science method. Many scientists use both. 
 
-The method of data science motivates every other aspect of the field. Data scientists study data, and how to work with it, because data opens new doors of scientific discovery. _This_ is the data science that you will learn here. This book will teach you how to use data to make and justify scientific discoveries. I won't teach you how to run programs on a hadoop cluster or how to set up the latest type of non-relational database. These are useful things for a data scientist to know, for sure, but to study them now would be like putting the cart before the horse.
+The method of data science motivates every other aspect of the field. Data scientists study data, and how to work with it, because data opens new doors of scientific discovery. _This_ is the data science that you will learn here. This book will teach you how to use data to make and justify scientific discoveries. I won't teach you how to run programs on a hadoop cluster or how to set up the latest type of non-relational database. Those are useful things for a data scientist to know, but to study them now would be like putting the cart before the horse.
 
 This chapter will describe the problems that data scientists attempt to solve, as well as the methods that they use to solve them. It introduces data science as a specific method of reasoning that matches the structure of data to the structure of natural laws. This method of reasoning guides the techniques that you will learn in later chapters—techniques like machine learning, statistical modelling, and visualization.
 
@@ -20,7 +20,7 @@ This chapter will describe the problems that data scientists attempt to solve, a
 
 As a method of science, data science is based on two simple ideas. First, that the best way to learn about the word is to observe it. And second, that the universe operates according to _natural laws_. 
 
-A natural law is a law-like relationship between _variables_, which are quantities or qualities whose values can change from measurement to measurement. So, for example, $E = Mc^{2}$ and $F = MA$ are both natural laws. In theses laws, the quantities $E$, $M$, $F$, and $A$ are all variables. The quantity $c$ is a constant value. Throughout the book, I will refer to variable names with a capital letter and individual values with a lower case letter.
+A natural law is a law-like relationship between variables. So, for example, $E = Mc^{2}$ and $F = MA$ are both natural laws. In theses laws, the quantities $E$, $M$, $F$, and $A$ are all variables, quantities whose values can change from measurement to measurement. The quantity $c$ is a constant value. Throughout the book, I will refer to variable names with a capital letter and individual values with a lower case letter.
 
 Natural laws explain how the values of variables relate to each other, which can help scientists understand, control, and make predictions about natural processes.
 
@@ -34,13 +34,13 @@ _Variation_ is the natural tendency for a quantity or quality to change from mea
 
 Variation creates uncertainty for scientists because it implies that you cannot know what value you will observe when you measure a quantity—even if you have measured the quantity before. However, variation also contains information.
 
-Variation contains clues about natural laws because natural laws constrain how a variable can vary. For example, the acceleration of a particle will always be related to the particle's mass and the forces acting on the particle. The acceleration can vary, but only in ways that preserve the relationship $F = MA$.
+Variation contains clues about natural laws because natural laws determine how a variable will vary. Consider a particle in a physical system. The acceleration of the particle will vary as the forces that act on the particle change because the acceleration is determined by the forces according to the law $F = MA$.
 
-This law will leave fingerprints on the pattern of variation displayed by acceleration. If you measure both the acceleration of a particle and the force acting on it, you may notice that the values of the acceleration and the force correspond in a systematic way. The value of $A$ will be high whenever the value of $F$ is high, and the value of $A$ will be low when the value of $F$ is low. This behavior is known as _covariation_, correspondence between the values of two or more variables.
+This law will leave fingerprints on the pattern of variation displayed by acceleration. If you measure both the acceleration of the particle and the force acting on it, you may notice that the values of the acceleration and the force correspond in a systematic way. The value of $A$ will be high whenever the value of $F$ is high, and the value of $A$ will be low when the value of $F$ is low. This behavior is known as _covariation_, correspondence between the values of two or more variables.
 
 You will observe an even more striking relationship if you also measure the particle's mass. Whenever you measure the acceleration, force, and mass simultaneously, you will observe values that display the relationship $F = MA$.
 
-Data scientists use variation and covariation to reveal unknown natural laws. To do this, they use a tool perfectly suited to the job: data.
+These measurements—and the covariation that they display—would provide a way to discover the relationship $F = MA$ if you did not know that it existed ahead of time. Data science is built around this mechanism.Data scientists use measurements and covariation to reveal unknown natural laws. To do this, they use a tool perfectly suited to the job: data.
 
 ## Data
 
@@ -59,7 +59,7 @@ Both of these definitions rely on the idea of measurement, so let's define that 
 
 Every measurement creates a _value_, a piece of information that describes a specific part of the world at a specific time. Measurements make it easy to quantify variation because they provide a rigorous way to observe the world.
 
-Measurements, variables, and observations give data sets a structure that parallels the structure of natural laws. Natural laws contain variables whose values correspond when the variables are measured under identical conditions. For example, the natural law $F = MA$ contains the variables $F$, $M$, and $A$; and it implies that you will observe trios of values such that
+Measurements, variables, and observations give data sets a structure that parallels the structure of natural laws. Natural laws state how the values of variables will correspond when the variables are measured under identical conditions. In other words, a natural law states how the values of variables will correspond within an observation. For example, the law $F = MA$ states that when you measure a particle's force, mass, and acceleration, you will observe trios of values such that
 
 $$f_{1} = m_{1} * a_{1}$$
 $$f_{2} = m_{2} * a_{2}$$
@@ -85,11 +85,9 @@ obs | $F$     |     | $M$     |          | $A$
 2   | $f_{2}$ | =   | $m_{2}$ | $\times$ | $a_{2}$
 3   | $f_{3}$ | =   | $m_{3}$ | $\times$ | $a_{3}$
 
-If you collect many different observations, this relationship will appear as a pattern of covariation in your data.
+If you collect many different observations, this relationship will appear as a pattern of covariation in your data. As a result, data provides a way to discover natural laws. You can search for patterns in raw data, or visualize the data to make patterns more apparent. You can also search through your data with pattern recognition algorithms, like those of statistical modelling and machine learning.
 
-Data provides a way to discover natural laws. You can search for patterns in raw data, or visualize the data to make patterns more apparent. You can also search through your data with pattern recognition algorithms, like those of statistical modelling and machine learning.
-
-Let's make this clear with a concrete example. The example is simple, but it will help us tackle more complicated ideas in the next section. Suppose your friend teaches you a new game that involves dice. On each turn, you roll one die and receive a score based on your roll. However, your friend forgets to explain how your score is determined. That's okay because you've written down the value of your die ($D$) and your score ($S$) as you've played. In other words, you've collected some data.
+Let's make this clear with a concrete example. The example is simple, but it will help us tackle more complicated ideas in the next section. Suppose your friend teaches you a new game that involves dice. On each turn, you roll one die and receive a score based on your roll. However, your friend forgets to explain how your score is determined. Luckily, you've written down the value of your die ($D$) and your score ($S$) as you've played. In other words, you've collected some data.
 
 obs | $D$ | $S$ 
 --- | --- | --- 
@@ -104,9 +102,9 @@ obs | $D$ | $S$
 9   | 1 | 7
 10  | 5 | 23 
 
-Unless the game is random, the values of $D$ and $S$ must be connected by some type of relationship, even if you do not know yet what the relationship is. The relationship between $D$ and $S$ is akin to a natural law. 
+Unless the game is random, the values of $D$ and $S$ must be connected by some type of relationship, even if you do not know what the relationship is. The relationship between $D$ and $S$ is akin to a natural law because the relationship will hold whenever we examine $D$ and $S$ at the same time. 
 
-The data gives you clues about the relationship. When you rearrange the values, you can see strong covariation. For example, the score increases as the die value increases. Also, everytime you roll a 1, the score is 7 and everytime you roll a 5 the score is 23. 
+Your data gives you clues about the relationship between $D$ and $S$. When you rearrange the values, you can see strong covariation. For example, the score increases as the die value increases. Also, everytime you roll a 1, the score is 7 and everytime you roll a 5 the score is 23. 
 
 obs | $D$ | $S$ 
 --- | --- | --- 
@@ -123,9 +121,27 @@ obs | $D$ | $S$
 
 You can plot the data to make the relationship even more clear. This reveals that the relationship is linear.
 
-[](/images/dice-plot.png)[](/images/dice-fit.png)
+<img src="/images/dice-plot.png"><img src="/images/dice-fit.png">
 
-Since the relationship is linear, you can model it with linear regression, which returns an exact formula for the relationship, $S = 3 + 4D$. You now know all you need to play the game. This formula acts as a law between $S$ and $D$; the score will always equal three plus four times the die amount, unless someone is cheating. 
+Since the relationship is linear, you can model it with linear regression, which returns an exact formula for the relationship, $S = 3 + 4D$. You now know all you need to play the game. This formula acts as a law between $S$ and $D$; the score will always equal three plus four times the amount of the die, unless someone is cheating. 
+
+### Distribution
+
+What if you forgot to collect data about $D$? Then your data set would look like this. Could you still use your data to discover insights about $S$?
+
+obs | $S$ 
+--- | --- 
+1   | 7 
+9   | 7
+5   | 11
+3   | 15
+2   | 19
+6   | 23
+7   | 23
+8   | 23
+10   | 23
+4  | 27 
+
 
 So the basic idea of data science is simple: to search for patterns of covariation in data that reveal natural laws. However, the practice of data science is more complicated than that. With enough data, the laws of the universe become clear; but data scientists rarely get to work with enough data. As a general rule, you will work with data sets that cover too few variables and too few observations to easily reveal natural laws.
 
