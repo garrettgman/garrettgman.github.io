@@ -4,15 +4,15 @@ title: Foundations of Data Science
 weight: 3
 ---
 
-O'Reilly publishes nine books on data science and one of them is named "What is Data Science?" When you open any of them you should ask yourself, what am I getting into? Data science has come to mean several different things. 
+O'Reilly publishes nine books on data science and one of them is named "What is Data Science?" When you open any of these books you should ask yourself, what am I getting into? Over the past few years, data science has come to mean several different things. 
 
-At one level, data science is a _body of knowledge_, like library science or managerial science. Library science collects the best ways to run a library, managerial science collects the best ways to run a business, and data science collects the best ways to store, retrieve, and manage data. As a result, a data scientist might know how to run programs on a hadoop cluster or how to set up a the latest type of non-relational database. This is useful information—and it is probably what most people think of when they think of "data science", but it is not the type of data science that R is designed to do. And it is not the type of data science that I will teach you.
+At one level, data science is a _body of knowledge_.  A body of knowledge is a collection of useful information related to a specific task. For example, library science and managerial science are bodies of knowledge. Library science collects the best ways to run a library and managerial science collects the best ways to run a business. Data science collects the best ways to store, retrieve, and manage data. As a result, a data scientist might know how to run programs on a hadoop cluster or how to set up the latest type of non-relational database. This is useful information—and it is probably what most people think of when they think of "data science," but this is not the type of data science that I will teach you.
 
-At another level, data science is a _branch_ of science. A branch of science uses scientific techniques to study a single subject. For example, physicists study physical systems, chemists study chemical systems, and biologists study living systems. Data scientists study data. This is not as strange as it sounds. Data is its own thing with its own behaviors. If you want to make the most of it, you need to know how to approach it (for example, with visualization and statistics). I'll teach you how to visualize data and do statistics, but don't let these things distract you. This book is designed to teach you an even more important aspect of data science.
+At another level, data science is a _branch_ of science. A branch of science uses scientific techniques to study a single subject. For example, physicists study physical systems, chemists study chemical systems, and biologists study living systems. Data scientists study data. This is not as strange as it sounds. Data is its own thing with its own behaviors. If you want to make the most of data, you need to know how to approach it (for example, with visualization and statistics). I'll teach you how to visualize data and do statistics, but this is also not the type of data science that we'll cover here.
 
-At the final level, data science is a _method_ of science. Data scientists study a method that anyone can use to solve scientific problems. You can think of data science as a complement to experimental science. Experimental scientists use the experimental method to solve scientific problems, and data scientists use the data science method. Many scientists use both. 
+At the most important level, data science is a _method_ of science. Data scientists study a method that anyone can use to solve scientific problems. You can think of data science as a complement to experimental science. Experimental scientists use the experimental method to solve scientific problems, and data scientists use the data science method. Many scientists use both. 
 
-The method of data science motivates every other aspect of the field. Data scientists study data, and how to work with it, because data opens new doors of scientific discovery. _This_ is the data science that you will learn here. This book will teach you how to use data to make and justify scientific discoveries. 
+The method of data science motivates every other aspect of data science. Data scientists study data, and how to work with it, because data opens new doors of scientific discovery. _This_ is the data science that you will learn here. This book will teach you how to use data to make and justify scientific discoveries. 
 
 This chapter will describe the problems that data scientists attempt to solve, as well as the method that they use to solve them. It introduces data science as a specific method of reasoning that matches the structure of data to the structure of natural laws. This method of reasoning guides the techniques that you will learn in later chapters—techniques like machine learning, statistical modelling, and visualization.
 
@@ -20,34 +20,21 @@ This chapter will describe the problems that data scientists attempt to solve, a
 
 As a method of science, data science is based on two simple ideas. First, that the best way to learn about the word is to observe it. And second, that the universe operates according to _natural laws_. 
 
-A natural law is a law-like relationship between variables. So, for example, $E = Mc^{2}$ and $F = MA$ are both natural laws. In theses laws, the quantities $E$, $M$, $F$, and $A$ are all variables, quantities whose values can change from measurement to measurement. The quantity $c$ is a constant value. Throughout the book, I will refer to variable names with a capital letter and individual values with a lower case letter.
-
-Natural laws explain how the values of variables relate to each other, which can help scientists understand, control, and make predictions about natural processes.
+A natural law is a law-like relationship between variables, like $E = Mc^{2}$ and $F = MA$. Natural laws explain how the values of variables relate to each other, which can help scientists understand, control, and make predictions about natural processes.
 
 For example, $E = Mc^2$ states that the energy content of a system ($E$) is always equal to the mass of the system ($M$) multiplied by the speed of light squared ($c^{2}$). $F = MA$ explains that the force exerted upon an object ($F$) is equal to the mass of the object ($M$) multiplied by its acceleration ($A$), an insight that has many applications in the field of physics. 
 
-You can think of science as a collection of methods that use observations to discover natural laws. Data science is one of those methods. It uses a specific tool to reveal natural laws, and that tool is data.
-
-## Data
-
-A data set is a collection of measurements that have been organized in a specific way. Each value in a data set is associated with a _variable_ and an _observation_. We use "variable" and "observation" in everyday speech, but the terms have a technical meaning when associated with data.
+Natural laws deal with variables, values, and observations. We use these terms in everyday speech, but they have a technical meaning when associated with science.
 
 * A _variable_ is a quantity, quality, or property that can be measured. 
 
+* A _value_ is the state of a variable, which may change from measurement to measurement.
+
 * An _observation_ is a set of measurements that are made on multiple variables under similar (ideally identical) conditions. 
 
-You can think of an observation as a snapshot of the world. An observation shows what a group of variables looked like together for a brief moment before they changed. 
+    You can think of an observation as a snapshot of the world. An observation shows what a group of variables looked like together for a brief moment before they changed. 
 
-Both of these definitions rely on the idea of measurement, so let's define that word too. To define measurement, I'll use the word "observation" in its general, everyday sense (as in "to observe"). A _measurement_ is an observation that is 
-
-1. made with a reproducible method 
-2. recorded in a precise way 
-
-Every measurement creates a _value_, a piece of information that describes a specific part of the world at a specific time. Measurements make it easy to quantify variation because they provide a rigorous way to observe the world.
-
-Measurements, variables, and observations give data sets a structure that parallels the structure of natural laws. Natural laws can be written as a formula of variables, but their operation depends on measurements and observations. 
-
-For example, the law $F = MA$ states that when you measure a particle's force, mass, and acceleration, you will observe trios of values such that
+Natural laws deal with variables, but they operate on values that are measured in the same observation. For example, the law $F = MA$ states that when you measure a particle's force, mass, and acceleration, you will observe trios of values such that
 
 $$f_{1} = m_{1} * a_{1}$$
 $$f_{2} = m_{2} * a_{2}$$
@@ -55,11 +42,16 @@ $$f_{3} = m_{3} * a_{3}$$
 
 and so on.
 
-In the notation above, the lowercase letters denote specific values of the variables $F$, $M$, and $A$; $f_{1}$ is the value of $F$ that we measure on occasion one, and $f_{2}$ is the value of $F$ that we measure on occasion two. If two variables are measured on the same occasion, it implies that they are measured under identical conditions; or in other words, that their measurements are part of the same observation. 
+In the notation above, the lowercase letters denote specific values of the variables $F$, $M$, and $A$. Throughout the book, I will refer to variable names with a capital letter and individual values with a lower case letter.
 
-This brings up an important point: natural laws only apply to values that are measured in the same observation. You shouldn't expect $a_{3}$ to be related to $f_{1}$ in a law-like way because the forces acting on a particle may change between occasion one and occasion three.
+The subscripts denote when we measure each variable. $f_{1}$ is the value of $F$ that we measure on occasion one, and $f_{2}$ is the value of $F$ that we measure on occasion two. If two variables are measured on the same occasion, it implies that they are measured under identical conditions; or in other words, that their measurements are part of the same observation. 
+The law $F = MA$ does not imply that if you measure the acceleration of a particle today, it will be related to the mass and the force that you measured yesterday. Both quantities may have changed since you last measured them. In other words, a law like $F = MA$ implies that a relationship will exist within observations, but not between them. $a_{3}$ may not be related to $f_{1}$ in a law-like way because the forces acting on the particle may change between occasion one and occasion three.
 
-You could organize the measurements $f_{1}$, $f_{2}$, $f_{3}$, $m_{1}$, $m_{2}$, $m_{3}$, $a_{1}$, $a_{2}$, and $a_{3}$ into a data set like this.
+Natural laws provide a goal for science. You can think of science as a collection of methods that use observations to discover natural laws. Data science is one of those methods. It uses a specific tool to reveal natural laws, and that tool is data.
+
+## Data
+
+A data set is a collection of values that have been organized in a specific way. Each value in a data set is associated with a _variable_ and an _observation_. This structure parallels the structure of natural laws. For example, you could organize the measurements $f_{1}$, $f_{2}$, $f_{3}$, $m_{1}$, $m_{2}$, $m_{3}$, $a_{1}$, $a_{2}$, and $a_{3}$ from above into a data set like this.
 
 obs | $F$     |           | $M$     |           | $A$    
 --- | ------- | --------- | ------- | --------- | -------
@@ -67,7 +59,7 @@ obs | $F$     |           | $M$     |           | $A$
 2   | $f_{2}$ |   $\:\:$  | $m_{2}$ |  $\:\:$   | $a_{2}$
 3   | $f_{3}$ |   $\:\:$  | $m_{3}$ |  $\:\:$   | $a_{3}$
 
-The data set contains a structure that parallels the structure of the natural law. Each value is associated with a variable, as well as an observation. Within each observation, the relationship described by the law is present. As a result, the data set reveals what the natural law implies:
+Each value is associated with a variable, as well as an observation. Within each observation, the relationship described by the law is present. As a result, the data set reveals what the natural law implies:
 
 obs | $F$     |     | $M$     |          | $A$    
 --- | ------- | --- | ------- | -------- | -------
@@ -75,7 +67,7 @@ obs | $F$     |     | $M$     |          | $A$
 2   | $f_{2}$ | =   | $m_{2}$ | $\times$ | $a_{2}$
 3   | $f_{3}$ | =   | $m_{3}$ | $\times$ | $a_{3}$
 
-
+Data sets provide insights about natural laws in two ways. They display variation, which is shaped by natural laws. And, they reveal covariation, which mirrors the form of natural laws.
 
 ## Variation and variables
 
