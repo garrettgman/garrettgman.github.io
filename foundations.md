@@ -45,7 +45,9 @@ Both of these definitions rely on the idea of measurement, so let's define that 
 
 Every measurement creates a _value_, a piece of information that describes a specific part of the world at a specific time. Measurements make it easy to quantify variation because they provide a rigorous way to observe the world.
 
-Measurements, variables, and observations give data sets a structure that parallels the structure of natural laws. For example, the law $F = MA$ states that when you measure a particle's force, mass, and acceleration, you will observe trios of values such that
+Measurements, variables, and observations give data sets a structure that parallels the structure of natural laws. Natural laws can be written as a formula of variables, but their operation depends on measurements and observations. 
+
+For example, the law $F = MA$ states that when you measure a particle's force, mass, and acceleration, you will observe trios of values such that
 
 $$f_{1} = m_{1} * a_{1}$$
 $$f_{2} = m_{2} * a_{2}$$
@@ -55,9 +57,9 @@ and so on.
 
 In the notation above, the lowercase letters denote specific values of the variables $F$, $M$, and $A$; $f_{1}$ is the value of $F$ that we measure on occasion one, and $f_{2}$ is the value of $F$ that we measure on occasion two. If two variables are measured on the same occasion, it implies that they are measured under identical conditions; or in other words, that their measurements are part of the same observation. 
 
-This brings up an important point: natural laws only apply to values that are measured in the same observation. You shouldn't expect $a_{3}$ to be related to $f_{1}$ in a law-like way because the forces acting on the particle may have changed between occasion one and occasion three.
+This brings up an important point: natural laws only apply to values that are measured in the same observation. You shouldn't expect $a_{3}$ to be related to $f_{1}$ in a law-like way because the forces acting on a particle may change between occasion one and occasion three.
 
-Data sets contain values that are each associated with a variable and an observation, e.g.
+You could organize the measurements $f_{1}$, $f_{2}$, $f_{3}$, $m_{1}$, $m_{2}$, $m_{3}$, $a_{1}$, $a_{2}$, and $a_{3}$ into a data set like this.
 
 obs | $F$     |           | $M$     |           | $A$    
 --- | ------- | --------- | ------- | --------- | -------
@@ -65,13 +67,20 @@ obs | $F$     |           | $M$     |           | $A$
 2   | $f_{2}$ |   $\:\:$  | $m_{2}$ |  $\:\:$   | $a_{2}$
 3   | $f_{3}$ |   $\:\:$  | $m_{3}$ |  $\:\:$   | $a_{3}$
 
-If a natural law exists between the variables, their values will display the law within each observation. In our case, $f_{1}$ will equal $m_{1}$ times $a_{1}$, e.g.
+The data set contains a structure that parallels the structure of the natural law. Each value is associated with a variable, as well as an observation. Within each observation, the relationship described by the law is present. As a result, the data set reveals what the natural law implies:
 
 obs | $F$     |     | $M$     |          | $A$    
 --- | ------- | --- | ------- | -------- | -------
 1   | $f_{1}$ | =   | $m_{1}$ | $\times$ | $a_{1}$
 2   | $f_{2}$ | =   | $m_{2}$ | $\times$ | $a_{2}$
 3   | $f_{3}$ | =   | $m_{3}$ | $\times$ | $a_{3}$
+
+
+
+## Variation and variables
+
+## Covariation and observations
+
 
 If you collect many different observations, this relationship will appear as a pattern of covariation in your data. As a result, data provides a way to discover natural laws. You can search for patterns in raw data, or visualize the data to make patterns more apparent. You can also search through your data with pattern recognition algorithms, like those of statistical modelling and machine learning.
 
