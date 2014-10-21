@@ -16,7 +16,7 @@ The method of data science motivates every other aspect of the field. Data scien
 
 This chapter will describe the problems that data scientists attempt to solve, as well as the method that they use to solve them. It introduces data science as a specific method of reasoning that matches the structure of data to the structure of natural laws. This method of reasoning guides the techniques that you will learn in later chapters—techniques like machine learning, statistical modelling, and visualization.
 
-## The data science worldview
+## The method of data science
 
 As a method of science, data science is based on two simple ideas. First, that the best way to learn about the word is to observe it. And second, that the universe operates according to _natural laws_. 
 
@@ -26,7 +26,21 @@ Natural laws explain how the values of variables relate to each other, which can
 
 For example, $E = Mc^2$ states that the energy content of a system ($E$) is always equal to the mass of the system ($M$) multiplied by the speed of light squared ($c^{2}$). $F = MA$ explains that the force exerted upon an object ($F$) is equal to the mass of the object ($M$) multiplied by its acceleration ($A$), an insight that has many applications in the field of physics. 
 
-You can think of science as a collection of methods that use observations to discover natural laws. Data science is one of those methods. It uses a specific tool to reveal natural laws, and that tool is data.
+You can think of science as a collection of methods that use observations to discover natural laws. Data science is one of those methods. It uses a specific property of observations to reveal natural laws, and that property is variation.
+
+## Variation
+
+_Variation_ is the natural tendency for a quantity or quality to change from measurement to measurement. Quantities like the temperature of the air and the salinity of the sea change from moment to moment and from place to place. Properties of objects, like height, weight, or volume, change from object to object. If you look closely at the same quantity twice, you will notice these changes, even if the changes are small.
+
+Variation creates uncertainty for scientists because it implies that you cannot know what value you will observe when you measure a quantity—even if you have measured the quantity before. However, variation also contains information.
+
+Variation contains clues about natural laws because natural laws determine how a variable will vary. Consider a particle in a physical system. The acceleration of the particle will vary as the forces that act on the particle change because the acceleration is determined by the forces according to the law $F = MA$.
+
+This law will leave fingerprints on the pattern of variation displayed by acceleration. If you measure both the acceleration of the particle and the force acting on it, you may notice that the values of the acceleration and the force correspond in a systematic way. The value of $A$ will be high whenever the value of $F$ is high, and the value of $A$ will be low when the value of $F$ is low. This behavior is known as _covariation_, correspondence between the values of two or more variables.
+
+You will observe an even more striking relationship if you also measure the particle's mass. Whenever you measure the acceleration, force, and mass simultaneously, you will observe values that display the relationship $F = MA$.
+
+These measurements—and the covariation that they display—would provide a way to discover the relationship $F = MA$ if you did not know that it existed ahead of time. Data science is built around this mechanism.Data scientists use measurements and covariation to reveal unknown natural laws. To do this, they use a tool perfectly suited to the job: data.
 
 ## Data
 
@@ -45,7 +59,7 @@ Both of these definitions rely on the idea of measurement, so let's define that 
 
 Every measurement creates a _value_, a piece of information that describes a specific part of the world at a specific time. Measurements make it easy to quantify variation because they provide a rigorous way to observe the world.
 
-Measurements, variables, and observations give data sets a structure that parallels the structure of natural laws. For example, the law $F = MA$ states that when you measure a particle's force, mass, and acceleration, you will observe trios of values such that
+Measurements, variables, and observations give data sets a structure that parallels the structure of natural laws. Natural laws state how the values of variables will correspond when the variables are measured under identical conditions. In other words, a natural law states how the values of variables will correspond within an observation. For example, the law $F = MA$ states that when you measure a particle's force, mass, and acceleration, you will observe trios of values such that
 
 $$f_{1} = m_{1} * a_{1}$$
 $$f_{2} = m_{2} * a_{2}$$
@@ -53,9 +67,7 @@ $$f_{3} = m_{3} * a_{3}$$
 
 and so on.
 
-In the notation above, the lowercase letters denote specific values of the variables $F$, $M$, and $A$; $f_{1}$ is the value of $F$ that we measure on occasion one, and $f_{2}$ is the value of $F$ that we measure on occasion two. If two variables are measured on the same occasion, it implies that they are measured under identical conditions; or in other words, that their measurements are part of the same observation. 
-
-This brings up an important point: natural laws only apply to values that are measured in the same observation. You shouldn't expect $a_{3}$ to be related to $f_{1}$ in a law-like way because the forces acting on the particle may have changed between occasion one and occasion three.
+In the notation above, the lowercase letters denote specific values of the variables $F$, $M$, and $A$; $f_{1}$ is the value of $F$ that we measure on occasion one, and $f_{2}$ is the value of $F$ that we measure on occasion two. If two variables are measured on the same occasion, it implies that they are measured under identical conditions; or in other words, that their measurements are part of the same observation.
 
 Data sets contain values that are each associated with a variable and an observation, e.g.
 
