@@ -4,9 +4,9 @@ title: Foundations of Data Science
 weight: 3
 ---
 
-O'Reilly publishes nine books on data science and one of them is named "What is Data Science?" When you open any of these books you should ask yourself, what am I getting into? Over the past few years, data science has come to mean several different things. 
+O'Reilly publishes nine books on data science and one of them is named "What is Data Science?" When you open any of these books you should ask yourself, what am I getting into? As a term, data science has come to mean several things. 
 
-At one level, data science is a _body of knowledge_.  A body of knowledge is a collection of useful information related to a specific task. For example, library science and managerial science are bodies of knowledge. Library science collects the best ways to run a library and managerial science collects the best ways to run a business. Data science collects the best ways to store, retrieve, and manage data. As a result, a data scientist might know how to run programs on a hadoop cluster or how to set up the latest type of non-relational database. This is useful information—and it is probably what most people think of when they think of "data science," but this is not the type of data science that I will teach you.
+At one level, data science is a _body of knowledge_, a collection of useful information related to a specific task. For example, library science and managerial science are bodies of knowledge. Library science collects the best ways to run a library and managerial science collects the best ways to run a business. Data science collects the best ways to store, retrieve, and manage data. As a result, a data scientist might know how to set up a hadoop cluster or run the latest type of non-relational database. This is probably what most people think of when they think of "data science," but this is not the type of data science that I will teach you.
 
 At another level, data science is a _branch_ of science. A branch of science uses scientific techniques to study a single subject. For example, physicists study physical systems, chemists study chemical systems, and biologists study living systems. Data scientists study data. This is not as strange as it sounds. Data is its own thing with its own behaviors. If you want to make the most of data, you need to know how to approach it (for example, with visualization and statistics). I'll teach you how to visualize data and do statistics, but this is also not the type of data science that we'll cover here.
 
@@ -24,17 +24,17 @@ A natural law is a law-like relationship between variables, like $E = Mc^{2}$ an
 
 For example, $E = Mc^2$ states that the energy content of a system ($E$) is always equal to the mass of the system ($M$) multiplied by the speed of light squared ($c^{2}$). $F = MA$ explains that the force exerted upon an object ($F$) is equal to the mass of the object ($M$) multiplied by its acceleration ($A$), an insight that has many applications in the field of physics. 
 
-Natural laws deal with variables, values, and observations. We use these terms in everyday speech, but they have a technical meaning when associated with science.
+Natural laws deal with variables, values, and observations. We use these terms in everyday speech, but they have a technical meaning when associated with data science.
 
 * A _variable_ is a quantity, quality, or property that can be measured. 
 
-* A _value_ is the state of a variable, which may change from measurement to measurement.
+* A _value_ is the state a variable seems to be in when you measure it. The value of a variable may change from measurement to measurement.
 
 * An _observation_ is a set of measurements that are made on multiple variables under similar (ideally identical) conditions. 
 
     You can think of an observation as a snapshot of the world. An observation shows what a group of variables looked like together for a brief moment before they changed. 
 
-Natural laws deal with variables, but they operate on values that are measured in the same observation. For example, the law $F = MA$ states that when you measure a particle's force, mass, and acceleration, you will observe trios of values such that
+Natural laws deal with variables, but they operate on values that are measured in the same observation. For example, the law $F = MA$ states that when you measure a particle's force, mass, and acceleration _at the same time_, you will observe trios of values such that
 
 $$f_{1} = m_{1} * a_{1}$$
 $$f_{2} = m_{2} * a_{2}$$
@@ -42,16 +42,20 @@ $$f_{3} = m_{3} * a_{3}$$
 
 and so on.
 
-In the notation above, the lowercase letters denote specific values of the variables $F$, $M$, and $A$. Throughout the book, I will refer to variable names with a capital letter and individual values with a lower case letter.
+In the notation above, the lowercase letters denote specific values of the variables $F$, $M$, and $A$. Throughout the book, I will refer to variable names with a capital letter and individual values with a lower case letter. The subscripts denote when we measure each variable. $f_{1}$ is the value of $F$ that we measure on occasion one, and $f_{2}$ is the value of $F$ that we measure on occasion two. If two variables are measured on the same occasion, it implies that they are measured under identical conditions; or in other words, that their measurements are part of the same observation. 
 
-The subscripts denote when we measure each variable. $f_{1}$ is the value of $F$ that we measure on occasion one, and $f_{2}$ is the value of $F$ that we measure on occasion two. If two variables are measured on the same occasion, it implies that they are measured under identical conditions; or in other words, that their measurements are part of the same observation. 
-The law $F = MA$ does not imply that if you measure the acceleration of a particle today, it will be related to the mass and the force that you measured yesterday. Both quantities may have changed since you last measured them. In other words, a law like $F = MA$ implies that a relationship will exist within observations, but not between them. $a_{3}$ may not be related to $f_{1}$ in a law-like way because the forces acting on the particle may change between occasion one and occasion three.
+A natural law implies that a relationship will exist between values _in the same observation_. However, natural laws do not imply that a relationship will exist between values in _different_ observations.
 
-Natural laws provide a goal for science. You can think of science as a collection of methods that use observations to discover natural laws. Data science is one of those methods. It uses a specific tool to reveal natural laws, and that tool is data.
+
+For example, the law $F = MA$ does not imply that if you measure the acceleration of a particle today, it will be related to the mass and the force that you measured tomorrow. All three quantities may change between now and then. In other words, $a_{1}$ will be related to $f_{1}$ and $m_{1}$, but it may not be related to $f_{3}$ and $m_{3}$. 
+
+Natural laws provide a goal for science. Scientists attempt to discover natural laws and thereby explain natural phenomena. You can think of science as a collection of methods that use observations to discover natural laws. Data science is one of those methods. It uses a specific tool to reveal natural laws, and that tool is data.
 
 ## Data
 
-A data set is a collection of values that have been organized in a specific way. Each value in a data set is associated with a _variable_ and an _observation_. This structure parallels the structure of natural laws. For example, you could organize the measurements $f_{1}$, $f_{2}$, $f_{3}$, $m_{1}$, $m_{2}$, $m_{3}$, $a_{1}$, $a_{2}$, and $a_{3}$ from above into a data set like this.
+A data set is a collection of values that have been organized in a specific way. Each value in a data set is associated with a _variable_ and an _observation_. This organization gives data a structure that parallels the structure of natural laws. 
+
+For example, you could organize the measurements $f_{1}$, $f_{2}$, $f_{3}$, $m_{1}$, $m_{2}$, $m_{3}$, $a_{1}$, $a_{2}$, and $a_{3}$ from above into a data set like this.
 
 obs | $F$     |           | $M$     |           | $A$    
 --- | ------- | --------- | ------- | --------- | -------
@@ -67,11 +71,33 @@ obs | $F$     |     | $M$     |          | $A$
 2   | $f_{2}$ | =   | $m_{2}$ | $\times$ | $a_{2}$
 3   | $f_{3}$ | =   | $m_{3}$ | $\times$ | $a_{3}$
 
-Data sets provide insights about natural laws in two ways. They display variation, which is shaped by natural laws. And, they reveal covariation, which mirrors the form of natural laws.
+Data sets provide insights about natural laws in two ways. First, they display variation, which is shaped by natural laws. And, second, they reveal covariation, which mirrors the form of natural laws.
 
 ## Variation and variables
 
+_Variation_ is the natural tendency for a value to change from measurement to measurement. Quantities like the temperature of the air and the salinity of the sea change from moment to moment and from place to place. Properties of objects, like height, weight, or volume, change from object to object. If you look closely at the same quantity twice, you will notice these changes, even if the changes are small.
+
+Variation creates uncertainty for scientists because it implies that you cannot know what value you will observe when you measure a quantity—even if you have measured the quantity before. However, variation also contains information.
+
+Variation contains clues about natural laws because natural laws determine how a variable will vary. Consider our familiar law, $F = MA$. The law states that the acceleration of a particle will vary as the forces acting on the particle vary. This law will leave fingerprints on the pattern of variation displayed by acceleration.
+
+To see how this works...
+
+It is not possible to ... with the inputs of the law...
+
+Data sets provide a record of variation. When you examine all of the values of a variable in a data set, you will see that some values are more common than others. Some values are rare, and some values do not appear at all. You can use this information to identify a "typical" value for the variable. You can also quantify how much the variable tends to vary. This information can be useful for prediction, since the amount of natural variation in a variable determines how certain (or uncertain) you can be about future values of the variable. 
+
+The distribution of values in a data set also provides a basis for using probability to reason about a variable. For example, if you notice that the acceleration of a particle is x 1 out of 100 times, you can infer that the probability of the next value being x is also about 1 in 100.
+
+Although all variation is insightful, a specific type of variation provides more information than all others. That type of variation is known as covariation.
+
 ## Covariation and observations
+
+This law will leave fingerprints on the pattern of variation displayed by acceleration. If you measure both the acceleration of the particle and the force acting on it, you may notice that the values of the acceleration and the force correspond in a systematic way. The value of $A$ will be high whenever the value of $F$ is high, and the value of $A$ will be low when the value of $F$ is low. This behavior is known as _covariation_, correspondence between the values of two or more variables.
+
+You will observe an even more striking relationship if you also measure the particle's mass. Whenever you measure the acceleration, force, and mass simultaneously, you will observe values that display the relationship $F = MA$.
+
+These measurements—and the covariation that they display—would provide a way to discover the relationship $F = MA$ if you did not know that it existed ahead of time. Data science is built around this mechanism.Data scientists use measurements and covariation to reveal unknown natural laws. To do this, they use a tool perfectly suited to the job: data.
 
 
 If you collect many different observations, this relationship will appear as a pattern of covariation in your data. As a result, data provides a way to discover natural laws. You can search for patterns in raw data, or visualize the data to make patterns more apparent. You can also search through your data with pattern recognition algorithms, like those of statistical modelling and machine learning.
