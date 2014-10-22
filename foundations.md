@@ -71,38 +71,35 @@ obs | $F$     |     | $M$     |          | $A$
 2   | $f_{2}$ | =   | $m_{2}$ | $\times$ | $a_{2}$
 3   | $f_{3}$ | =   | $m_{3}$ | $\times$ | $a_{3}$
 
-Data sets provide insights about natural laws in two ways. First, they display variation, which is shaped by natural laws. And, second, they reveal covariation, which mirrors the form of natural laws.
+Data sets provide insights about natural laws in two ways. First, they display variation, which reveals how variables within natural laws behave. And, second, they display covariation, which reveals how variables within natural laws are related.
 
 ## Variation and variables
 
 _Variation_ is the natural tendency for a value to change from measurement to measurement. Quantities like the temperature of the air and the salinity of the sea change from moment to moment and from place to place. Properties of objects, like height, weight, or volume, change from object to object. If you look closely at the same quantity twice, you will notice these changes, even if the changes are small.
 
-Variation creates uncertainty for scientists because it implies that you cannot know what value you will observe when you measure a quantity—even if you have measured the quantity before. However, variation also contains information.
+Variation creates uncertainty for scientists because it implies that you cannot know which value you will observe when you measure a variable—even if you have measured the variable before. However, variation also contains information.
 
-Variation contains clues about natural laws because natural laws determine how a variable will vary. Consider our familiar law, $F = MA$. The law states that the acceleration of a particle will vary as the forces acting on the particle vary. This law will leave fingerprints on the pattern of variation displayed by acceleration.
+Each variable has a unique pattern of variation that is shaped by the natural laws that influence the variable. This pattern of variation is known as the variable's _distribution_ because it determines how values of the variable will be distributed over many measurements. If you understand a variable's distribution, you can use it to make predictions about future values of the variable. You can spot which values are typical, which are rare, and which are impossible. You can also use the distribution to quantify how uncertain you should feel about a prediction. Your prediction is more likely to be far off if the variable varies over a wide range of values than if it varies over a small range of values.
 
-To see how this works...
-
-It is not possible to ... with the inputs of the law...
-
-Data sets provide a record of variation. When you examine all of the values of a variable in a data set, you will see that some values are more common than others. Some values are rare, and some values do not appear at all. You can use this information to identify a "typical" value for the variable. You can also quantify how much the variable tends to vary. This information can be useful for prediction, since the amount of natural variation in a variable determines how certain (or uncertain) you can be about future values of the variable. 
-
-The distribution of values in a data set also provides a basis for using probability to reason about a variable. For example, if you notice that the acceleration of a particle is x 1 out of 100 times, you can infer that the probability of the next value being x is also about 1 in 100.
+Data sets provide a record of variation that you can use to study a variable. They not only reveal the distribution of the variable; they also provide a basis for reasoning about the variable with probability. For example, if the data shows that half of the measurements of $X$ are less than or equal to $y$, then you can infer that the probability that a future value will be less than or equal to $y$ is about one half. If your data reveals that the variable $X$ has a value of $z$ in 1 out of 100 measurements, you can infer that the probability that the next value will also be $z$ is about 1 in 100. 
 
 Although all variation is insightful, a specific type of variation provides more information than all others. That type of variation is known as covariation.
 
 ## Covariation and observations
 
-This law will leave fingerprints on the pattern of variation displayed by acceleration. If you measure both the acceleration of the particle and the force acting on it, you may notice that the values of the acceleration and the force correspond in a systematic way. The value of $A$ will be high whenever the value of $F$ is high, and the value of $A$ will be low when the value of $F$ is low. This behavior is known as _covariation_, correspondence between the values of two or more variables.
+_Covariation_ is the tendency for two or more variables to vary in a systematic way. When two variables covary, their values will seem to correspond to each other. To understand covariation, consider our familiar law, $F = MA$. The law states that the acceleration of a particle will vary as the forces acting on the particle vary. This law will leave fingerprints on the patterns of variation displayed by acceleration, force and mass.
 
-You will observe an even more striking relationship if you also measure the particle's mass. Whenever you measure the acceleration, force, and mass simultaneously, you will observe values that display the relationship $F = MA$.
+If you measure both the acceleration of a particle and the force acting on it, you may notice that the values of the acceleration and the force correspond in a systematic way. The value of $A$ will be high whenever the value of $F$ is high, and the value of $A$ will be low when the value of $F$ is low. You will observe an even more striking relationship if you also measure the particle's mass. Whenever you measure the acceleration, force, and mass simultaneously, you will observe values that display the relationship $F = MA$.
 
-These measurements—and the covariation that they display—would provide a way to discover the relationship $F = MA$ if you did not know that it existed ahead of time. Data science is built around this mechanism.Data scientists use measurements and covariation to reveal unknown natural laws. To do this, they use a tool perfectly suited to the job: data.
+If you collect many different observations, this relationship will appear as a pattern of covariation in your data. As a result, data provides a way to discover natural laws. You can search for patterns in raw data, or visualize the data to make patterns more apparent. You can also search through your data with pattern recognition algorithms, like those of statistical modelling and machine learning. 
 
+This is the basic method of data science: to spot patterns in data that reveal natural laws. It works because the structure of data parallels the structure of natural laws. Data reveals the effects of natural laws.
 
-If you collect many different observations, this relationship will appear as a pattern of covariation in your data. As a result, data provides a way to discover natural laws. You can search for patterns in raw data, or visualize the data to make patterns more apparent. You can also search through your data with pattern recognition algorithms, like those of statistical modelling and machine learning.
+Let's make this clear with a concrete example. The example is simple, but it will help us tackle more complicated ideas in the next sections. 
 
-Let's make this clear with a concrete example. The example is simple, but it will help us tackle more complicated ideas in the next section. Suppose your friend teaches you a new game that involves dice. On each turn, you roll one die and receive a score based on your roll. However, your friend forgets to explain how your score is determined. Luckily, you've written down the value of your die ($D$) and your score ($S$) as you've played. In other words, you've collected some data.
+### Case study
+
+Suppose your friend teaches you a new game that involves dice. On each turn, you roll one die and receive a score based on your roll. However, your friend forgets to explain how your score is determined. Luckily, you've written down the value of your die ($D$) and your score ($S$) as you've played. In other words, you've collected some data.
 
 obs | $D$ | $S$ 
 --- | --- | --- 
