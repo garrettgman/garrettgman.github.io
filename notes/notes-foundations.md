@@ -34,9 +34,51 @@ At another level, data science is a _body of knowledge_, a collection of useful 
 
  I won't teach you about hadoop clusters or non-relational databases, and I will only teach you the most useful parts of statistics. Those are useful things for a data scientist to know about, but to study them now would be like putting the cart before the horse.
 
-## The method of data science
+## The data science worldview
+
+A natural law is a law-like relationship between variables. So, for example, $E = Mc^{2}$ and $F = MA$ are both natural laws. In theses laws, the quantities $E$, $M$, $F$, and $A$ are all variables, quantities whose values can change from measurement to measurement. The quantity $c$ is a constant value. Throughout the book, I will refer to variable names with a capital letter and individual values with a lower case letter.
 
 You can think of science as a collection of methods that use observations to discover natural laws. Data science is one of those methods. It uses a specific property of observations to reveal natural laws, and that property is variation.
+
+You shouldn't expect $a_{3}$ to be related to $f_{1}$ in a law-like way because the forces acting on a particle may change between occasion one and occasion three.
+
+Scientists act as if the world behaves according to natural laws, which provides a goal for science. If you can discover a natural law, you can use it to explain—and perhaps control—a natural process.
+
+## Data
+
+Both of these definitions rely on the idea of measurement, so let's define that word too. To define measurement, I'll use the word "observation" in its general, everyday sense (as in "to observe"). A _measurement_ is an observation that is 
+
+1. made with a reproducible method 
+2. recorded in a precise way 
+
+Every measurement creates a _value_, a piece of information that describes a specific part of the world at a specific time. Measurements make it easy to quantify variation because they provide a rigorous way to observe the world.
+
+Measurements, variables, and observations give data sets a structure that parallels the structure of natural laws. Natural laws can be written as a formula of variables, but their operation depends on measurements and observations. 
+
+
+## Variation
+
+You will notice two different values whenever you measure the same variable twice, so long as you measure precisely enough. In fact, due to measurement errors, you will notice two different values even if you measure a constant. 
+
+Data sets are more than a record of values, they are also a record of variation. 
+
+_Variation_ is the natural tendency for a quantity or quality to change from measurement to measurement. Quantities like the temperature of the air and the salinity of the sea change from moment to moment and from place to place. Properties of objects, like height, weight, or volume, change from object to object. If you look closely at the same quantity twice, you will notice these changes, even if the changes are small.
+
+Variation creates uncertainty for scientists because it implies that you cannot know what value you will observe when you measure a quantity—even if you have measured the quantity before. However, variation also contains information.
+
+Variation contains clues about natural laws because natural laws determine how a variable will vary. Consider a particle in a physical system. The acceleration of the particle will vary as the forces that act on the particle change because the acceleration is determined by the forces according to the law $F = MA$.
+
+This law will leave fingerprints on the pattern of variation displayed by acceleration. If you measure both the acceleration of the particle and the force acting on it, you may notice that the values of the acceleration and the force correspond in a systematic way. The value of $A$ will be high whenever the value of $F$ is high, and the value of $A$ will be low when the value of $F$ is low. This behavior is known as _covariation_, correspondence between the values of two or more variables.
+
+You will observe an even more striking relationship if you also measure the particle's mass. Whenever you measure the acceleration, force, and mass simultaneously, you will observe values that display the relationship $F = MA$.
+
+These measurements—and the covariation that they display—would provide a way to discover the relationship $F = MA$ if you did not know that it existed ahead of time. Data science is built around this mechanism.Data scientists use measurements and covariation to reveal unknown natural laws. To do this, they use a tool perfectly suited to the job: data.
+
+## Data 
+
+Natural laws state how the values of variables will correspond when the variables are measured under identical conditions.
+
+If a natural law exists between the variables, their values will display the law within each observation. In our case, $f_{1}$ will equal $m_{1}$ times $a_{1}$, e.
 
 ## Modelling
 
