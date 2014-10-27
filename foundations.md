@@ -20,7 +20,7 @@ This chapter will describe the problems that data scientists attempt to solve, a
 
 As a method of science, data science is based on two simple ideas. First, that the best way to learn about the word is to observe it. And second, that the universe operates according to _natural laws_. 
 
-A natural law is a law-like relationship between variables, like $E = Mc^{2}$ and $F = MA$. Natural laws explain how the values of variables relate to each other, which can help scientists understand, control, and make predictions about natural processes.
+A natural law is a law-like relationship between variables, like $$E = Mc^{2}$$ and $$F = MA$$. Natural laws explain how the values of variables relate to each other, which can help scientists understand, control, and make predictions about natural processes.
 
 For example, $E = Mc^2$ states that the energy content of a system ($E$) is always equal to the mass of the system ($M$) multiplied by the speed of light squared ($c^{2}$). $F = MA$ explains that the force exerted upon an object ($F$) is equal to the mass of the object ($M$) multiplied by its acceleration ($A$), an insight that has many applications in the field of physics. 
 
