@@ -1,5 +1,5 @@
 # Dependencies
-markdown:         pandoc
+markdown:         kramdown
 pygments:         true
 
 # Permalinks

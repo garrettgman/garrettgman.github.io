@@ -22,7 +22,7 @@ As a method of science, data science is based on two simple ideas. First, that t
 
 A natural law is a law-like relationship between variables, like $$E = Mc^{2}$$ and $$F = MA$$. Natural laws explain how the values of variables relate to each other, which can help scientists understand, control, and make predictions about natural processes.
 
-For example, $E = Mc^2$ states that the energy content of a system ($E$) is always equal to the mass of the system ($M$) multiplied by the speed of light squared ($c^{2}$). $F = MA$ explains that the force exerted upon an object ($F$) is equal to the mass of the object ($M$) multiplied by its acceleration ($A$), an insight that has many applications in the field of physics. 
+For example, $$E = Mc^2$$ states that the energy content of a system ($$E$$) is always equal to the mass of the system ($$M$$) multiplied by the speed of light squared ($$c^{2}$$). $$F = MA$$ explains that the force exerted upon an object ($$F$$) is equal to the mass of the object ($$M$$) multiplied by its acceleration ($$A$$), an insight that has many applications in the field of physics. 
 
 Natural laws deal with variables, values, and observations. We use these terms in everyday speech, but they have a technical meaning when associated with data science.
 
@@ -34,20 +34,22 @@ Natural laws deal with variables, values, and observations. We use these terms i
 
     You can think of an observation as a snapshot of the world. An observation shows what a group of variables looked like together for a brief moment before they changed. 
 
-Natural laws deal with variables, but they operate on values that are measured in the same observation. For example, the law $F = MA$ states that when you measure a particle's force, mass, and acceleration _at the same time_, you will observe trios of values such that
+Natural laws deal with variables, but they operate on values that are measured in the same observation. For example, the law $$F = MA$$ states that when you measure a particle's force, mass, and acceleration _at the same time_, you will observe trios of values such that
 
-$$f_{1} = m_{1} * a_{1}$$
-$$f_{2} = m_{2} * a_{2}$$
-$$f_{3} = m_{3} * a_{3}$$
+$$f_{1} = m_{1} * a_{1}$$  
+
+$$f_{2} = m_{2} * a_{2}$$  
+
+$$f_{3} = m_{3} * a_{3}$$  
 
 and so on.
 
-In the notation above, the lowercase letters denote specific values of the variables $F$, $M$, and $A$. Throughout the book, I will refer to variable names with a capital letter and individual values with a lower case letter. The subscripts denote when we measure each variable. $f_{1}$ is the value of $F$ that we measure on occasion one, and $f_{2}$ is the value of $F$ that we measure on occasion two. If two variables are measured on the same occasion, it implies that they are measured under identical conditions; or in other words, that their measurements are part of the same observation. 
+In the notation above, the lowercase letters denote specific values of the variables $$F$$, $$M$$, and $$A$$. Throughout the book, I will refer to variable names with a capital letter and individual values with a lower case letter. The subscripts denote when we measure each variable. $$f_{1}$$ is the value of $$F$$ that we measure on occasion one, and $$f_{2}$$ is the value of $$F$$ that we measure on occasion two. If two variables are measured on the same occasion, it implies that they are measured under identical conditions; or in other words, that their measurements are part of the same observation. 
 
 A natural law implies that a relationship will exist between values _in the same observation_. However, natural laws do not imply that a relationship will exist between values in _different_ observations.
 
 
-For example, the law $F = MA$ does not imply that if you measure the acceleration of a particle today, it will be related to the mass and the force that you measured tomorrow. All three quantities may change between now and then. In other words, $a_{1}$ will be related to $f_{1}$ and $m_{1}$, but it may not be related to $f_{3}$ and $m_{3}$. 
+For example, the law $$F = MA$$ does not imply that if you measure the acceleration of a particle today, it will be related to the mass and the force that you measured tomorrow. All three quantities may change between now and then. In other words, $$a_{1}$$ will be related to $$f_{1}$$ and $$m_{1}$$, but it may not be related to $$f_{3}$$ and $$m_{3}$$. 
 
 Natural laws provide a goal for science. Scientists attempt to discover natural laws and thereby explain natural phenomena. You can think of science as a collection of methods that use observations to discover natural laws. Data science is one of those methods. It uses a specific tool to reveal natural laws, and that tool is data.
 
@@ -55,21 +57,21 @@ Natural laws provide a goal for science. Scientists attempt to discover natural 
 
 A data set is a collection of values that have been organized in a specific way. Each value in a data set is associated with a _variable_ and an _observation_. This organization gives data a structure that parallels the structure of natural laws. 
 
-For example, you could organize the measurements $f_{1}$, $f_{2}$, $f_{3}$, $m_{1}$, $m_{2}$, $m_{3}$, $a_{1}$, $a_{2}$, and $a_{3}$ from above into a data set like this.
+For example, you could organize the measurements $$f_{1}$$, $$f_{2}$$, $$f_{3}$$, $$m_{1}$$, $$m_{2}$$, $$m_{3}$$, $$a_{1}$$, $$a_{2}$$, and $$a_{3}$$ from above into a data set like this.
 
-obs | $F$     |           | $M$     |           | $A$    
---- | ------- | --------- | ------- | --------- | -------
-1   | $f_{1}$ |   $\:\:$  | $m_{1}$ | $\:\:$    | $a_{1}$
-2   | $f_{2}$ |   $\:\:$  | $m_{2}$ |  $\:\:$   | $a_{2}$
-3   | $f_{3}$ |   $\:\:$  | $m_{3}$ |  $\:\:$   | $a_{3}$
+obs | $$F$$     |           | $$M$$     |           | $$A$$    
+--- | --------- | --------- | --------- | --------- | ---------
+1   | $$f_{1}$$ |  $$\:\:$$ | $$m_{1}$$ | $$\:\:$$ | $$a_{1}$$
+2   | $$f_{2}$$ |  $$\:\:$$ | $$m_{2}$$ | $$\:\:$$ | $$a_{2}$$
+3   | $$f_{3}$$ |  $$\:\:$$ | $$m_{3}$$ | $$\:\:$$ | $$a_{3}$$
 
 Each value is associated with a variable, as well as an observation. Within each observation, the relationship described by the law is present. As a result, the data set reveals what the natural law implies:
 
-obs | $F$     |     | $M$     |          | $A$    
---- | ------- | --- | ------- | -------- | -------
-1   | $f_{1}$ | =   | $m_{1}$ | $\times$ | $a_{1}$
-2   | $f_{2}$ | =   | $m_{2}$ | $\times$ | $a_{2}$
-3   | $f_{3}$ | =   | $m_{3}$ | $\times$ | $a_{3}$
+obs | $$F$$     |     | $$M$$     |          | $$A$$    
+--- | --------- | --- | --------- | ---------- | ---------
+1   | $$f_{1}$$ | =   | $$m_{1}$$ | $$\times$$ | $$a_{1}$$
+2   | $$f_{2}$$ | =   | $$m_{2}$$ | $$\times$$ | $$a_{2}$$
+3   | $$f_{3}$$ | =   | $$m_{3}$$ | $$\times$$ | $$a_{3}$$
 
 Data sets provide insights about natural laws in two ways. First, they display variation, which reveals how variables within natural laws behave. And, second, they display covariation, which reveals how variables within natural laws are related.
 
@@ -81,15 +83,15 @@ Variation creates uncertainty for scientists because it implies that you cannot 
 
 Each variable has a unique pattern of variation that is shaped by the natural laws that influence the variable. This pattern of variation is known as the variable's _distribution_ because it determines how values of the variable will be distributed over many measurements. If you understand a variable's distribution, you can use it to make predictions about future values of the variable. You can spot which values are typical, which are rare, and which are impossible. You can also use the distribution to quantify how uncertain you should feel about a prediction. Your prediction is more likely to be far off if the variable varies over a wide range of values than if it varies over a small range of values.
 
-Data sets provide a record of variation that you can use to study a variable. They not only reveal the distribution of the variable; they also provide a basis for reasoning about the variable with probability. For example, if the data shows that half of the measurements of $X$ are less than or equal to $y$, then you can infer that the probability that a future value will be less than or equal to $y$ is about one half. If your data reveals that the variable $X$ has a value of $z$ in 1 out of 100 measurements, you can infer that the probability that the next value will also be $z$ is about 1 in 100. 
+Data sets provide a record of variation that you can use to study a variable. They not only reveal the distribution of the variable; they also provide a basis for reasoning about the variable with probability. For example, if the data shows that half of the measurements of $$X$$ are less than or equal to $$y$$, then you can infer that the probability that a future value will be less than or equal to $$y$$ is about one half. If your data reveals that the variable $$X$$ has a value of $$z$$ in 1 out of 100 measurements, you can infer that the probability that the next value will also be $$z$$ is about 1 in 100. 
 
 Although all variation is insightful, a specific type of variation provides more information than all others. That type of variation is known as covariation.
 
 ## Covariation and observations
 
-_Covariation_ is the tendency for two or more variables to vary in a systematic way. When two variables covary, their values will seem to correspond to each other. To understand covariation, consider our familiar law, $F = MA$. The law states that the acceleration of a particle will vary as the forces acting on the particle vary. This law will leave fingerprints on the patterns of variation displayed by acceleration, force and mass.
+_Covariation_ is the tendency for two or more variables to vary in a systematic way. When two variables covary, their values will seem to correspond to each other. To understand covariation, consider our familiar law, $$F = MA$$. The law states that the acceleration of a particle will vary as the forces acting on the particle vary. This law will leave fingerprints on the patterns of variation displayed by acceleration, force and mass.
 
-If you measure both the acceleration of a particle and the force acting on it, you may notice that the values of the acceleration and the force correspond in a systematic way. The value of $A$ will be high whenever the value of $F$ is high, and the value of $A$ will be low when the value of $F$ is low. You will observe an even more striking relationship if you also measure the particle's mass. Whenever you measure the acceleration, force, and mass simultaneously, you will observe values that display the relationship $F = MA$.
+If you measure both the acceleration of a particle and the force acting on it, you may notice that the values of the acceleration and the force correspond in a systematic way. The value of $$A$$ will be high whenever the value of $$F$$ is high, and the value of $$A$$ will be low when the value of $$F$$ is low. You will observe an even more striking relationship if you also measure the particle's mass. Whenever you measure the acceleration, force, and mass simultaneously, you will observe values that display the relationship $$F = MA$$.
 
 If you collect many different observations, this relationship will appear as a pattern of covariation in your data. As a result, data provides a way to discover natural laws. You can search for patterns in raw data, or visualize the data to make patterns more apparent. You can also search through your data with pattern recognition algorithms, like those of statistical modelling and machine learning. 
 
@@ -99,9 +101,9 @@ Let's make this clear with a concrete example. The example is simple, but it wil
 
 ### Case study
 
-Suppose your friend teaches you a new game that involves dice. On each turn, you roll one die and receive a score based on your roll. However, your friend forgets to explain how your score is determined. Luckily, you've written down the value of your die ($D$) and your score ($S$) as you've played. In other words, you've collected some data.
+Suppose your friend teaches you a new game that involves dice. On each turn, you roll one die and receive a score based on your roll. However, your friend forgets to explain how your score is determined. Luckily, you've written down the value of your die ($$D$$) and your score ($$S$$) as you've played. In other words, you've collected some data.
 
-obs | $D$ | $S$ 
+obs | $$D$$ | $$S$$ 
 --- | --- | --- 
 1   | 1 | 7 
 2   | 4 | 19
@@ -114,11 +116,11 @@ obs | $D$ | $S$
 9   | 1 | 7
 10  | 5 | 23 
 
-Unless the game is random, the values of $D$ and $S$ must be connected by some type of relationship, even if you do not know what the relationship is. The relationship between $D$ and $S$ is akin to a natural law because the relationship will hold whenever we examine $D$ and $S$ at the same time. 
+Unless the game is random, the values of $$D$$ and $$S$$ must be connected by some type of relationship, even if you do not know what the relationship is. The relationship between $$D$$ and $$S$$ is akin to a natural law because the relationship will hold whenever we examine $$D$$ and $$S$$ at the same time. 
 
-Your data gives you clues about the relationship between $D$ and $S$. When you rearrange the values, you can see strong covariation. For example, the score increases as the die value increases. Also, everytime you roll a 1, the score is 7 and everytime you roll a 5 the score is 23. 
+Your data gives you clues about the relationship between $$D$$ and $$S$$. When you rearrange the values, you can see strong covariation. For example, the score increases as the die value increases. Also, everytime you roll a 1, the score is 7 and everytime you roll a 5 the score is 23. 
 
-obs | $D$ | $S$ 
+obs | $$D$$ | $$S$$ 
 --- | --- | --- 
 1   | 1 | 7 
 9   | 1 | 7
@@ -135,13 +137,13 @@ You can plot the data to make the relationship even more clear. This reveals tha
 
 <img src="/images/dice-plot.png"><img src="/images/dice-fit.png">
 
-Since the relationship is linear, you can model it with linear regression, which returns an exact formula for the relationship, $S = 3 + 4D$. You now know all you need to play the game. This formula acts as a law between $S$ and $D$; the score will always equal three plus four times the amount of the die, unless someone is cheating. 
+Since the relationship is linear, you can model it with linear regression, which returns an exact formula for the relationship, $$S = 3 + 4D$$. You now know all you need to play the game. This formula acts as a law between $$S$$ and $$D$$; the score will always equal three plus four times the amount of the die, unless someone is cheating. 
 
 ### Distribution
 
-What if you forgot to collect data about $D$? Then your data set would look like this. Could you still use your data to discover insights about $S$?
+What if you forgot to collect data about $$D$$? Then your data set would look like this. Could you still use your data to discover insights about $$S$$?
 
-obs | $S$ 
+obs | $$S$$ 
 --- | --- 
 1   | 7 
 9   | 7
@@ -154,7 +156,7 @@ obs | $S$
 10   | 23
 4  | 27 
 
-You do not have enough data to look for covarition that might reveal a natural law. However, you can look for clues about the laws that control $S$ by looking at the distribution of values of $S$.
+You do not have enough data to look for covarition that might reveal a natural law. However, you can look for clues about the laws that control $$S$$ by looking at the distribution of values of $$S$$.
 
 
 
@@ -176,21 +178,21 @@ Third, many physical systems are quite complicated and involve many variables. C
 
 As a result, we ususally look for natural laws in data that can only hope to reveal part of the law, a relationship between several variables that occur in a law alongside other variables. What effect will this have on your research?
 
-To find out, consider our dice game from before. Suppose that we modify the game so that on each turn two dice are rolled. You roll one and your friend rolls one. In this version of the game, the final score is equal to three plus four times your dice ($D_{1}$) plus five times your friend's dice ($D_{2}$), i.e. $S = 3 + 4D_{1} + 5D_{2}$.
+To find out, consider our dice game from before. Suppose that we modify the game so that on each turn two dice are rolled. You roll one and your friend rolls one. In this version of the game, the final score is equal to three plus four times your dice ($$D_{1}$$) plus five times your friend's dice ($$D_{2}$$), i.e. $$S = 3 + 4D_{1} + 5D_{2}$$.
 
-$S$ is no longer solely determined by $D_{1}$, but it is related to $D_{1}$. As $D_{1}$ gets bigger, $S$ should get bigger, all else being equal. This insight could be useful. Perhaps it could form the basis of a game of Liar's dice. 
+$$S$$ is no longer solely determined by $$D_{1}$$, but it is related to $$D_{1}$$. As $$D_{1}$$ gets bigger, $$S$$ should get bigger, all else being equal. This insight could be useful. Perhaps it could form the basis of a game of Liar's dice. 
 
-If you collect data on each of $S$, $D_{1}$, and $D_{2}$, this relationship will appear as a pattern between the three variables in the data set, although you may not recognize the pattern with the naked eye.
+If you collect data on each of $$S$$, $$D_{1}$$, and $$D_{2}$$, this relationship will appear as a pattern between the three variables in the data set, although you may not recognize the pattern with the naked eye.
 
 You can visualize the data with a three dimensional graph. The pattern will appear as a plane, the three dimensional equivalent of a linear relationship.
 
-Consider what happens however, if you only collect data on $D_{1}$. However, you are unlikely to notice, let alone accurately describe the partial relationship between $S$ and $D_{1}$ because the effect of $D_{1}$ on $S$ is swamped by the effect of $D_{2}$ on $S$, which you have no way of examining. The effect of $D_{2}$ acts as noise in the data.
+Consider what happens however, if you only collect data on $$D_{1}$$. However, you are unlikely to notice, let alone accurately describe the partial relationship between $$S$$ and $$D_{1}$$ because the effect of $$D_{1}$$ on $$S$$ is swamped by the effect of $$D_{2}$$ on $$S$$, which you have no way of examining. The effect of $$D_{2}$$ acts as noise in the data.
 
-In many scientific analysis, things are similar but better. Suppose we modify the dice game, so your dice has the numbers 101 to 200 on it and your friends dice still has the numbers 1 to 6 on it. Now the effect of $D_{2}$ is small compared to the effect of $D_{1}$. It still appears as noise in the data, but it doesn't overwhelm the partial relationship between $S$ and $D_{1}$. We can make pretty accurate guesses about the partial relationship.
+In many scientific analysis, things are similar but better. Suppose we modify the dice game, so your dice has the numbers 101 to 200 on it and your friends dice still has the numbers 1 to 6 on it. Now the effect of $$D_{2}$$ is small compared to the effect of $$D_{1}$$. It still appears as noise in the data, but it doesn't overwhelm the partial relationship between $$S$$ and $$D_{1}$$. We can make pretty accurate guesses about the partial relationship.
 
 Data scientists deal with unmeasured variables by modelling the relationships (or partial relationships) that are revealed in the data. A model is an estimate of a relationship that divides the variation in the y variable into variation that can be explained by the x variables and variation that cannot be explained by the x variables, which is known as _unexplained variation_. For example, we can model the dice data as
 
-Data scientists use the greek letter epsilon, $\epsilon$, to symbolize the unexplained variation in a model. You can treat this unexplained variation as random noise. So the estimate that your model would give is y plus some random noise. But be aware that there's no reason to think that this noise is random. As you saw in the dice example, the unexplained variation can be caused by unmeasured variables that have a small influence on the outcome.
+Data scientists use the greek letter epsilon, $$\epsilon$$, to symbolize the unexplained variation in a model. You can treat this unexplained variation as random noise. So the estimate that your model would give is y plus some random noise. But be aware that there's no reason to think that this noise is random. As you saw in the dice example, the unexplained variation can be caused by unmeasured variables that have a small influence on the outcome.
 
 Since the physical universe is very interconnected (for example, each particle technically exerts a gravitational pull on every other particle), there can be _many_ unmeasured variables that have a small influence on the system that you are studying. Consider a coin flip.
 
