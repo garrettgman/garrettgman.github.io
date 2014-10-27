@@ -57,19 +57,19 @@ A data set is a collection of values that have been organized in a specific way:
 
 For example, the values $$f_{1}$$, $$f_{2}$$, $$f_{3}$$, $$m_{1}$$, $$m_{2}$$, $$m_{3}$$, $$a_{1}$$, $$a_{2}$$, and $$a_{3}$$ compose a data set.
 
-obs | $$F$$     |           | $$M$$     |           | $$A$$    
---- | --------- | --------- | --------- | --------- | ---------
-1   | $$f_{1}$$ |  $$\:\:$$ | $$m_{1}$$ | $$\:\:$$ | $$a_{1}$$
-2   | $$f_{2}$$ |  $$\:\:$$ | $$m_{2}$$ | $$\:\:$$ | $$a_{2}$$
-3   | $$f_{3}$$ |  $$\:\:$$ | $$m_{3}$$ | $$\:\:$$ | $$a_{3}$$
+obs | $$F$$     | $$M$$     | $$A$$    
+--- | --------- | --------- | ---------
+1   | $$f_{1}$$ | $$m_{1}$$ | $$a_{1}$$
+2   | $$f_{2}$$ | $$m_{2}$$ | $$a_{2}$$
+3   | $$f_{3}$$ | $$m_{3}$$ | $$a_{3}$$
 
 Each value is associated with a variable, as well as an observation. Within each observation, the relationship described by the law $$F = MA$$ is present. As a result, the data set reveals what the natural law implies:
 
-obs | $$F$$     |     | $$M$$     |          | $$A$$    
---- | --------- | --- | --------- | ---------- | ---------
-1   | $$f_{1}$$ | =   | $$m_{1}$$ | $$\times$$ | $$a_{1}$$
-2   | $$f_{2}$$ | =   | $$m_{2}$$ | $$\times$$ | $$a_{2}$$
-3   | $$f_{3}$$ | =   | $$m_{3}$$ | $$\times$$ | $$a_{3}$$
+obs | $$F$$     | $$M$$     | $$A$$    
+--- | --------- | --------- | ---------
+1   | $$f_{1} =$$ | $$m_{1} \times $$ | $$a_{1}$$
+2   | $$f_{2} =$$ | $$m_{2} \times $$ | $$a_{2}$$
+3   | $$f_{3} =$$ | $$m_{3} \times $$ | $$a_{3}$$
 
 Data sets provide insights about natural laws in two ways. First, they display variation, which reveals how variables within natural laws behave. And, second, they display covariation, which reveals how natural laws connect variables.
 
