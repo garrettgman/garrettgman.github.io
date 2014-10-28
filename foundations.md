@@ -71,17 +71,41 @@ obs | $$F$$     | $$M$$     | $$A$$
 2   | $$f_{2} =$$ | $$m_{2} \times $$ | $$a_{2}$$
 3   | $$f_{3} =$$ | $$m_{3} \times $$ | $$a_{3}$$
 
-Data sets provide insights about natural laws in two ways. First, they display variation, which reveals how variables within natural laws behave. And, second, they display covariation, which reveals how natural laws connect variables.
+Data sets provide insights about natural laws in two ways. First, they display variation, which reveals how variables within natural laws behave. And second, they display covariation, which reveals how natural laws connect variables.
 
 ## Variation and variables
 
 _Variation_ is the natural tendency for a value to change from measurement to measurement. Quantities like the temperature of the air and the salinity of the sea change from moment to moment and from place to place. Properties of objects, like height, weight, or volume, change from object to object. If you look closely at the same quantity twice, you will notice these changes, even if the changes are small.
 
-Variation creates uncertainty for scientists because it implies that you cannot know which value you will observe when you measure a variable—even if you have measured the variable before. However, variation also contains information.
+Variation creates uncertainty for scientists because it implies that you cannot know which value you will observe when you measure a variable—even if you have measured the variable before. However, variation also contains information. Each variable has a unique pattern of variation that contains clues about how the variable will behave.
 
-Each variable has a unique pattern of variation that is shaped by the natural laws that influence the variable. This pattern of variation is known as the variable's _distribution_ because it determines how values of the variable will be distributed over many measurements. If you understand a variable's distribution, you can use it to make predictions about future values of the variable. You can spot which values are typical, which are rare, and which are impossible. You can also use the distribution to quantify how uncertain you should feel about a prediction. Your prediction is more likely to be far off if the variable varies over a wide range of values than if it varies over a small range of values.
+Data sets provide a record of variation that you can use to study a variable. If you look at the recorded values of a variable, you will notice that some values occur quite often, some quite rarely, and others not at all. This pattern of values is known as the _distribution_ of the variable. To see how a distribution can help you reason about a variable, consider the speed of light.
 
-Data sets provide a record of variation that you can use to study a variable. They not only reveal the distribution of the variable; they also provide a basis for reasoning about the variable with probability. For example, if the data shows that half of the measurements of $$X$$ are less than or equal to $$y$$, then you can infer that the probability that a future value will be less than or equal to $$y$$ is about one half. If your data reveals that the variable $$X$$ has a value of $$z$$ in 1 out of 100 measurements, you can infer that the probability that the next value will also be $$z$$ is about 1 in 100. 
+Scientists believe that the speed of light is a universal constant that should never vary. In fact, Einsteinian relativity shows that the universe will distort space and time to preserve the speed of light. This is probably the most drastic effort to preserve the value of a constant that I can think of. However, if you were to measure the speed of light repeatedly, you would get different values each time—just as Albert Michelson did in 1879, (see the table below). Why should this be?
+
+
+|------------|------------|------------|------------|------------|------------|------------|------------|------------|------------
+| 299,850|    299,740|    299,900|    300,070|    299,930 |    299,800| 299,850|    299,880|    299,900|    299,840
+|299,850| 299,950| 299,980| 299,980| 299,880 |299,830| 299,790| 299,810| 299,880| 299,880
+|300,000| 299,980| 299,930| 299,650| 299,760 |299,830| 299,800| 299,790| 299,760| 299,800
+|299,810| 300,000| 300,000| 299,960| 299,960 |299,880| 299,880| 299,880| 299,860| 299,720
+|299,960| 299,940| 299,960| 299,940| 299,880 |299,720| 299,620| 299,860| 299,970| 299,950
+
+_50 measurements of the speed of light (in air) (km/s) observed by Michelson in 1879._
+
+Tiny measurement errors happen when you take measurements. For example, your hand might shake very slightly, or a lens might expand as temperatures change. As a result, even constants will appear to vary from observation to observation, so long as you measure them precisely enough. 
+
+However, you can still reason about the true value of a constant by studying the distribution of values associated with the constant. For example we can plot the values above on a number line. I'll stack two measurements one on top of the other wherever the two mesurements have the same value. This will let me place each measurement at the correct spot on the number line without hiding any of the measurements. 
+
+![](images/light.pdf)
+
+Each of these measurements attempts to record the same constant value, the speed of light; but each measurement is offset by tiny measurement errors. It seems likely that small errors will be more common than large errors—the experimenter is trying to avoid errors after all, and the distribution seems to support this. The points seem to cluster around a single value, something like 299,850 km/s. Many points fall within 50 units of 299,850 km/s, some points fall more than 50 units from 299,850 km/s, and very few points fall more than 150 units from 299,850 km/s. The further we go from 299,850 km/s, the less likely we are to find any measurments.
+
+You can use the distribution to estimate the true speed of light. The distribution suggests that the true value of the speed of light is around 299,850 km/s. However, the distribution does not provide fullproof evidence. The variation in the data obscures the exact value that the points are clustering around. To express this uncertainty, Michelson estimated the speed of light in air to be 299,852±51 km/s. 
+
+The ±51 km/s provides a margin of error. Michelson uses it to suggest that the true speed of light falls somewhere in the interval between 299,801 and 299,903. Any of these values would be reasonable based on the data. 
+
+Estimates and margins of error demonstrate two types of information that are contained in a distribution. You can use a distribution to identify a "typical" value of a variable and to quantify the amount of uncertainty associated with a variable. You can also use a distribution to predict how a variable will behave in the future. For example, we could predict that Michelson's next measurement (if he had made one) would be less than 300,000 km/s and much less than 400,000 km/s. In Chapter 19, you will see that distributions also form a basis for probability, a toolkit for making exact predictions about the behavior of variables.
 
 Although all variation is insightful, a specific type of variation provides more information than all others. That type of variation is known as covariation.
 
