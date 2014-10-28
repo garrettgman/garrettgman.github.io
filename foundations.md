@@ -97,7 +97,7 @@ Tiny measurement errors happen when you take measurements. For example, your han
 
 However, you can still reason about the true value of a constant by studying the distribution of values associated with the constant. For example we can plot the values above on a number line. I'll stack two measurements one on top of the other wherever the two mesurements have the same value. This will let me place each measurement at the correct spot on the number line without hiding any of the measurements. 
 
-![light](/images/light.pdf)
+![light](../images/light.pdf)  
 
 Each of these measurements attempts to record the same constant value, the speed of light; but each measurement is offset by tiny measurement errors. It seems likely that small errors will be more common than large errors—the experimenter is trying to avoid errors after all, and the distribution seems to support this. The points seem to cluster around a single value, something like 299,850 km/s. Many points fall within 50 units of 299,850 km/s, some points fall more than 50 units from 299,850 km/s, and very few points fall more than 150 units from 299,850 km/s. The further we go from 299,850 km/s, the less likely we are to find any measurments.
 
