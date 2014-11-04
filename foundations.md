@@ -32,7 +32,7 @@ Natural laws deal with variables, values, and observations. We use these terms i
 
     You can think of an observation as a snapshot of the world. An observation shows what a group of variables looked like together for a brief moment before they changed. 
 
-Natural laws deal with variables, but they operate on values that are measured in the same observation. For example, the law $$F = MA$$ states that when you measure a particle's force, mass, and acceleration _at the same time_, you will observe trios of values such that
+Natural laws deal with variables, but they operate on values that appear in the same observation. For example, the law $$F = MA$$ states that when you measure a particle's force, mass, and acceleration _at the same time_, you will observe a trio of values such that
 
 $$f_{1} = m_{1} * a_{1}$$  
 
@@ -44,10 +44,7 @@ and so on.
 
 In the notation above, the lowercase letters denote specific values of the variables $$F$$, $$M$$, and $$A$$. Throughout the book, I will refer to variable names with a capital letter and individual values with a lower case letter. The subscripts denote when we measure each variable. $$f_{1}$$ is the value of $$F$$ that we measure on occasion one, and $$f_{2}$$ is the value of $$F$$ that we measure on occasion two. If two variables are measured on the same occasion, it implies that they are measured under identical conditions; or in other words, that they are measured as part of the same observation. 
 
-A natural law implies that a relationship will exist between values _in the same observation_. However, natural laws do not imply that a relationship will exist between values in _different_ observations.
-
-
-For example, the law $$F = MA$$ does not imply that if you measure the force of a particle today, it will equal the mass times the acceleration that you measured tomorrow. All three quantities may change between now and then. In other words, $$f_{1}$$ will be related to $$m_{1}$$ and $$a_{1}$$, but it may not be related to $$m_{3}$$ and $$a_{3}$$. 
+A natural law implies that a relationship will exist between values _in the same observation_. However, natural laws do not imply that a relationship will exist between values in _different_ observations. You wouldn't think that if you measure the force of a particle today, it will equal the mass times the acceleration that you measured tomorrow. All three quantities may change between now and then. In other words, $$f_{1}$$ will be related to $$m_{1}$$ and $$a_{1}$$, but it may not be related to $$m_{3}$$ and $$a_{3}$$. 
 
 Natural laws provide a goal for science. Scientists attempt to discover natural laws and thereby explain natural phenomena. You can think of science as a collection of methods that use observations to discover natural laws. Data science is one of those methods. It uses a specific tool to reveal natural laws, and that tool is data.
 
@@ -67,9 +64,9 @@ Each value is associated with a variable, as well as an observation. Within each
 
 obs | $$F$$     | $$M$$     | $$A$$    
 --- | --------- | --------- | ---------
-1   | $$f_{1} =$$ | $$m_{1} \times $$ | $$a_{1}$$
-2   | $$f_{2} =$$ | $$m_{2} \times $$ | $$a_{2}$$
-3   | $$f_{3} =$$ | $$m_{3} \times $$ | $$a_{3}$$
+1   | $$f_{1}$$ | $$= m_{1}$$ | $$\times a_{1}$$
+2   | $$f_{2}$$ | $$= m_{2}$$ | $$\times a_{2}$$
+3   | $$f_{3}$$ | $$= m_{3}$$ | $$\times a_{3}$$
 
 Data sets provide insights about natural laws in two ways. First, they display variation, which reveals how variables within natural laws behave. And second, they display covariation, which reveals how natural laws connect variables.
 
@@ -93,31 +90,39 @@ Scientists believe that the speed of light is a universal constant that should n
 
 _50 measurements of the speed of light (in air) (km/s) observed by Michelson in 1879._
 
-Tiny measurement errors happen when you take measurements. For example, your hand might shake very slightly, or a lens might expand as temperatures change. As a result, even constants will appear to vary from observation to observation, so long as you measure them precisely enough. 
+Tiny measurement errors happen when you take measurements. For example, your hand might shake very slightly, or a lens might expand as temperatures change. As a result, even constants will seem to vary from observation to observation, so long as you measure them precisely enough. 
 
-However, you can still reason about the true value of a constant by studying the distribution of values associated with the constant. For example we can plot the values above on a number line. I'll stack two measurements one on top of the other wherever the two mesurements have the same value. This will let me place each measurement at the correct spot on the number line without hiding any of the measurements. 
+However, you can still reason about the true value of a constant by studying the distribution of values associated with the constant. For example, we can plot the values above on a number line. If two values appear at the same spot on the number line, I'll stack the second value above the first. This will let me place each value at the correct spot on the number line without hiding any of the measurements. 
 
 <img src="/images/light.png">
 
-Each of these measurements attempts to record the same constant value, the speed of light; but each measurement is offset by tiny measurement errors. It seems likely that small errors will be more common than large errors—the experimenter is trying to avoid errors after all, and the distribution seems to support this. The points seem to cluster around a single value, something like 299,850 km/s. Many points fall within 50 units of 299,850 km/s, some points fall more than 50 units from 299,850 km/s, and very few points fall more than 150 units from 299,850 km/s. The further we go from 299,850 km/s, the less likely we are to find any measurments.
+Each of these measurements attempts to record the same constant value, the speed of light; but each measurement is offset by tiny measurement errors. In some measurements, Albert's hand shook. In some, the lens swelled. In some, both happened at once, and so on.
 
-You can use the distribution to estimate the true speed of light. The distribution suggests that the true value of the speed of light is around 299,850 km/s. However, the distribution does not provide fullproof evidence. The variation in the data obscures the exact value that the points are clustering around. To express this uncertainty, Michelson estimated the speed of light in air to be 299,852±51 km/s. 
+It seems likely that large errors will be less common than small ones—the experimenter is trying to avoid errors after all. For a large error to occur, a point would either need to experience a large measurement error (which is unlikely) or several small measurement errorswhich together have a large effect (which is also unlikely). As a result, you would expect many points to be near the true value and fewer points to be far away from it. In fact, you would expect the number of points to drop off as you move further and further away from the true value.
 
-The ±51 km/s provides a margin of error. Michelson uses it to suggest that the true speed of light falls somewhere in the interval between 299,801 and 299,903. Any of these values would be reasonable based on the data. 
+The distribution seems to support this. The points seem to cluster around a single value, something like 299,850 km/s. Many points fall within 50 units of 299,850 km/s. Some points fall more than 50 units from 299,850 km/s. And, very few points fall more than 150 units from 299,850 km/s. The further we go from 299,850 km/s, the less likely we are to find any measurments.
 
-Estimates and margins of error demonstrate two types of information that are contained in a distribution. You can use a distribution to identify a "typical" value of a variable and to quantify the amount of uncertainty associated with a variable. You can also use a distribution to predict how a variable will behave in the future. For example, we could predict that Michelson's next measurement (if he had made one) would be less than 300,000 km/s and much less than 400,000 km/s. In Chapter 19, you will see that distributions also form a basis for probability, a toolkit for making exact predictions about the behavior of variables.
+You can use the distribution to estimate the true speed of light. The distribution suggests that the true value of the speed of light is around 299,850 km/s. However, the distribution does not provide fullproof evidence. The variation in the data obscures the value that the points are clustering around. Michelson can guess that the points are clustering around 299,850 km/s, but they could also be clustering around 299,840 or 299,860 km/s. To express this uncertainty, Michelson estimated the speed of light in air to be 299,852±51 km/s. 
 
-Although all variation is insightful, a specific type of variation provides more information than all others. That type of variation is known as covariation.
+The ±51 km/s provides a margin of error. Michelson uses it to suggest that the true speed of light falls somewhere in the interval between 299,801 and 299,903. In other words, any of these values would be reasonable based on the data. 
+
+Estimates and margins of error demonstrate two types of information that you can find in a distribution. You can use a distribution to identify a "typical" value of a variable and to quantify the amount of uncertainty associated with a variable. You can also use a distribution to predict how a variable will behave in the future. Distributions show that some values appear frequently, some values appear rarely, and some values do not appear at all. For example, we can use the distribution above to predict that Michelson would never observe a value above 400,000 km/s—even if he continues to take many more measurements. In Chapter 6, you will see that the information contained in a distribution also form a basis for probability, a toolkit for making exact predictions about the behavior of variables.
+
+Distributions provide insightful information about a variable, but a second type of variation provides even more useful information. That type of variation is known as covariation.
 
 ## Covariation and observations
 
-_Covariation_ is the tendency for two or more variables to vary in a systematic way. When two variables covary, their values will seem to correspond to each other. To understand covariation, consider our familiar law, $$F = MA$$. The law states that the acceleration of a particle will vary as the forces acting on the particle vary. This law will leave fingerprints on the patterns of variation displayed by acceleration, force, and mass.
+_Covariation_ is the tendency for two or more variables to vary in a systematic way. When two variables covary, their values will seem to correspond to each other. For example, if you measure both the acceleration of a particle ($$A$$) and the force acting on it ($$F$$), you may notice that the value of $$A$$ is high whenever the value of $$F$$ is high, and the value of $$A$$ is low when the value of $$F$$ is low. In other words, $$F$$ and $$A$$ covary. 
 
-If you measure both the acceleration of a particle and the force acting on it, you may notice that the values of the acceleration and the force correspond in a systematic way. The value of $$A$$ will be high whenever the value of $$F$$ is high, and the value of $$A$$ will be low when the value of $$F$$ is low. You will observe an even more striking relationship if you also measure the particle's mass. Whenever you measure the acceleration, force, and mass simultaneously, you will observe values that display the relationship $$F = MA$$.
+If you also measure the particle's mass ($$M$$), you will observe an even more striking type of covariation. Whenever you measure the acceleration, force, and mass simultaneously, you will observe values that display the relationship $$F = MA$$.
 
-If you collect many different observations, this relationship will appear as a pattern of covariation in your data. As a result, data provides a way to discover natural laws. You can search for patterns in raw data, or visualize the data to make patterns more apparent. You can also search through your data with pattern recognition algorithms, like those of statistical modelling and machine learning. 
+Covariation provides a way to discover natural laws. If a law exists between two variables, their values will covary. To find new laws, you can search through data for patterns.
+
+If you collect many different observations, this relationship will appear as a pattern of covariation in your data. You can search for patterns in raw data, or visualize the data to make patterns more apparent. You can also search through your data with pattern recognition algorithms, like those of statistical modelling and machine learning. 
 
 This is the basic method of data science: to spot patterns in data that reveal natural laws. It works because the structure of data parallels the structure of natural laws. Data reveals the effects of natural laws.
+
+But data science requires more planning. Just as an experimenter cannot run an unplanned trial and see what happens, a data scientist cannot look at data and draw a unobscured conclusion.
 
 Let's make this clear with a concrete example. The example is simple, but it will help us tackle more complicated ideas in the next sections. 
 
