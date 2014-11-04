@@ -112,6 +112,8 @@ Distributions provide insightful information about a variable, but a second type
 
 ## Covariation and observations
 
+Recall that the data set of $$F$$, $$M$$, and $$A$$ showed the relationship $$f = m \times a$$ in each row. Even if you didn't know that $$F = MA$$, you might notice this pattern in the data. This behavior is called covariation. You can use covariation to discover laws.
+
 _Covariation_ is the tendency for two or more variables to vary in a systematic way. When two variables covary, their values will seem to correspond to each other. For example, if you measure both the acceleration of a particle ($$A$$) and the force acting on it ($$F$$), you may notice that the value of $$A$$ is high whenever the value of $$F$$ is high, and the value of $$A$$ is low when the value of $$F$$ is low. In other words, $$F$$ and $$A$$ covary. 
 
 If you also measure the particle's mass ($$M$$), you will observe an even more striking type of covariation. Whenever you measure the acceleration, force, and mass simultaneously, you will observe values that display the relationship $$F = MA$$.
