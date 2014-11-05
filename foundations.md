@@ -108,19 +108,32 @@ The ±51 km/s provides a margin of error. Michelson uses it to suggest that the 
 
 Estimates and margins of error demonstrate two types of information that you can find in a distribution. You can use a distribution to identify a "typical" value of a variable and to quantify the amount of uncertainty associated with a variable. You can also use a distribution to predict how a variable will behave in the future. Distributions show that some values appear frequently, some values appear rarely, and some values do not appear at all. For example, we can use the distribution above to predict that Michelson would never observe a value above 400,000 km/s—even if he continues to take many more measurements. In Chapter 6, you will see that the information contained in a distribution also form a basis for probability, a toolkit for making exact predictions about the behavior of variables.
 
-Distributions provide insightful information about a variable, but a second type of variation provides even more useful information. That type of variation is known as covariation.
+Data scientists use distributions to provide insights about variables, but these insights are often vague, a basic ennumeration of possibilities. A second type of variation provides a much more exact tool for prediction and discovery. That type of variation is known as covariation.
 
 ## Covariation and observations
 
-Recall that the data set of $$F$$, $$M$$, and $$A$$ showed the relationship $$f = m \times a$$ in each row. Even if you didn't know that $$F = MA$$, you might notice this pattern in the data. This behavior is called covariation. You can use covariation to discover laws.
+_Covariation_ is the tendency for two or more variables to vary in a systematic way. When two variables covary, their values will seem to correspond to each other. For example, you can see covariation in our data set of force, mass and acceleration. I've added to the data set below to make the covariation clearer.
 
-_Covariation_ is the tendency for two or more variables to vary in a systematic way. When two variables covary, their values will seem to correspond to each other. For example, if you measure both the acceleration of a particle ($$A$$) and the force acting on it ($$F$$), you may notice that the value of $$A$$ is high whenever the value of $$F$$ is high, and the value of $$A$$ is low when the value of $$F$$ is low. In other words, $$F$$ and $$A$$ covary. 
+obs | $$F$$     | $$M$$     | $$A$$    
+--- | --------- | --------- | ---------
+1   | $$f_{1}$$ | $$m_{1}$$ | $$a_{1}$$
+2   | $$f_{2}$$ | $$m_{2}$$ | $$a_{2}$$
+3   | $$f_{3}$$ | $$m_{3}$$ | $$a_{3}$$
 
-If you also measure the particle's mass ($$M$$), you will observe an even more striking type of covariation. Whenever you measure the acceleration, force, and mass simultaneously, you will observe values that display the relationship $$F = MA$$.
 
-Covariation provides a way to discover natural laws. If a law exists between two variables, their values will covary. To find new laws, you can search through data for patterns.
+If you examine the data, you may notice that the value of $$A$$ is high whenever the value of $$F$$ is high, and the value of $$A$$ is low when the value of $$F$$ is low. In other words, $$F$$ and $$A$$ covary. 
 
-If you collect many different observations, this relationship will appear as a pattern of covariation in your data. You can search for patterns in raw data, or visualize the data to make patterns more apparent. You can also search through your data with pattern recognition algorithms, like those of statistical modelling and machine learning. 
+If you also examine the values of the particle's mass ($$M$$), you will observe an even more striking form of covariation. In each row, the value of $$F$$ exactly equals the value of $$M$$ times the value of $$A$$. This covariation is no surprise. The variables are shaped by the law $$F=MA$$, and the law has left its fingerprints in the data.
+
+Covariation provides a way to discover natural laws. If a law exists between two variables, their values will covary.
+
+If you collect many different observations, the law will appear as a pattern of covariation in your data. You can find patterns of covariation by searching through your raw data, or you can employ two tools that are better suited for the job.
+
+First, you can visualize your data, which makes low dimensional patterns more apparent. For example, the relationship between $$F$$, $$M$$, and $$A$$ appears as a plane in a three dimensional graph.
+
+![](images/fma.png)
+
+Second, you can also search through your data with pattern recognition algorithms, like those of statistical modelling and machine learning. Data scientists describe these techniques in terms of statistics, but the techniques are at heart just computerized methods of spotting patterns in data.
 
 This is the basic method of data science: to spot patterns in data that reveal natural laws. It works because the structure of data parallels the structure of natural laws. Data reveals the effects of natural laws.
 
