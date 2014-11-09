@@ -70,9 +70,33 @@ obs | $$F$$     | $$M$$     | $$A$$
 
 Data sets provide insights about natural laws in two ways. First, they display variation, which reveals how variables within natural laws behave. And second, they display covariation, which reveals how natural laws connect variables.
 
-## Variation and variables
+Before we look at how data scientists use data to solve scientific problems, let's look at how experimental science provides the best way to understand data science because most people are familiar with the basics of experimental scientce.
+
+# Experimental scientists
+
+Like data scientists, experimental scientists wish to discover the relationships between variables. To do this, they design an experiment and observe its outcome.
+
+Experiments seem so obviously useful that we tend to forget what they accomplish. An experiment let's a scientist control variation.
 
 _Variation_ is the natural tendency for a value to change from measurement to measurement. Quantities like the temperature of the air and the salinity of the sea change from moment to moment and from place to place. Properties of objects, like height, weight, or volume, change from object to object. If you look closely at the same quantity twice, you will notice these changes, even if the changes are small.
+
+Variation makes it difficult to discover relationships. Suppose you wish to determine whether the local factory causes ozone pollution in your town. You measure the amount of ozone in the air on Day 1, when the factory is open for business and running full steam. Then you measure the ozone on Day 2, when the factory is closed for business.
+
+You discover that the ozone is much lower on Day 2 than Day 1. Case closed, right? Or is it?
+
+Due to natural variation, _many_ things changed from Day 1 to Day 2. These changes may have caused the drop in ozone (and the factory may be innocent). What might have changed? Atmospheric conditions, like temperature, humidty, and wind speed, which affectthe creation and accumulation of ozone; traffic conditions, like the number of cars on the road, whihc provide a competing source of ozone; or unknown conditions, like the arrival of a hairspray convention, which could alter ozone levels without ever drawing our attention.
+
+When a scientist runs an experiment, he or she creates a controlled environment that eliminates every source of variation accept for one, the source being studied. in other words, an experimental scientist holds competing sources of variation constant, which allows them to directly observe the effect of the variable under study.
+
+This technique is very useful because it creates results that we can be certain about. However, it requires a level of control over natural phenomenon that may not always be possible. It also requires a cause and effect relationship to exist between the experimental input and output. It may be useful to know that levels of ozone are high when the factory is open even if the factory is just a proxy variable associated with the true cause.
+
+You cna think of experimental science as observation under controlled conditions. Think of data science as observation under controlled conditions. To understand data science, consider how a lack of control influences basic scientific tasks.
+
+(_note: maybe introduce the effect of unexplained variation first. Then talk about experiments_)
+
+# Estimation
+
+## Variation and variables
 
 Variation creates uncertainty for scientists because it implies that you cannot know which value you will observe when you measure a variable—even if you have measured the variable before. However, variation also contains information. Each variable has a unique pattern of variation that contains clues about how the variable will behave.
 
