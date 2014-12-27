@@ -53,6 +53,7 @@ Natural laws provide a goal for science. Scientists attempt to discover natural 
 _note: explain data first. Then introduce experimental science as a way to motivate "Why do data science?"_
 
 ***
+
 ## Newton's Second Law
 
 I'll use this second law as an example throughout the rest of the chapter, so let's make sure we understand it. $$F = MA$$ is the second of Newton's three laws of motion. These three rules explain how the physical universe behaves, and you've probably heard of them before. 
