@@ -52,6 +52,21 @@ Natural laws provide a goal for science. Scientists attempt to discover natural 
 
 _note: explain data first. Then introduce experimental science as a way to motivate "Why do data science?"_
 
+***
+## Newton's Second Law
+
+I'll use this second law as an example throughout the rest of the chapter, so let's make sure we understand it. $$F = MA$$ is the second of Newton's three laws of motion. These three rules explain how the physical universe behaves, and you've probably heard of them before. 
+
+The first law of motion states that an object at rest (or in motion) will stay at rest (or in motion) until a force acts upon it. 
+
+The second law explains how the motion of an object will change when a force is applied. A force will cause an object to speed up or slow down according to the relationship $$F = MA$$. Here is how that plays out in real life. If you were to compete in an olympic shotput event, you would begin by holding a shotput ball at rest next to your chin. Next you would launch the ball forward with your arm. This applies a force ($$F$$) to the ball which causes the ball to accelerate ($$A$$). Since shotput balls are massive ($$M$$), you won't be able to make it accelerate very fast ($$A = \frac{F}{M}$$). As a result, the shotput travels at a fairly slow speed and does not go very far before gravity causes it to fall to the ground.
+
+You could repeat this event with a softball. A softball is about the same size as a shotput, but has much less mass ($$M$$). As a result, you can accelerate it to a much greater speed than a shotput even if you use the same amount of force to throw it. This will cause the softball to travel farther before gravity brings it to the ground.
+
+It would take very little engineering to measure the force, acceleration, and mass involved in each of these throws. As a result, we could collect data about Newton's Second Law. 
+
+***
+
 ## Experimental science
 
 When most people think of science they think of experimental science, a very popular method for discovering natural laws. To conduct experimental science, you employ a method that follows these general steps:
@@ -91,17 +106,7 @@ The experimental method is called _the_ scientific method, but it is not the onl
 Data science is one of those methods. It uses a specific tool to reveal natural laws, and that tool is data.
 
 
-***
-
-I'll use this second law as an example throughout the rest of the chapter, so let's make sure we understand it. $$F = MA$$ is the second of Newton's three laws of motion. These three rules explain how the physical universe behaves, and you've probably heard of them before. 
-
-The first law of motion states that an object at rest (or in motion) will stay at rest (or in motion) until a force acts upon it. 
-
-The second law explains how a force will change the motion of an object. A force will cause an object to speed up or slow down according to the relationship $$F = MA$$. Here is how that plays out in real life. If you were to compete in an olympic shotput event, you would begin by holding a shotput ball at rest next to your chin. Next you would launch the ball forward with your arm. This applies a force ($$F$$) to the ball which causes the ball to accelerate ($$A$$). Since shotput balls are massive ($$M$$), you won't be able to make it accelerate very fast ($$A = \frac{F}{M}$$). As a result, the shotput travels at a fairly slow speed and does not go very far before gravity causes it to fall to the ground.
-
-You could repeat this event with a softball. A softball is about the same size as a shotput, but has much less mass ($$M$$). As a result, you can accelerate it to a much greater speed than a shotput even if you use the same amount of force to throw it. This will cause the softball to travel farther before gravity brings it to the ground.
-
-It would take very little engineering to measure the force, acceleration, and mass involved in each of these throws. As a result, we could collect data about Newton's Second Law. We will examine this type of data in a moment.
+We will examine this type of data in a moment.
 
 ![figure]()
 
