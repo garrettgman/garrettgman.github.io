@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Foundations of Data Science
+title: Foundations of Data Science - draft
 weight: 3
 ---
 
-O'Reilly publishes nine books on data science and one of them is named "What is Data Science?" When you open any of these books you should ask yourself, what am I getting into? As a term, data science has come to mean several things. 
+O'Reilly publishes nine books on data science and one of them is named "What is Data Science?" When you open any of these books you should ask yourself, "What am I getting into?" As a term, data science has come to mean several things. 
 
 At one level, data science is a _body of knowledge_, a collection of useful information related to a specific task. For example, library science and managerial science are bodies of knowledge. Library science collects the best ways to run a library, and managerial science collects the best ways to run a business. Data science collects the best ways to store, retrieve, and manage data. As a result, a data scientist might know how to set up a hadoop cluster or run the latest type of non-relational database. This is probably what most people think of when they think of "data science," but this is not the type of data science that I will teach you.
 
@@ -12,7 +12,7 @@ At another level, data science is a way of doing science. Data scientists use da
 
 This book will teach you the method of data science. You will learn how to use data to make scientific discoveries, and to justify those discoveries once they are made. Along the way, you will learn how to visualize data, build models, and make predictions.
 
-This chapter introduces data science as a specific method of reasoning that matches the structure of data to the structure of natural laws. This method of reasoning guides the techniques that you will learn in later chapters—techniques like data wrangling, data modelling, and data visualization.
+This chapter introduces the strategy behind data science: _data scientists search for evidence of natural laws in the structure of data_. This strategy guides the techniques that you will learn in later chapters—techniques like data wrangling, data modelling, and data visualization.
 
 ## The scientific worldview
 
@@ -20,7 +20,78 @@ Science is based on two simple ideas. First, that the best way to learn about th
 
 A natural law is a law-like relationship between variables, like $$E = Mc^{2}$$ and $$F = MA$$. Natural laws explain how the values of variables relate to each other, which can help scientists understand, control, and make predictions about natural processes.
 
-For example, $$E = Mc^2$$ states that the energy content of a system ($$E$$) is always equal to the mass of the system ($$M$$) multiplied by the speed of light squared ($$c^{2}$$). $$F = MA$$ explains that the force exerted upon an object ($$F$$) is equal to the mass of the object ($$M$$) multiplied by its acceleration ($$A$$), an insight that has many applications in the field of physics. 
+For example, the natural law $$E = Mc^2$$ states that the energy content of a system ($$E$$) is always equal to the mass of the system ($$M$$) multiplied by the speed of light squared ($$c^{2}$$). $$F = MA$$ explains that the force exerted upon an object ($$F$$) is equal to the mass of the object ($$M$$) multiplied by its acceleration ($$A$$), an insight that has many applications in the field of physics. 
+
+Natural laws deal with variables, values, and observations. We use these terms in everyday speech, but they have a technical meaning when associated with science.
+
+* A _variable_ is a quantity, quality, or property that can be measured. 
+
+* A _value_ is the apparent state of a variable when you measure it. The value of a variable may change from measurement to measurement.
+
+* An _observation_ is a set of measurements that are made on multiple variables under similar (ideally identical) conditions. 
+
+    You can think of an observation as a snapshot of the world. An observation shows what a group of variables looked like together for a brief moment before they changed. 
+
+Natural laws deal with variables, but they operate on values that appear in the same observation. For example, the law $$F = MA$$ states that when you measure a particle's force, mass, and acceleration _at the same time_, you will observe a trio of values such that
+
+$$f_{1} = m_{1} * a_{1}$$  
+
+$$f_{2} = m_{2} * a_{2}$$  
+
+$$f_{3} = m_{3} * a_{3}$$  
+
+and so on.
+
+In the notation above, the lowercase letters denote specific values of the variables $$F$$, $$M$$, and $$A$$. Throughout the book, I will refer to variable names with a capital letter and individual values with a lower case letter. 
+
+The subscripts denote the conditions associated with each measurement. For example, the subscript could denote the occaision on which each measurement was made. The measurements $$f_{1}$$, $$m_{1}$$, and $$a_{1}$$ could have been measured at time one, and measurements $$f_{2}$$, $$m_{2}$$, and $$a_{2}$$ could have been measured at time two. Or the subscripts could denote which particle each of the measurments were made on. The measurements $$f_{1}$$, $$m_{1}$$, and $$a_{1}$$ could describe a particle of gold, while the measurements $$f_{2}$$, $$m_{2}$$, and $$a_{2}$$ could describe a different particle, perhaps an atom of Oxygen. If two variables have the same subscript, it implies that they are measured under identical conditions; or in other words, that they are measured as part of the same observation. 
+
+A natural law implies that a relationship will exist between values _in the same observation_. This is a very important point. A natural law _does not_ imply that a relationship will exist between values in _different_ observations. You wouldn't think that the force you exert on particle one, would equal the mass times the acceleration that you measure on particle two. In other words, $$f_{1}$$ will be related to $$m_{1}$$ and $$a_{1}$$, but it may not be related to $$m_{2}$$ and $$a_{2}$$. 
+
+Natural laws provide a goal for science. Scientists attempt to discover natural laws and thereby explain natural phenomena. You can think of science as a collection of methods that use observations to discover natural laws. Data science is one of those methods. It uses a specific tool to reveal natural laws, and that tool is data.
+
+_note: explain data first. Then introduce experimental science as a way to motivate "Why do data science?"_
+
+## Experimental science
+
+When most people think of science they think of experimental science, a very popular method for discovering natural laws. To conduct experimental science, you employ a method that follows these general steps:
+
+1. *Formulate a hypothesis* about a natural law. Experimental science does not suggest how to formulate a hypothesis. An idea may occur to you as you familiarize yourself with the subject.
+
+2. *Make a testable prediction* deduced from your hypothesis your hypothesis. Identify an implication of your hypothesis that you can test with an experiment. The prediction should be such that it can only be false if the hypothesis itself were false.
+
+3. *Conduct an experiment* to test the prediction.
+
+4. *Reject the hypothesis if the prediction is disproven.* 
+
+If the experiment 
+
+Like data scientists, experimental scientists use a simple strategy to discover natural laws with observations. 
+
+The experimental method is well known, easy to understand, and a revealing counter-example to data science. Throughout this book, I will 
+
+Experimental science is helpful for a data scientist to know.
+This is experimental science
+Experimental science is so popular that it is sometimes called the scientific method.
+But data science is also a scientific method. 
+It relies on a different tool, data.
+
+You may know the experimental method by a different name, _the scientific method_, but this name is a misnomer. Experimental science is not the only method of scientific investigation. Data science is another method that complements and augments experimental science. 
+
+Un
+
+
+The experimental method is the oldest and most widely practiced method of science, but it is just _a_ scientific method. Data science is another. However, the experimental method makes it easy to understand 
+
+Data science complements and augments experimental science.  It is much easier to understand data science if you first understand this older method.
+
+The experimental method is called _the_ scientific method, but it is not the only scientific method. Data science is another. However, the experimental method provides a useful way to understand the data science method. 
+
+
+Data science is one of those methods. It uses a specific tool to reveal natural laws, and that tool is data.
+
+
+***
 
 I'll use this second law as an example throughout the rest of the chapter, so let's make sure we understand it. $$F = MA$$ is the second of Newton's three laws of motion. These three rules explain how the physical universe behaves, and you've probably heard of them before. 
 
