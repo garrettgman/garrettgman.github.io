@@ -18,9 +18,9 @@ This chapter introduces the strategy behind data science: _data scientists searc
 
 As a method of science, data science is based on two simple ideas. First, that the best way to learn about the word is to observe it. And second, that the universe operates according to _natural laws_. 
 
-A natural law is a rule that determines how a specific phenomenon behaves. For example, the natural law $$E = Mc^2$$ states that the energy content of a system ($$E$$) is always equal to the mass of the system ($$M$$) multiplied by the speed of light squared ($$c^{2}$$). The natural law $$F = MA$$ explains that the force exerted upon an object ($$F$$) will cause the object to accelerate ($$A$$) at a rate proportional to the mass of the object ($$M$$), an insight that has many applications in the field of physics. 
+A natural law is a rule that describes how the values of variables relate to each other, which can help scientists understand, control, and make predictions about natural processes. 
 
-You can write down a natural law as a relationship between variables, like $$E = Mc^{2}$$ and $$F = MA$$. Natural laws explain how the values of variables relate to each other, which can help scientists understand, control, and make predictions about natural processes.
+You can write down a natural law as a relationship between variables, like $$E = Mc^{2}$$ and $$F = MA$$. The natural law $$E = Mc^2$$ states that the energy content of a system ($$E$$) is always equal to the mass of the system ($$M$$) multiplied by the speed of light squared ($$c^{2}$$). The natural law $$F = MA$$ explains that the force exerted upon an object ($$F$$) will cause the object to accelerate ($$A$$) at a rate proportional to the mass of the object ($$M$$), an insight that has many applications in the field of physics. 
 
 Natural laws deal with variables, values, and observations. We use these terms in everyday speech, but they have a technical meaning when associated with science.
 
@@ -44,17 +44,21 @@ and so on.
 
 In the notation above, the lowercase letters denote specific values of the variables $$F$$, $$M$$, and $$A$$. Throughout the book, I will refer to variable names with a capital letter and individual values with a lower case letter. 
 
-The subscripts denote the conditions associated with each measurement. For example, we could use the subscripts to denote the time at which I made each measurement. I could have measured $$f_{1}$$, $$m_{1}$$, and $$a_{1}$$ at time one, $$f_{2}$$, $$m_{2}$$, and $$a_{2}$$ at time two, and so on. Alternatively, we could use subscripts to denote which object each set of measurements describes. I could have measured $$f_{1}$$, $$m_{1}$$, and $$a_{1}$$ on one particle, $$f_{2}$$, $$m_{2}$$, and $$a_{2}$$ on a second particle, and $$f_{3}$$, $$m_{3}$$, and $$a_{3}$$ on a third particle. If two variables have the same subscript, it implies that they are measured under similar conditions; or in other words, that they are measured as part of the same observation. 
+The subscripts denote which observation each of the measurements belongs to. If a set of measurements belongs to the same observation, it implies that the measurements were made under similar conditions.
 
-A natural law implies that a relationship will exist between values _in the same observation_. This is a very important point. A natural law _does not_ imply that a relationship will exist between values in _different_ observations. You wouldn't think that the force you exert on one particle, would equal the mass times the acceleration that you measure on a different particle. In other words, you would expect $$f_{1}$$ to be related to $$m_{1}$$ and $$a_{1}$$, but you would not necessarily expect it to be related to $$m_{2}$$ and $$a_{2}$$. 
+To see how this works, consider what the three observations above represent. The observations may have been taken at three different times. $$f_{1}$$, $$m_{1}$$, and $$a_{1}$$ may have been taken at time one, $$f_{2}$$, $$m_{2}$$, and $$a_{2}$$ taken at time two, and so on.  Alternatively, the observations may describe three different particles. $$f_{1}$$, $$m_{1}$$, and $$a_{1}$$ may describe one particle, $$f_{2}$$, $$m_{2}$$, and $$a_{2}$$ may describe a second particle, and $$f_{3}$$, $$m_{3}$$, and $$a_{3}$$ may describe a third particle. 
 
-Natural laws provide a goal for science. Scientists attempt to discover natural laws and thereby explain natural phenomena. You can think of science as a collection of methods that use observations to discover natural laws. Data science is one of those methods. It uses a specific tool to reveal natural laws, and that tool is data.
+Observations play a very important role in science. A natural law implies that a relationship will exist between values _in the same observation_. However, a natural law _does not_ imply that a relationship will exist between values in _different_ observations. You wouldn't think that the force you exert on one particle, would equal the mass times the acceleration that you measure on a different particle. Or, in the notation above, you wouldn't expect $$f_{1}$$ to equal $$m_{2}$$ times $$a_{2}$$. You would expect $$f_{1}$$ to equal $$m_{1}$$ times $$a_{1}$$. 
+
+Natural laws provide a goal for science. Scientists attempt to discover natural laws and thereby explain natural phenomena. You can think of science as a collection of methods that use observations to discover natural laws. 
+
+Data science is one of those methods. It uses a specific tool to reveal natural laws, and that tool is data.
 
 ## Data
 
-A data set is a collection of values that have been organized in a specific way: each value in a data set is associated with a variable and an observation. This organization makes data sets particularly useful for discovering natural laws.
+A data set is a collection of values that have been organized in a specific way: each value in a data set is associated with a variable and an observation. 
 
-For example, you can use the values $$f_{1}$$, $$f_{2}$$, $$f_{3}$$, $$m_{1}$$, $$m_{2}$$, $$m_{3}$$, $$a_{1}$$, $$a_{2}$$, and $$a_{3}$$ to compose a data set.
+For example, you can use the values $$f_{1}$$, $$f_{2}$$, $$f_{3}$$, $$m_{1}$$, $$m_{2}$$, $$m_{3}$$, $$a_{1}$$, $$a_{2}$$, and $$a_{3}$$ to compose a data set, like the one below.
 
 obs | $$F$$     | $$M$$     | $$A$$    
 --- | --------- | --------- | ---------
@@ -62,27 +66,49 @@ obs | $$F$$     | $$M$$     | $$A$$
 2   | $$f_{2}$$ | $$m_{2}$$ | $$a_{2}$$
 3   | $$f_{3}$$ | $$m_{3}$$ | $$a_{3}$$
 
-Each value is associated with a variable, as well as an observation. Within each observation, the relationship described by the law $$F = MA$$ will be present. As a result, the data set reveals what the natural law implies:
+Each value is associated with a variable, as well as an observation. This organization makes data sets particularly useful for discovering natural laws. Data sets display _values of variables that appear in the same observations_, and natural laws describe the relationship between _values of variables that appear in the same observations_. As a result, natural laws appear as patterns in data.
+
+In our example data set, the relationship described by the law $$F = MA$$ will be present in each observation. As a result, the data set will reveal what the natural law implies:
 
 obs | $$F$$     | $$M$$     | $$A$$    
 --- | --------- | --------- | ---------
-1   | $$f_{1}$$ | $$= m_{1}$$ | $$\times a_{1}$$
-2   | $$f_{2}$$ | $$= m_{2}$$ | $$\times a_{2}$$
-3   | $$f_{3}$$ | $$= m_{3}$$ | $$\times a_{3}$$
+1   | $$f_{1}$$ | $$= m_{1}$$ | $$\times \; a_{1}$$
+2   | $$f_{2}$$ | $$= m_{2}$$ | $$\times \; a_{2}$$
+3   | $$f_{3}$$ | $$= m_{3}$$ | $$\times \; a_{3}$$
 
-In other words, the structure of a data set parallels the ideas contained in a natural law. A data set displays _values_ of _variables_ that appear in the same _observation_. A natural law describes the relationship between _values_ of _variables_ that appear in the same _observation_. As a result, natural laws appear as patterns in data.
-
-This simple fact provides a system of discovery for scientists. You can discover a natural law by collecting the right data and searching it for patterns.
-
-For example, you could measure the real forces, masses, and accelerations of several dozen particles. This will create a data set that reveals how $$F = MA$$.
+This is easy to verify if you measure the real forces, masses, and accelerations of several dozen particles, like in the data set below. Each row of values displays the relationship $$F = MA$$.
 
 [data]
 
-It can be difficult to notice patterns in raw data, but you can optimize how you spot patterns in data. First, you can visualize raw data to make patterns easier to spot. For example, the pattern between $$F$$, $$M$$, and $$A$$ becomes easy to spot when you visualize the data with a three dimensional, or even a two dimensional, graph.
+Data sets provide a system of discovery for scientists. You can discover a natural law by collecting data and exploring the data for patterns.
+
+Patterns can be difficult to notice in raw data, but you can optimize how you search for patterns. First, you can visualize raw data to make patterns easier to spot. For example, the pattern between $$F$$, $$M$$, and $$A$$ becomes easy to spot when you visualize the data with a three dimensional, or even a two dimensional, graph.
 
 [graphs]
 
 Second, you can use a computer algorithm to search for patterns within data, which is exactly what data scientists do when they use statistical modeling or machine learning techniques.
+
+This method of discovering natural laws forms the basis of data science. Data scientists search for evidence of natural laws in the structure of data. This process may sound simple, but success is not guaranteed. It takes expertise and judgement to search for patterns in a productive way.
+
+Data science also requires expertise and judgement in a second, more important way.
+
+## Uncertainty
+
+John Tukey, one of the first data scientists, often compared data science to detective work. I like this metaphor because detective work is risky business, and so is data science. You may be surprised at how risky data science can be.
+
+We are starting to learn that most published data science findings may be wrong. In 2012, Amgen determined that _only_ 6 of  53 "landmark" medical studies had results that could be reproduced. From a scientific point of view, this means that these studies should be considered unreliable, if not wrong. In 2011, the Bayer company found it could only reproduce 25% of published findings in cardiovascular disease, cancer, and women's health studies. Bayer shelved development of  two thirds of its new drug projects as a result. 
+
+Data science goes wrong in other fields too. The 2008 Financial Crisis was enabled by a misapplication of the Gaussian copula, a data science technique. In another case, NASA analyzed global ozone data for seven years without noticing the hole in the ozone layer. The most famous data analysis failure probably happened in 1983. Engineers at Morton Thiokol, the builder of space shuttle booster rockets, predicted that the _Challenger_ would explode on launch. They had a chance to prevent the launch, but changed their minds after misreading data that proved them right.
+
+Even famous statisticians can get data wrong. Sir Ronald Fisher invented much of modern statistics, but he spent the end of his career using data to show that cigarettes do not cause cancer. 
+
+What went wrong in each of these cases? In some scenarios, the researchers failed to find a pattern that was there in the data. In others, scientists were mislead by complicated techniques that masked the simple core of data science.
+
+However, a third reason for failure lurks whenever you analyze data: data sets often display patterns that do not exist in real life.
+
+If you think of yourself as a detective, you should think of data as the mysterious blonde who walks into your office: sexy on the surface, murky and treacherous beneath. 
+
+This doesn't mean you should avoid data. Looking at data will always create better understanding than ignoring it, but remember that data is not a cure-all. Good science also requires good reasoning and skepticism. 
 
 Data provides a useful way to discover natural laws, but the system is not foolproof. Natural laws are not the only things that create patterns in data. A pattern can also be the result of coincidence.
 
