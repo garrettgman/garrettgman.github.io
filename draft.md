@@ -102,10 +102,9 @@ Together these concerns provide a basic outline of data science. Data scientists
 
 1. **Collect data** in a way that minimizes the chance of coincidence.
 2. **Search for patterns** that provide evidence of natural laws. Often this search involves:
-
-    a. **Wrangling data** - making patterns more apparent by reshaping the data, subsetting the data, transforming variables, and calculating summary statistics.
-    b. **Visualizing data** - displaying data in a graph, which exposes patterns to the human visual system.
-    c. **Modelling data** - searching for patterns with computer algorithms that can be automated, calibrated, and optimized.
+    + **Wrangling data** - making patterns more apparent by reshaping the data, subsetting the data, transforming variables, and calculating summary statistics.
+    + **Visualizing data** - displaying data in a graph, which exposes patterns to the human visual system.
+    + **Modelling data** - searching for patterns with computer algorithms that can be automated, calibrated, and optimized.
 
 3. **Judge patterns** - calculate the probability that a pattern is due to coincidence, and not a natural law. You can view this step as measuring the strength of the evidence provided by an analysis.
 
@@ -115,19 +114,9 @@ Given this ambiguity, you may wonder why anyone would practice data science. The
 
 ## Why do Data Science?
 
-Experimental science
-Data science is logistically easier
-Experimental science: hypothesis -> observation
-Data science: observation -> hypothesis
-Non-causal relationships/prediction
-So much data!
-Other benefits as we will see. Data science makes it more simple to reason about a complex universe.
-I will highlight differences between experimental science and data science throughout the book. Experimental science provides a very useful way to understand data science because the experimental method is so widely known.
+When most people think of science they think of experimental science, a very popular method for discovering natural laws. 
 
-
-Data science complements experimental science and is an essential tool in a scientist's tool kit. Data science is good at doing the things experimental science is poor at (and poor at doing the things that experimental science is good at). However, data science requires a different way of thinking than experimental science. If you are familiar with experimental science, but not data science, there is one large difference you should be aware of. Proof.
-
-When most people think of science they think of experimental science, a very popular method for discovering natural laws. To conduct experimental science, you employ a method that follows these general steps:
+Like data scientists, experimental scientists use a simple strategy to discover natural laws with observations. To conduct experimental science, you employ a method that follows these general steps:
 
 1. *Formulate a hypothesis* about a natural law. Experimental science does not suggest how to formulate a hypothesis. An idea may occur to you as you familiarize yourself with the subject.
 
@@ -137,31 +126,28 @@ When most people think of science they think of experimental science, a very pop
 
 4. *Reject the hypothesis if the prediction is disproven.* 
 
-If the experiment 
+Experimental science has a track record of success, and delivers results that are foolproof. As a result, you may wonder why anyone should bother with data science.
 
-Like data scientists, experimental scientists use a simple strategy to discover natural laws with observations. 
+Data science complements experimental science and is an essential tool in a scientist's tool kit. Data science is good at doing the things experimental science is poor at (and poor at doing the things that experimental science is good at). 
 
-The experimental method is well known, easy to understand, and a revealing counter-example to data science. Throughout this book, I will 
+Data science is logistically easier. It is easier to build an experiment that manipulates physical objects, than one that manipulates national economies, or human lives. In fact, much of what we know about astronomy comes from analyzing data -- not experiments.
 
-Experimental science is helpful for a data scientist to know.
-This is experimental science
-Experimental science is so popular that it is sometimes called the scientific method.
-But data science is also a scientific method. 
-It relies on a different tool, data.
+Experimental science: hypothesis -> observation  
+Data science: observation -> hypothesis  
 
-You may know the experimental method by a different name, _the scientific method_, but this name is a misnomer. Experimental science is not the only method of scientific investigation. Data science is another method that complements and augments experimental science. 
+Experimental science revolves around hypotheses. An experimental scientist attempts to disprove hypotheses. However, experimental scientists does not have much to say about how to develop hypotheses to test. Philosophers of Scientists have wrestled with this problem since the beginning of science. How do scientists discover hypotheses to test. Karl Popper, one of the most influential philosophers, decided that discovery is a matter of inspiration.
 
-Un
+Data science cannot prove that a relationship is causal, it can only show that the value of two or more variables are correlated. You've probably heard the phrase "correlation does not necessitate causation." This applies here. Many reasons can exist for correlation between two variables. (By the way, if you've heard "correlation does not _imply_ causation," you've heard wrong. Correlation _should_ make you more suspicious that a causal relationship may exist between your variables.)
 
+Experimental science is better suited for discovering and proving causation. An experiment allows you to manipulate one variable and to observe the effects that the manipulation causes. However, experimental science is less useful for observing non-causal associations between variables.
 
-The experimental method is the oldest and most widely practiced method of science, but it is just _a_ scientific method. Data science is another. However, the experimental method makes it easy to understand 
+Non-causal relationships provide useful information and data science provides a way to spot such relationships.
 
-Data science complements and augments experimental science.  It is much easier to understand data science if you first understand this older method.
-
-The experimental method is called _the_ scientific method, but it is not the only scientific method. Data science is another. However, the experimental method provides a useful way to understand the data science method. 
+So much data!
+Other benefits as we will see. Data science makes it more simple to reason about a complex universe.
 
 
-Data science is one of those methods. It uses a specific tool to reveal natural laws, and that tool is data.
+I will highlight differences between experimental science and data science throughout the book. Experimental science provides a very useful way to understand data science because the experimental method is so widely known. The experimental method is well known, easy to understand, and a revealing counter-example to data science.
 
 ## Recap
 
