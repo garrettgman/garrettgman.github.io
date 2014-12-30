@@ -88,7 +88,7 @@ Patterns can be difficult to notice in raw data, but you can optimize how you se
 
 Second, you can use a computer algorithm to search for patterns within data, which is exactly what data scientists do when they use statistical modeling or machine learning techniques.
 
-This method of discovering natural laws forms the basis of data science. Data scientists search for evidence of natural laws in the structure of data. This process may sound simple, but success is not guaranteed. It takes expertise and judgement to search for patterns in a productive way.
+This method of discovering natural laws forms the basis of data science. Data scientists search for evidence of natural laws in the structure of data. This may sound simple, but success is not guaranteed. It takes expertise and judgement to search for patterns in a productive way.
 
 Data science also requires expertise and judgement in a second, more important way.
 
@@ -102,39 +102,46 @@ Data science goes wrong in other fields too. The 2008 Financial Crisis was enabl
 
 Even famous statisticians can get data wrong. Sir Ronald Fisher invented much of modern statistics, but he spent the end of his career using data to show that cigarettes do not cause cancer. 
 
-What went wrong in each of these cases? In some scenarios, the researchers failed to find a pattern that was there in the data. In others, scientists were mislead by complicated techniques that masked the simple core of data science.
+This doesn't mean you should avoid data. Looking at data will always create better understanding than ignoring it, but remember that data is not a cure-all. Good science also requires good reasoning and a knowledge of what you are up against. In other words, if you think of yourself as a detective, you should think of data as the mysterious blonde who walks into your office: sexy on the surface, murky and treacherous beneath. 
 
-However, a third reason for failure lurks whenever you analyze data: data sets often display patterns that do not exist in real life.
+So what are you up against? Some of these studies above failed because the scientists were mislead by complex techniques. Other studies failed because the scientists did not find a pattern that was there in the data. However, most of these studies failed for a third reason: data is deceptive.
 
-If you think of yourself as a detective, you should think of data as the mysterious blonde who walks into your office: sexy on the surface, murky and treacherous beneath. 
+Natural laws are not the only things that create patterns in data. A pattern can also be the result of coincidence. As a result, data sets often display patterns that do not exist in real life, which creates a challenge for data scientists. Many of the studies mentioned above failed because they mistook a coincidence for evidence of a natural law.
 
-This doesn't mean you should avoid data. Looking at data will always create better understanding than ignoring it, but remember that data is not a cure-all. Good science also requires good reasoning and skepticism. 
-
-Data provides a useful way to discover natural laws, but the system is not foolproof. Natural laws are not the only things that create patterns in data. A pattern can also be the result of coincidence.
-
-For example, consider the data points below. The points fall in an unstructured cloud, which suggests that there is no systematic relationship, or law, between $$X$$ and $$Y$$.
+To see how this could be, consider the data points below. The points fall in an unstructured cloud, which suggests that there is no systematic relationship—or law—between $$X$$ and $$Y$$.
 
 [graph]
 
-But what would happen if you collected only ten of these mesurements? More than likely, the ten measurements would not display a pattern, but by coincidence you might collect ten measurements that do display a pattern. For example, the ten points on the right display a pattern between $$X$$ and $$Y$$. The pattern suggests that a natural law exists between $$X$$ and $$Y$$ of the form $$Y = X$$.
+But what would happen if you collected only ten of these mesurements? More than likely, the ten measurements would not display a pattern, but by coincidence you might collect ten measurements that do display a pattern. For example, any of the collections below would suggest that a natural law exists between $$X$$ and $$Y$$.
 
 [graph]
 
-In practice, there is no way to use a data set to determine with absolute certainty whether the patterns contained in the data set result from laws or coincidences. However, you can use the tools of probability to estimate how likely or unlikely a pattern is to result from coincidence.
+In theory, there is no way to use a data set to determine whether the patterns contained in the data result from laws or coincidences. Or, more precisely, there is no way to determine this _with absolute certainty_. 
 
-Data scientists use these tools to augment the simple system of discovery presented by data. This arrangement creates the method of data science, which can be described with this basic outline:
+In practice, there is a way forward. You can assume (and ensure) that the data was collected in a random, unbiased way. Then you can calculate the probability that random chance would deliver a pattern as striking as the one you see. 
 
-Together these concerns provide a basic outline of data science. Data scientists search for evidence of natural laws in the structure of data, and then judge the strength of the evidence that they find. To do this, they:
+This system reduces patterns in data from _proofs_ of natural laws to _evidence_ of natural laws. Each pattern that you find is evidence of a natural law. If the pattern is likely to be caused by random chance, then the evidence is weak. If the pattern is unlikely to be caused by random chance, then the evidence is strong. 
 
-1. **Collect data** in a way that minimizes the chance of coincidence.
-2. **Search for patterns** that provide evidence of natural laws. Often this search involves:
-    + **Wrangling data** - making patterns more apparent by reshaping the data, subsetting the data, transforming variables, and calculating summary statistics.
-    + **Visualizing data** - displaying data in a graph, which exposes patterns to the human visual system.
-    + **Modelling data** - searching for patterns with computer algorithms that can be automated, calibrated, and optimized.
+A probability calculation will tell you exactly how weak or how strong your evidence is. As a data scientist, you will need to decide for yourself how strong the evidence must be before you are willing to believe it.
 
+It is important to realize that probability does not eliminate the uncertainty associated with your findings. There will always be a small possibility that even the most striking patterns were caused by random chance. Probability calculations do not eliminate this possibility; they quantify it, which makes it easier for you to reason about your evidence.
+
+Data scientists use probability calculations to augment the simple system of discovery presented by data. This arrangement creates the method of data science, which can be described with a basic outline.
+
+## Data Science
+
+Data scientists search for evidence of natural laws in the structure of data, and then judge the strength of the evidence that they find. To do this, they:
+
+1. **Collect data** in a way that minimizes the chance of coincidence. Often this involves some type of random selection.
+2. **Search for patterns** that provide evidence of natural laws. During this search a data scientist will often:
+    + **Wrangle data** - make patterns more apparent by reshaping, subsetting, or transforming the data.
+    + **Visualize data** - display data in a graph, which exposes patterns to the human visual system.
+    + **Model data** - search for patterns with computer algorithms that can be automated, calibrated, and optimized.
 3. **Judge patterns** - calculate the probability that a pattern is due to coincidence, and not a natural law. You can view this step as measuring the strength of the evidence provided by an analysis.
 
-Because the evidence prvided by a data set may be unreliable, data science requires a different way of thinking than other types of science. Most data science findings are uncertain. They may suggest one conclusion or another, but they often cannot prove that a conclusion is true beyond the shadow of a doubt. As a result, data scientists must always remain skeptical and search for counter explanations.
+Because the evidence provided by a data set may be unreliable, data science requires a different way of thinking than other types of science. A data scientist must possess enough curiousity to explore their data thoroughly, exposing any patterns that are there. But a data scientist must also possess enough skepticism to question every pattern that they find and to search for alternative explanations.
+
+Above all, a data scientist must have a high tolerance for uncertainty. In many ways, a data scientist is a specialist in uncertainty. They are asked to make useful predictions about things that cannot be known for certain, a job usually left to psychics and magicians.
 
 Given this ambiguity, you may wonder why anyone would practice data science. There are some very good reasons.
 
