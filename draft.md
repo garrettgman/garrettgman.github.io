@@ -156,7 +156,9 @@ Given this ambiguity, you may wonder why anyone would practice data science. The
 
 ## Why do Data Science?
 
-When most people think of science they think of experimental science, a very popular way to do research. Like data scientists, experimental scientists use observations to find natural laws. However, they use a different method to do this. They generally:
+Data science complements other methods of scientific inquiry. To see the strengths of data science, let's compare it to experimental science, a more well known way to do science.
+
+We can summarize experimental science with a simplified outline. Experimental scientists:
 
 1. *Formulate a hypothesis* about a natural law. 
 
@@ -170,11 +172,11 @@ The experimental method provides a very useful way to understand data science be
 
 ### Discovery and confirmation
 
-You may have noticed that the experimental method focuses on _confirmation_. An experimental scientist begins with a hypothesis and then focuses on disproving the hypothesis with observations. In theory, an experiment cannot prove that a hypothesis is true due to a philosophical problem known as the _Problem of Induction_, but in practice experiments provide strong support to hypotheses that are not rejected. Experimental scientists quickly winnow out false hypotheses from very plausible hypotheses.
+You may have noticed that the outline above focuses on _confirmation_. An experimental scientist begins with a hypothesis and then disproves it (or confirms it) with observations. The experimental method is very good at confirmation. Experimental scientists quickly winnow out false hypotheses from very plausible hypotheses.
 
-On the other hand, the experimental method does not explain how scientists should find hypotheses to test. This leads to a philosophical problem of its own, the _Problem of Discovery_: researchers are left to their own devices to think up new and better hypotheses.
+On the other hand, the experimental method does not explain how scientists should find a hypothesis to test. This leads to a philosophical problem known as the _Problem of Discovery_: how should researchers think up new and better hypotheses to test?
 
-Data science solves the Problem of Discovery by providing an easy way to generate hypotheses. A researcher can begin with observations and search them for patterns that would suggest natural laws. On the other hand, data usually cannot prove or disprove a hypothesis as conclusively as a well designed experiment would.
+Data science solves the Problem of Discovery by providing an easy way to generate hypotheses. A researcher can begin with observations and search them for patterns that would suggest natural laws. 
 
 ### Causation vs. association
 
