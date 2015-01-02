@@ -12,15 +12,15 @@ At another level, data science is a way of doing science. Data scientists use da
 
 This book will teach you the method of data science. You will learn how to use data to make scientific discoveries, and to justify those discoveries once they are made. Along the way, you will learn how to visualize data, build models, and make predictions.
 
-This chapter introduces the strategy behind data science: data scientists search for evidence of natural laws in the structure of data, and then judge the strength of the evidence that they find. This strategy guides the techniques that you will learn in later chapters—techniques like data wrangling, data modelling, and data visualization.
+In this chapter, you will learn the strategy behind data science: data scientists search for evidence of natural laws in the structure of data. They then judge the strength of the evidence that they find. This strategy guides the techniques that you will learn in later chapters—techniques like data wrangling, data modelling, and data visualization.
 
 ## The scientific worldview
 
-As a method of science, data science is based on two simple ideas. First, that the best way to learn about the word is to observe it. And second, that the universe operates according to _natural laws_. 
+Scientific inquiry is based on two simple ideas. First, that the best way to learn about the word is to observe it. And second, that the universe operates according to natural laws. These ideas are at the heart of data science. They also supply the first bit of vocabulry that you will need to talk about data science.
 
-A natural law is a rule that describes a part of the natural world, like $$E = Mc^{2}$$ and $$F = MA$$. These laws help scientists understand, control, and make predictions about natural processes. 
+A _natural law_ is a rule that describes a part of the natural world, like $$E = Mc^{2}$$ or $$F = MA$$. Natural laws help scientists understand, control, and make predictions about natural processes. 
 
-You can write down a natural law as a relationship between variables. For example, $$E = Mc^2$$ is a natural law that states that the energy content of a system ($$E$$) is always equal to the mass of the system ($$M$$) multiplied by the speed of light squared ($$c^{2}$$). $$F = MA$$ is a natural law that explains that a force exerted upon an object ($$F$$) will cause the object to accelerate ($$A$$) at a rate proportional to the mass of the object ($$M$$), an insight that has many applications in the field of physics. 
+You can write down a natural law as a relationship between variables. For example, $$E = Mc^2$$ is a natural law that states that the energy content of a system ($$E$$) is always equal to the mass of the system ($$M$$) multiplied by the speed of light squared ($$c^{2}$$). $$F = MA$$ is a natural law that explains that a force ($$F$$) exerted upon an object will cause the object to accelerate ($$A$$) at a rate proportional to the mass of the object ($$M$$), an insight that has many applications in the field of physics. 
 
 Natural laws deal with variables, values, and observations. We use these terms in everyday speech, but they have a technical meaning when associated with science.
 
@@ -50,7 +50,7 @@ The subscripts denote which observation each of the values belongs to. If a set 
 
 To see how this works, consider what the three observations above may represent. The observations may have been taken at three different times: $$f_{1}$$, $$m_{1}$$, and $$a_{1}$$ may have been measured at time one, $$f_{2}$$, $$m_{2}$$, and $$a_{2}$$ measured at time two, and so on.  Alternatively, the observations may describe three different particles: $$f_{1}$$, $$m_{1}$$, and $$a_{1}$$ may have been measured on one particle, $$f_{2}$$, $$m_{2}$$, and $$a_{2}$$ may may have been measured on a second particle, and $$f_{3}$$, $$m_{3}$$, and $$a_{3}$$ may have been measured on a third particle. 
 
-Observations play a very important role in science. A natural law implies that a relationship will exist between values of variables that appear _in the same observation_. However, a natural law _does not_ imply that a relationship will exist between values in _different_ observations. You wouldn't think that the force you exert on one object would equal the mass times the acceleration that you measure on a second object. Or, in the notation above, you wouldn't think that $$f_{1}$$ should equal $$m_{2}$$ times $$a_{2}$$. You would expect $$f_{1}$$ to equal $$m_{1}$$ times $$a_{1}$$. 
+Observations play a very important role in science. A natural law implies that a relationship will exist between values of variables that appear _in the same observation_. However, a natural law does not imply that a relationship will exist between values in _different_ observations. You wouldn't think that the force you exert on one object would equal the mass times the acceleration that you measure on a second object. Or, in the notation above, you wouldn't think that $$f_{1}$$ should equal $$m_{2}$$ times $$a_{2}$$. You would expect $$f_{1}$$ to equal $$m_{1}$$ times $$a_{1}$$. 
 
 Natural laws provide a goal for science. Scientists attempt to discover natural laws and thereby explain natural phenomena. You can think of science as a collection of methods that use observations to discover natural laws. 
 
@@ -78,60 +78,67 @@ obs | $$F$$     | $$M$$     | $$A$$
 2   | $$f_{2}$$ | $$= m_{2}$$ | $$\times \; a_{2}$$
 3   | $$f_{3}$$ | $$= m_{3}$$ | $$\times \; a_{3}$$
 
-This is easy to verify if you measure the real forces, masses, and accelerations of several dozen particles, like in the data set below. Each row of values displays the relationship $$F = MA$$.
+This is easy to verify if you measure the real forces, masses, and accelerations associated with several dozen particles, like in the data set below. Each row of values displays the relationship $$F = MA$$.
 
 [data]
 
-Data sets provide a system of discovery for scientists. You can discover a natural law by collecting data and exploring the data for patterns.
+Data sets provide a system of discovery for scientists. You can discover a natural law by collecting data and exploring the data for patterns. Patterns can be difficult to notice in raw data, but you can optimize how you search for patterns. 
 
-Patterns can be difficult to notice in raw data, but you can optimize how you search for patterns. First, you can visualize raw data to make patterns easier to spot. For example, the pattern between $$F$$, $$M$$, and $$A$$ becomes easy to spot when you visualize the data with a three dimensional, or even a two dimensional, graph.
+First, you can visualize raw data to make patterns easier to spot. For example, the pattern between $$F$$, $$M$$, and $$A$$ becomes easy to spot when you visualize the data with a three dimensional, or even a two dimensional, graph.
 
 [graphs]
 
 Second, you can use a computer algorithm to search for patterns within data, which is exactly what data scientists do when they use statistical modeling or machine learning techniques.
 
-Moreover, this system is extremely robust. If your values are contaminated by measurement errors, like the values below, the law will emerge as a noisy, but often still discernable pattern.
+This is an extremely robust way to find laws. If your values are contaminated by measurement errors, like the values below, a law will emerge as a noisy, but often still discernable pattern.
 
 [data next to graph f ~ m * a]
 
-The same thing will happen if you do not collect data on every variable in the law. The missing variables will contribute noise to the pattern that exists between the variables that are in the data set. You can see this happen in the two dimensional graph between $$F$$ and $$A$$ (here using our original, clean data).
+The same thing will happen if you do not collect data on every variable in a law. The missing variables will contribute noise to the pattern that exists between the variables in your data set. You can see this happen in the two dimensional graph between $$F$$ and $$A$$ (here using our original, clean data). The $$M$$ variable adds noise to the pattern between $$F$$ and $$A$$.
 
 [graph]
 
-As long as you capture the most influential variables in a law, and do not let measurement errors get so big that they swamp your data, you are likely to find a pattern in the data that points to the law.
+As long as you capture the most influential variables in a law, and do not let measurement errors get so big that they swamp your data, you are likely to find a pattern in your data that will point to the law.
 
-This method of discovering natural laws forms the basis of data science. Data scientists search for evidence of natural laws in the structure of data. This may sound simple, but in practice it is slightly more complicated. Sometimes data displays patterns that do not exist in real life.
+This method of discovering natural laws forms the basis of data science. Data scientists search for evidence of natural laws by looking for patterns in data. This may sound simple, but in practice it is slightly more complicated. Sometimes data displays patterns that do not exist in real life.
 
-## Uncertainty
+## Sampling
 
-Let's do a simple thought experiment. Imagine that you observe several hundred people and record:
-
-1. their birthdays, and 
-2. their heights
-
-There's is no natural law that connects these variables. A person's height will not be related to their birthday, unless perhaps the person is an infant. As a result, if you were to plot the data, the data points would fall in an unstructured cloud, like this:
+Let's do a simple thought experiment. Imagine that you repeatedly observe two variables that are not related to each other, $$A$$ and $$B$$. After several hundred observations, your data would look like this, an unstructured cloud with no patterns.
 
 [graph]
 
-The graph shows that different people have different heights and that different people have different birthdays, but there is no systematic relationship—or law—between $$height$$ and $$birthday$$.
+(Want the example to be more concrete? Pretend that each data point is an adult person. $$A$$ is their height in inches and $$B$$ is their birthday.)
 
-Now imagine that you had conducted your study differently. Instead of observing several hundred people, you had only observed ten. What would your data look like?
+Now imagine that you had conducted your study differently. Instead of making several hundred observations, you had only made ten. What would your data look like?
 
-More than likely, the ten data points would display a less dense, but still unstructured clloud. However, by coincidence you might collect ten measurements that do display a pattern. For example, any of the collections below would suggest that a natural law exists between $$height$$ and $$birthday$$.
+We can randomly select ten of the data points above to see. More than likely, the ten points would display a less dense, but still unstructured cloud. For example, here are ten points randomly selected from the original data set.
+
+[graph]
+
+However, by coincidence you might collect ten observations that do display a pattern. For example, any of the collections below would suggest that a natural law exists between $$A$$ and $$B$$. Would you be able to tell that these patterns are due to coincidence, that you happened to collect an unusual set of observations?
+
+[graph]
+
+The collections above are quite extreme, so it might seem unlikely that you would chance upon a set of points that shows such a strong pattern, but consider the sets below. It is much easier to collect by coincidence a set of points that displays a weak pattern. These patterns look like natural laws that have been filtered through the noise of measurement errors or missing variables, which is how many natural laws will appear in practice. Would you be able to tell that these patterns are the result of chance?
 
 [graph]
 
 The thought experiment reveals something important. Natural laws are not the only things that can create patterns in data. A pattern can also be the result of coincidence. As a result, data sets often display patterns that do not exist in real life, which creates a challenge for data scientists. 
 
+As a data science, your main source of evidence for natural laws will be patterns (or descriptions of patterns) that you find in data. How can you be certain that your evidence is trustworthy?
+
+## Uncertainty
+
 In theory, there is no way to use a data set to determine whether the patterns contained in the data exist in real life. Or, more precisely, there is no way to determine _with absolute certainty_ whether the patterns exist in real life.
 
 In practice, there _is_ a way forward. You can calculate the probability that a pattern is the result of random chance. If you assume (or ensure) that the data has been collected in a random, unbiased way, then random chance will be the only mechanism that could cause an illusory pattern to appear in the data. 
 
-Data scientists use probability to guard against _false discovery_, finding patterns that do not exist in real life. This system reduces patterns in data from _proofs_ of natural laws to _evidence_ of natural laws. Each pattern that you find is evidence of a natural law. If the pattern is likely to be caused by random chance, then the evidence is weak. If the pattern is not likely to be caused by random chance, then the evidence is strong. 
+Data scientists use probability to guard against _false discovery_, i.e.finding patterns that do not exist in real life. This system reduces patterns in data from _proofs_ of natural laws to _evidence_ of natural laws. Each pattern that you find is evidence of a natural law. If the pattern is likely to be caused by random chance, then the evidence is weak. If the pattern is not likely to be caused by random chance, then the evidence is strong. 
 
 A probability calculation will tell you exactly how weak or how strong your evidence is. As a data scientist, you will need to decide for yourself how strong the evidence must be before you are willing to believe it.
 
-It is important to realize that probability does not eliminate the uncertainty associated with your findings. There will always be a small possibility that even the most striking patterns are caused by random chance. Probability calculations do not eliminate this possibility; they quantify it, which makes it easier for you to reason about your evidence.
+It is important to realize that probability does not eliminate the uncertainty associated with patterns. There will always be a small possibility that even the most striking patterns are caused by random chance. Probability calculations do not eliminate this possibility; they quantify it, which makes it easier for you to reason about your evidence.
 
 Data scientists use probability calculations to augment the simple system of discovery presented by data. This arrangement creates the method of data science, which can be described with a basic outline.
 
@@ -148,7 +155,7 @@ Data scientists search for evidence of natural laws in the structure of data, an
 
 3. **Judge patterns** - calculate the probability that a pattern is due to coincidence, and not a natural law. You can view this step as measuring the strength of the evidence provided by an analysis.
 
-Because the evidence provided by a data set may be unreliable, data science requires a different way of thinking than other types of science. A data scientist must be curious enough to explore their data thoroughly, exposing any patterns that are there. But a data scientist must also be skeptical enough to question every pattern that they find and to search for alternative explanations.
+Because the evidence provided by a data set may be unreliable, data science requires a different way of thinking than other types of science. A data scientist must be curious enough to explore their data thoroughly, exposing any patterns that are there, but a data scientist must also be skeptical enough to question every pattern that they find and to search for alternative explanations.
 
 Above all, a data scientist must have a high tolerance for uncertainty. In many ways, data scientists are specialists in uncertainty. They do not work with proofs, like a mathematician, but with evidence that may or may not be reliable.
 
@@ -156,9 +163,7 @@ Given this ambiguity, you may wonder why anyone would practice data science. The
 
 ## Why do Data Science?
 
-Data science complements other methods of scientific inquiry. To see the strengths of data science, let's compare it to experimental science, a more well known way to do science.
-
-We can summarize experimental science with a simplified outline. Experimental scientists:
+Data science complements other methods of scientific inquiry. To see the strengths of data science, let's compare it to experimental science, a more well known way to do science. To summarize loosely, experimental scientists use the following method to learn about natural laws:
 
 1. *Formulate a hypothesis* about a natural law. 
 
@@ -167,8 +172,6 @@ We can summarize experimental science with a simplified outline. Experimental sc
 3. *Conduct an experiment* to test the prediction.
 
 4. *Reject the hypothesis if the prediction is incorrect.* 
-
-The experimental method provides a very useful way to understand data science because the experimental method is so widely known. You can think of data science as a complement to experimental science. Data science is good at doing the things experimental science is poor at (and poor at doing the things that experimental science is good at). 
 
 ### Discovery and confirmation
 
