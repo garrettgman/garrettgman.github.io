@@ -94,39 +94,47 @@ This is an extremely robust way to find laws. If your values are contaminated by
 
 [data next to graph f ~ m * a]
 
-The same thing will happen if you do not collect data on every variable in a law. The missing variables will contribute noise to the pattern that exists between the variables in your data set. You can see this happen in the two dimensional graph between $$F$$ and $$A$$ (here using our original, clean data). The $$M$$ variable adds noise to the pattern between $$F$$ and $$A$$.
+Noise will also occur if you do not collect data on every variable in a law. The missing variables will contribute noise to the pattern that exists between the variables that you do observe. You can see this happen in the two dimensional graph between $$F$$ and $$A$$ (here using our original, clean data). The $$M$$ variable adds noise to the pattern between $$F$$ and $$A$$, but the pattern is still discernable.
 
 [graph]
 
 As long as you capture the most influential variables in a law, and do not let measurement errors get so big that they swamp your data, you are likely to find a pattern in your data that will point to the law.
 
-This method of discovering natural laws forms the basis of data science. Data scientists search for evidence of natural laws by looking for patterns in data. This may sound simple, but in practice it is slightly more complicated. Sometimes data displays patterns that do not exist in real life.
+Pattern recognition forms the basis of data science. Data scientists search for evidence of natural laws by looking for patterns in data. This may sound simple, but in practice it is slightly more complicated. Sometimes data displays patterns that do not exist in real life.
 
 ## Sampling
 
-Let's do a simple thought experiment. Imagine that you repeatedly observe two variables that are not related to each other, $$A$$ and $$B$$. After several hundred observations, your data would look like this, an unstructured cloud with no patterns.
+Natural laws are not the only things that can cause patterns to appear in your data. Patterns can also be caused by coincidences that occur when you collect your data.
 
-[graph]
+Most data sets are much smaller than they could be. For example, if you wanted to research a question like, "How is an adult's height related to their age?", you could assemble a data set that contains measurements of every single adult on the planet. But that wouldn't be necessary. A pattern between height and age would become clear well before you finish measuring every adult on the planet (and if it doesn't, a pattern between your data collection efforts and your quality of life certainly will).
 
-(Want the example to be more concrete? Pretend that each data point is an adult person. $$A$$ is their height in inches and $$B$$ is their birthday.)
+Data scientists refer to the universe of possible observations that could be collected as a _population_, and the set of observations that are actually collected as a _sample_. The process of collecting a sample of data is known as _sampling_, and it has important consequences for data science. Sampling opens the door for illusions to creep into a data set. 
 
-Now imagine that you had conducted your study differently. Instead of making several hundred observations, you had only made ten. What would your data look like?
+Consider the two data sets visualized below. The graph on the left shows the relationship between the age and height of 1000 adults. These two variables are not closely related in adults. As a result, the points appear as an unstructured cloud, with no patterns.
 
-We can randomly select ten of the data points above to see. More than likely, the ten points would display a less dense, but still unstructured cloud. For example, here are ten points randomly selected from the original data set.
+The graph on the right displays the relationship between height and weight for the same adults. An adult's height is related to their weight, and the data points display a pattern as a result. The pattern is noisy because other variables (such as diet and exercise) also play a role in a person's weight, and their effect appears here as noise in the pattern.
 
-[graph]
+[graphs]
 
-However, by coincidence you might collect ten observations that do display a pattern. For example, any of the collections below would suggest that a natural law exists between $$A$$ and $$B$$. Would you be able to tell that these patterns are due to coincidence, that you happened to collect an unusual set of observations?
+Let's do a simple thought experiment. Imagine that these 1000 adults are the only adults on the planet. In other words, imagine that these data sets display the entire population of adults. Now suppose that you only observed 50 of these adults. What would your data look like?
 
-[graph]
+We can randomly select 50 of the data points above to see. More than likely, the 50 points would display a less dense, but still unstructured cloud on the left and a less dense, but still noticeable pattern on the right. For example, here are 50 points randomly selected from the original data sets.
 
-The collections above are quite extreme, so it might seem unlikely that you would chance upon a set of points that shows such a strong pattern, but consider the sets below. It is much easier to collect by coincidence a set of points that displays a weak pattern. These patterns look like natural laws that have been filtered through the noise of measurement errors or missing variables, which is how many natural laws will appear in practice. Would you be able to tell that these patterns are the result of chance?
+[graphs]
 
-[graph]
+However, by coincidence you might collect 50 observations that display an illusion. For example, any of the collections below would suggest that a natural law exists between $$height$$ and $$age$$. 
 
-The thought experiment reveals something important. Natural laws are not the only things that can create patterns in data. A pattern can also be the result of coincidence. As a result, data sets often display patterns that do not exist in real life, which creates a challenge for data scientists. 
+[graphs]
 
-As a data science, your main source of evidence for natural laws will be patterns (or descriptions of patterns) that you find in data. How can you be certain that your evidence is trustworthy?
+And any of the collections below would suggest that a natural law does not exist between $$height$$ and $$weight$$—or worse, the last pattern suggests that an inverse relationship exists between height and weight. 
+
+[graphs]
+
+These patterns are illusions. They are not caused by natural laws, they are caused by a coincidence; we happened to collect an unusual set of observations. 
+
+Notice how diabolical this situation can be. The individual measurements in each of these samples are correct, and yet the patterns displayed by the measurements do not exist in real life.
+
+Due to sampling effects, data sets often display patterns that do not exist in real life, which creates a challenge for data scientists. As a data science, your main source of evidence for natural laws will be patterns (or descriptions of patterns) that you find in data. Will you be able to tell that your pattern is caused by a natural law and not sampling effects?
 
 ## Uncertainty
 
@@ -134,7 +142,7 @@ In theory, there is no way to use a data set to determine whether the patterns c
 
 In practice, there _is_ a way forward. You can calculate the probability that a pattern is the result of random chance. If you assume (or ensure) that the data has been collected in a random, unbiased way, then random chance will be the only mechanism that could cause an illusory pattern to appear in the data. 
 
-Data scientists use probability to guard against _false discovery_, i.e.finding patterns that do not exist in real life. This system reduces patterns in data from _proofs_ of natural laws to _evidence_ of natural laws. Each pattern that you find is evidence of a natural law. If the pattern is likely to be caused by random chance, then the evidence is weak. If the pattern is not likely to be caused by random chance, then the evidence is strong. 
+Data scientists use probability to guard against false patterns. This system reduces patterns in data from _proofs_ of natural laws to _evidence_ of natural laws. Each pattern that you find is evidence of a natural law. If the pattern is likely to be caused by random chance, then the evidence is weak. If the pattern is not likely to be caused by random chance, then the evidence is strong. 
 
 A probability calculation will tell you exactly how weak or how strong your evidence is. As a data scientist, you will need to decide for yourself how strong the evidence must be before you are willing to believe it.
 
@@ -171,66 +179,52 @@ Data science complements other methods of scientific inquiry. To see the strengt
 
 3. *Conduct an experiment* to test the prediction.
 
-4. *Reject the hypothesis if the prediction is incorrect.* 
+4. *Reject the hypothesis* if the prediction is incorrect. 
 
 ### Discovery and confirmation
 
-You may have noticed that the outline above focuses on _confirmation_. An experimental scientist begins with a hypothesis and then disproves it (or confirms it) with observations. The experimental method is very good at confirmation. Experimental scientists quickly winnow out false hypotheses from very plausible hypotheses.
+Data science provides a system of discovery for scientists to use. 
 
-On the other hand, the experimental method does not explain how scientists should find a hypothesis to test. This leads to a philosophical problem known as the _Problem of Discovery_: how should researchers think up new and better hypotheses to test?
+You may notice that the experimental method begins with a hypothesis and then uses observations to test the hypothesis. This approach makes the experimental method very good for _confirming_ hypotheses. Experimental scientists can quickly winnow false hypotheses from very plausible hypotheses.
 
-Data science solves the Problem of Discovery by providing an easy way to generate hypotheses. A researcher can begin with observations and search them for patterns that would suggest natural laws. 
+However, the experimental method does not answer a very important question: how should scientists think up useful hypotheses to test? Data science provides the answer. A scientist can begin with observations and then search them for patterns that suggest hypotheses about natural laws.
 
-### Causation vs. association
+### Causation, correlations, and prediction
 
-Experiments are designed to prove cause and effect relationships. In a typical experiment, a scientist will manipulate an _explanatory variable_ and observe a _response variable_ to see if and how it changes in response. While this occurs, the scientist will hold other variables (like temperature, humidty, etc.) constant to ensure that the observed effect can only have been caused by the response variable. This requires an amazing level of control, which can usually only be had in a laboratory setting. But it also provides very good proof that the explanatory variable actually caused the changes in the response variable.
+Data science makes it easy to spot correlations, which you can then use to make better predictions. An example from finance will demonstrate how useful this can be. 
 
-Data science does not involve this level of control. As a result, data scientists can show that the values of two variables are associated, but data scientists cannot prove that one variable causes the other. If you've ever heard the phrase, "correlation does not imply causation," it applies here.
+Often the price of different stocks are correlated. For example, the price of JetBlue stock may be correlated to the price of Chevron stock. Chevron is an oil company whose profitability goes up when oil prices rise. JetBlue is an airline whose profitability goes down when oil prices rise. As a result you could make money by predicting that JetBlue shares will fall when you see Chevron shares rise (and vice versa).
 
-Since data science does not rely on a controlled environemnt, data scientists can discover non-causal associations that exist between variables in the real world. These associations provide useful information that you can use to make predictions about the real world. For example, x is associated with y even though x does not cause y. You would have a difficult time finding this relationship by manipulating x and watching y (or vice versa), but it is useful to know.
+I am just guessing about this relationship (so please don't invest money on it!), but if such a correlation exists, you could find it as a pattern in data. However, you probably would not be able to find the correlation by running an experiment. 
+
+Experiments are designed to show causation, which makes them ineffective for revealing non-causal associations. An experimenter manipulates an _explanatory variable_ to observe the effect the manipulation causes in a _response variable_. If you artificially lower the price of Chevron stock would it cause the price of JetBlue stock to rise? No. The two prices may be correlated in the wild, but one price does not cause the other.
+
+In contrast, Data Science is not very good at proving causation. A pattern between variables shows that the variables are correlated, but it does not show that the variables are correlated for causal reasons. Experiments will always be the best tool for showing causation.
 
 ### Flexibility and control
 
-(begin with an example to illustrate the competing strategies. Then explain the implications)
+The method of data science is flexible enough to use in most research situations.
 
-Experimental scientists often go to extremes to conduct experiments in a highly controlled environment. For example, an experimental scientist might artficially lower the temperature of a labratory to near absolute zero, the temperature at which molecular movement stops. Or he might travel into orbit, to conduct an experiment where the effect of gravity is weaker. 
+Consider for a moment why experiments prove causation. An experimenter does more than manipulate an explanatory variable to see the effect on a response variable. An experimenter also holds constant any other variable that could influence the response during the experiment. For example, an experimenter will ensure that the temperature, humidity, local magnetic fields, etc. do not fluctuate during an experiment.
 
-This level of control is on purpose. Experimental scientists control the conditions of an experiment to eliminate the possibility that an alternative hypothesis affects the results.
+As a result, the experimenter can rule out the posibility that something other than the explanatory variable caused the effect in the response variable. This method is almost foolproof, but it requires a tremendous amount of control over the process being studied. 
 
+Would you be able to control every aspect of the national economy to run an experiment on stimulus spending and unemployment? Would you willing to control how much alcohol a pregnant mother consumes to run an experiment on alcohol exposure and infant birth rate?
 
-Experiments are designed to test a hypothesis in a highly controlled environment. 
+Data science requires much less control than experimental science. As a result, it is possible to analyze data related to questions that cannot be analyzed with experiments. it is true that this lack of control comes with a trade-off; the evidence produced by data science is not as iron clad as the evidence produced by experiments. However, data science can provide a way forward where other options do not exist.
 
-Experiment are designed to eliminate any alternative hypotheses.
+## Summary
 
-### Association and causation
+The method of data science is very simple and very effective. Data scientists search for evidence of natural laws in the structure of data. If a natural law exists between the variables in a data set, it will appear as a pattern in the data.
 
-Data science is logistically easier. It is easier to build an experiment that manipulates physical objects, than one that manipulates national economies, or human lives. In fact, much of what we know about astronomy comes from analyzing data -- not experiments.
+This method is very useful for discovering laws and for collecting information that can lead to better predictions. Moreover, you can apply data science to any situation in which you can collect data.
 
+But data can be very deceptive. Coincidences—or biases—that occur when you collect your data can introduce patterns into your data that do not occur in real life. We are starting to learn just how unprepared previous data scientists have been to deal with this.
 
-Data science cannot prove that a relationship is causal, it can only show that the value of two or more variables are correlated. You've probably heard the phrase "correlation does not necessitate causation." This applies here. Many reasons can exist for correlation between two variables. (By the way, if you've heard "correlation does not _imply_ causation," you've heard wrong. Correlation _should_ make you more suspicious that a causal relationship may exist between your variables.)
-
-Experimental science is better suited for discovering and proving causation. An experiment allows you to manipulate one variable and to observe the effects that the manipulation causes. However, experimental science is less useful for observing non-causal associations between variables.
-
-Non-causal relationships provide useful information and data science provides a way to spot such relationships.
-
-So much data!
-
-Other benefits as we will see. Data science makes it more simple to reason about a complex universe.
-
-
-## Recap
-
-Data scientists search for evidence of natural laws in the structure of data. If a natural law exists between a collection of variables, it will appear as a pattern in the data. 
-
-However, there is no way to show beyond a doubt that a pattern is true. There will always be a chance that the results of data science are due to random coincidence—even if this chance is a small one. As a result, data science requires a different way of thinking than other methods of math and science. Data scientists must be curious enough to explore data thoroughly which will reveal patterns, but skeptical enough to allow for the possibility of coincidence.
-
-
-John Tukey, one of the first data scientists, often compared data science to detective work. I like this metaphor because detective work is risky business, and so is data science. You may be surprised at how risky data science can be.
-
-We are starting to learn that most published data science findings may be wrong. In 2012, Amgen determined that _only_ 6 of  53 "landmark" medical studies had results that could be reproduced. From a scientific point of view, this means that these studies should be considered unreliable, if not wrong. In 2011, the Bayer company found it could only reproduce 25% of published findings in cardiovascular disease, cancer, and women's health studies. Bayer shelved development of  two thirds of its new drug projects as a result. 
-
-Data science goes wrong in other fields too. The 2008 Financial Crisis was enabled by a misapplication of the Gaussian copula, a data science technique. In another case, NASA analyzed global ozone data for seven years without noticing the hole in the ozone layer. The most famous data analysis failure probably happened in 1983. Engineers at Morton Thiokol, the builder of space shuttle booster rockets, predicted that the _Challenger_ would explode on launch. They had a chance to prevent the launch, but changed their minds after misreading data that proved them right.
+In 2012, Amgen determined that _only_ 6 of  53 "landmark" medical studies had results that could be reproduced. From a scientific point of view, this means that these studies should be considered unreliable, if not wrong. In 2011, the Bayer company found it could only reproduce 25% of published findings in cardiovascular disease, cancer, and women's health studies. Bayer shelved development of  two thirds of its new drug projects as a result. 
 
 Even famous statisticians can get data wrong. Sir Ronald Fisher invented much of modern statistics, but he spent the end of his career using data to show that cigarettes do not cause cancer. 
 
-This doesn't mean you should avoid data. Looking at data will always create better understanding than ignoring it, but remember that data is not a cure-all. Good science also requires good reasoning and a knowledge of what you are up against. In other words, if you think of yourself as a detective, you should think of data as the mysterious blonde who walks into your office: sexy on the surface, murky and treacherous beneath. 
+This doesn't mean you should avoid data. Looking at data will always create better understanding than ignoring it, but remember that data is not a cure-all. Good science also requires good reasoning and a knowledge of what you are up against. 
+
+John Tukey, one of the first data scientists, often compared data science to detective work. I like this metaphor because detective work is risky business, and so is data science. But I would extend the metaphor further: if you think of yourself as a detective, you should think of data as the mysterious blonde who walks into your office: sexy on the surface, murky and treacherous beneath. 
