@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Foundations of Data Science
+title: Foundations of Data Science - draft
 weight: 3
 ---
 
-O'Reilly publishes nine books on data science and one of them is named "What is Data Science?" When you open any of these books you should ask yourself, what am I getting into? As a term, data science has come to mean several things. 
+O'Reilly publishes nine books on data science and one of them is named "What is Data Science?" When you open any of these books you should ask yourself what you are getting into. As a term, data science has come to mean several things. 
 
 At one level, data science is a _body of knowledge_, a collection of useful information related to a specific task. For example, library science and managerial science are bodies of knowledge. Library science collects the best ways to run a library, and managerial science collects the best ways to run a business. Data science collects the best ways to store, retrieve, and manage data. As a result, a data scientist might know how to set up a hadoop cluster or run the latest type of non-relational database. This is probably what most people think of when they think of "data science," but this is not the type of data science that I will teach you.
 
@@ -12,29 +12,31 @@ At another level, data science is a way of doing science. Data scientists use da
 
 This book will teach you the method of data science. You will learn how to use data to make scientific discoveries, and to justify those discoveries once they are made. Along the way, you will learn how to visualize data, build models, and make predictions.
 
-This chapter will describe the problems that data scientists attempt to solve, as well as the method that they use to solve them. It introduces data science as a specific method of reasoning that matches the structure of data to the structure of natural laws. This method of reasoning guides the techniques that you will learn in later chapters—techniques like machine learning, statistical modelling, and visualization.
+In this chapter, you will learn the strategy behind data science: data scientists search for evidence of natural laws in the structure of data. They then judge the strength of the evidence that they find. This strategy guides the techniques that you will learn in later chapters—techniques like data wrangling, exploratory data analysis (EDA), bootstrap sampling, and cross-validation.
 
-## The data science worldview
+## The scientific worldview
 
-As a method of science, data science is based on two simple ideas. First, that the best way to learn about the word is to observe it. And second, that the universe operates according to _natural laws_. 
+As a method of science, data science is based on two simple ideas. First, that the best way to learn about the word is to observe it. And second, that the universe operates according to natural laws. These ideas summarize the worldview shared by all scientists, and they provide a bit of vocabulary that will help us talk about data science.
 
-A natural law is a law-like relationship between variables, like $$E = Mc^{2}$$ and $$F = MA$$. Natural laws explain how the values of variables relate to each other, which can help scientists understand, control, and make predictions about natural processes.
+A _natural law_ is a rule that describes a part of the natural world, like $$E = Mc^{2}$$ or $$F = MA$$. Natural laws help scientists understand, control, and make predictions about natural processes. 
 
-For example, $$E = Mc^2$$ states that the energy content of a system ($$E$$) is always equal to the mass of the system ($$M$$) multiplied by the speed of light squared ($$c^{2}$$). $$F = MA$$ explains that the force exerted upon an object ($$F$$) is equal to the mass of the object ($$M$$) multiplied by its acceleration ($$A$$), an insight that has many applications in the field of physics. 
+You can write down a natural law as a relationship between variables. For example, $$E = Mc^2$$ is a natural law that states that the energy content of a system ($$E$$) is always equal to the mass of the system ($$M$$) multiplied by the speed of light squared ($$c^{2}$$). $$F = MA$$ is a natural law that explains that a force ($$F$$) exerted upon an object will cause the object to accelerate ($$A$$) at a rate proportional to the mass of the object ($$M$$), an insight that has many applications in the field of physics. 
 
-Natural laws deal with variables, values, and observations. We use these terms in everyday speech, but they have a technical meaning when associated with data science.
+Natural laws deal with variables, values, and observations. We use these terms in everyday speech, but they have a technical meaning when associated with science.
 
 * A _variable_ is a quantity, quality, or property that can be measured. 
 
 * A _value_ is the apparent state of a variable when you measure it. The value of a variable may change from measurement to measurement.
 
-* An _observation_ is a set of measurements that are made on multiple variables under similar (ideally identical) conditions. 
+* An _observation_ is a set of values that are measured on multiple variables under similar (ideally identical) conditions. 
 
     You can think of an observation as a snapshot of the world. An observation shows what a group of variables looked like together for a brief moment before they changed. 
 
-Natural laws deal with variables, but they operate on values that appear in the same observation. For example, the law $$F = MA$$ states that when you measure a particle's force, mass, and acceleration _at the same time_, you will observe a trio of values such that
+Natural laws deal with variables, but they operate on values that appear in the same observation. For example, the law $$F = MA$$ states that when you measure the force, mass, and acceleration associated with _the same_ particle _at the same time_, you will observe a trio of values such that
 
 $$f_{1} = m_{1} * a_{1}$$  
+
+or
 
 $$f_{2} = m_{2} * a_{2}$$  
 
@@ -42,101 +44,23 @@ $$f_{3} = m_{3} * a_{3}$$
 
 and so on.
 
-In the notation above, the lowercase letters denote specific values of the variables $$F$$, $$M$$, and $$A$$. Throughout the book, I will refer to variable names with a capital letter and individual values with a lower case letter. The subscripts denote when we measure each variable. $$f_{1}$$ is the value of $$F$$ that we measure on occasion one, and $$f_{2}$$ is the value of $$F$$ that we measure on occasion two. If two variables are measured on the same occasion, it implies that they are measured under identical conditions; or in other words, that they are measured as part of the same observation. 
+In the notation above, the lowercase letters denote specific values of the variables $$F$$, $$M$$, and $$A$$. Throughout the book, I will refer to variable names with a capital letter and individual values with a lower case letter. 
 
-A natural law implies that a relationship will exist between values _in the same observation_. However, natural laws do not imply that a relationship will exist between values in _different_ observations. You wouldn't think that if you measure the force of a particle today, it will equal the mass times the acceleration that you measured tomorrow. All three quantities may change between now and then. In other words, $$f_{1}$$ will be related to $$m_{1}$$ and $$a_{1}$$, but it may not be related to $$m_{3}$$ and $$a_{3}$$. 
+The subscripts denote which observation each of the values belongs to. If a set of values belongs to the same observation, it implies that the values were measured under similar conditions.
 
-Natural laws provide a goal for science. Scientists attempt to discover natural laws and thereby explain natural phenomena. You can think of science as a collection of methods that use observations to discover natural laws. Data science is one of those methods. It uses a specific tool to reveal natural laws, and that tool is data.
+To see how this works, consider what the three observations above may represent. The observations may have been taken at three different times. For example, $$f_{1}$$, $$m_{1}$$, and $$a_{1}$$ may have been measured at time one, $$f_{2}$$, $$m_{2}$$, and $$a_{2}$$ measured at time two, and so on.  Alternatively, the observations may describe three different particles. For example, $$f_{1}$$, $$m_{1}$$, and $$a_{1}$$ may have been measured on one particle, $$f_{2}$$, $$m_{2}$$, and $$a_{2}$$ may may have been measured on a second particle, and $$f_{3}$$, $$m_{3}$$, and $$a_{3}$$ may have been measured on a third particle. 
+
+Observations play a very important role in science. A natural law implies that a relationship will exist between values of variables that appear _in the same observation_. However, a natural law does not imply that a relationship will exist between values in _different_ observations. You wouldn't think that the force you exert on one object would equal the mass times the acceleration that you measure on a different object. Or, in the notation above, you wouldn't think that $$f_{1}$$ should equal $$m_{2}$$ times $$a_{2}$$. You would expect $$f_{1}$$ to equal $$m_{1}$$ times $$a_{1}$$. 
+
+Natural laws provide a goal for science. Scientists attempt to discover natural laws and thereby explain natural phenomena. You can think of science as a collection of methods that use observations to discover natural laws. 
+
+Data science is one of those methods. It uses a specific tool to reveal natural laws, and that tool is data.
 
 ## Data
 
-A data set is a collection of values that have been organized in a specific way: each value in a data set is associated with a variable and an observation. This organization gives data a structure that parallels the structure of natural laws. 
+A _data set_ is a collection of values that have been organized in a specific way: each value in a data set is associated with a variable and an observation. 
 
-For example, the values $$f_{1}$$, $$f_{2}$$, $$f_{3}$$, $$m_{1}$$, $$m_{2}$$, $$m_{3}$$, $$a_{1}$$, $$a_{2}$$, and $$a_{3}$$ compose a data set.
-
-obs | $$F$$     | $$M$$     | $$A$$    
---- | --------- | --------- | ---------
-1   | $$f_{1}$$ | $$m_{1}$$ | $$a_{1}$$
-2   | $$f_{2}$$ | $$m_{2}$$ | $$a_{2}$$
-3   | $$f_{3}$$ | $$m_{3}$$ | $$a_{3}$$
-
-Each value is associated with a variable, as well as an observation. Within each observation, the relationship described by the law $$F = MA$$ is present. As a result, the data set reveals what the natural law implies:
-
-obs | $$F$$     | $$M$$     | $$A$$    
---- | --------- | --------- | ---------
-1   | $$f_{1}$$ | $$= m_{1}$$ | $$\times a_{1}$$
-2   | $$f_{2}$$ | $$= m_{2}$$ | $$\times a_{2}$$
-3   | $$f_{3}$$ | $$= m_{3}$$ | $$\times a_{3}$$
-
-Data sets provide insights about natural laws in two ways. First, they display variation, which reveals how variables within natural laws behave. And second, they display covariation, which reveals how natural laws connect variables.
-
-Before we look at how data scientists use data to solve scientific problems, let's look at how experimental science provides the best way to understand data science because most people are familiar with the basics of experimental scientce.
-
-# Experimental scientists
-
-Like data scientists, experimental scientists wish to discover the relationships between variables. To do this, they design an experiment and observe its outcome.
-
-Experiments seem so obviously useful that we tend to forget what they accomplish. An experiment let's a scientist control variation.
-
-_Variation_ is the natural tendency for a value to change from measurement to measurement. Quantities like the temperature of the air and the salinity of the sea change from moment to moment and from place to place. Properties of objects, like height, weight, or volume, change from object to object. If you look closely at the same quantity twice, you will notice these changes, even if the changes are small.
-
-Variation makes it difficult to discover relationships. Suppose you wish to determine whether the local factory causes ozone pollution in your town. You measure the amount of ozone in the air on Day 1, when the factory is open for business and running full steam. Then you measure the ozone on Day 2, when the factory is closed for business.
-
-You discover that the ozone is much lower on Day 2 than Day 1. Case closed, right? Or is it?
-
-Due to natural variation, _many_ things changed from Day 1 to Day 2. These changes may have caused the drop in ozone (and the factory may be innocent). What might have changed? Atmospheric conditions, like temperature, humidty, and wind speed, which affectthe creation and accumulation of ozone; traffic conditions, like the number of cars on the road, whihc provide a competing source of ozone; or unknown conditions, like the arrival of a hairspray convention, which could alter ozone levels without ever drawing our attention.
-
-When a scientist runs an experiment, he or she creates a controlled environment that eliminates every source of variation accept for one, the source being studied. in other words, an experimental scientist holds competing sources of variation constant, which allows them to directly observe the effect of the variable under study.
-
-This technique is very useful because it creates results that we can be certain about. However, it requires a level of control over natural phenomenon that may not always be possible. It also requires a cause and effect relationship to exist between the experimental input and output. It may be useful to know that levels of ozone are high when the factory is open even if the factory is just a proxy variable associated with the true cause.
-
-You cna think of experimental science as observation under controlled conditions. Think of data science as observation under controlled conditions. To understand data science, consider how a lack of control influences basic scientific tasks.
-
-(_note: maybe introduce the effect of unexplained variation first. Then talk about experiments_)
-
-# Estimation
-
-## Variation and variables
-
-Variation creates uncertainty for scientists because it implies that you cannot know which value you will observe when you measure a variable—even if you have measured the variable before. However, variation also contains information. Each variable has a unique pattern of variation that contains clues about how the variable will behave.
-
-Data sets provide a record of variation that you can use to study a variable. If you look at the recorded values of a variable, you will notice that some values occur quite often, some quite rarely, and others not at all. This pattern of values is known as the _distribution_ of the variable. To see how a distribution can help you reason about a variable, consider the speed of light.
-
-Scientists believe that the speed of light is a universal constant that should never vary. In fact, Einsteinian relativity shows that the universe will distort space and time to preserve the speed of light. This is probably the most drastic effort to preserve the value of a constant that I can think of. However, if you were to measure the speed of light repeatedly, you would get different values each time—just as Albert Michelson did in 1879, (see the table below). Why should this be?
-
-
-|------------|------------|------------|------------|------------|------------|------------|------------|------------|------------
-| 299,850|    299,740|    299,900|    300,070|    299,930 |    299,800| 299,850|    299,880|    299,900|    299,840
-|299,850| 299,950| 299,980| 299,980| 299,880 |299,830| 299,790| 299,810| 299,880| 299,880
-|300,000| 299,980| 299,930| 299,650| 299,760 |299,830| 299,800| 299,790| 299,760| 299,800
-|299,810| 300,000| 300,000| 299,960| 299,960 |299,880| 299,880| 299,880| 299,860| 299,720
-|299,960| 299,940| 299,960| 299,940| 299,880 |299,720| 299,620| 299,860| 299,970| 299,950
-
-_50 measurements of the speed of light (in air) (km/s) observed by Michelson in 1879._
-
-Tiny measurement errors happen when you take measurements. For example, your hand might shake very slightly, or a lens might expand as temperatures change. As a result, even constants will seem to vary from observation to observation, so long as you measure them precisely enough. 
-
-However, you can still reason about the true value of a constant by studying the distribution of values associated with the constant. For example, we can plot the values above on a number line. If two values appear at the same spot on the number line, I'll stack the second value above the first. This will let me place each value at the correct spot on the number line without hiding any of the measurements. 
-
-<img src="/images/light.png">
-
-Each of these measurements attempts to record the same constant value, the speed of light; but each measurement is offset by tiny measurement errors. In some measurements, Albert's hand shook. In some, the lens swelled. In some, both happened at once, and so on.
-
-It seems likely that large errors will be less common than small ones—the experimenter is trying to avoid errors after all. For a large error to occur, a point would either need to experience a large measurement error (which is unlikely) or several small measurement errorswhich together have a large effect (which is also unlikely). As a result, you would expect many points to be near the true value and fewer points to be far away from it. In fact, you would expect the number of points to drop off as you move further and further away from the true value.
-
-The distribution seems to support this. The points seem to cluster around a single value, something like 299,850 km/s. Many points fall within 50 units of 299,850 km/s. Some points fall more than 50 units from 299,850 km/s. And, very few points fall more than 150 units from 299,850 km/s. The further we go from 299,850 km/s, the less likely we are to find any measurments.
-
-You can use the distribution to estimate the true speed of light. The distribution suggests that the true value of the speed of light is around 299,850 km/s. However, the distribution does not provide fullproof evidence. The variation in the data obscures the value that the points are clustering around. Michelson can guess that the points are clustering around 299,850 km/s, but they could also be clustering around 299,840 or 299,860 km/s. To express this uncertainty, Michelson estimated the speed of light in air to be 299,852±51 km/s. 
-
-The ±51 km/s provides a margin of error. Michelson uses it to suggest that the true speed of light falls somewhere in the interval between 299,801 and 299,903. In other words, any of these values would be reasonable based on the data. 
-
-Estimates and margins of error demonstrate two types of information that you can find in a distribution. You can use a distribution to identify a "typical" value of a variable and to quantify the amount of uncertainty associated with a variable. You can also use a distribution to predict how a variable will behave in the future. Distributions show that some values appear frequently, some values appear rarely, and some values do not appear at all. For example, we can use the distribution above to predict that Michelson would never observe a value above 400,000 km/s—even if he continues to take many more measurements. In Chapter 6, you will see that the information contained in a distribution also form a basis for probability, a toolkit for making exact predictions about the behavior of variables.
-
-Data scientists use distributions to provide insights about variables, but these insights are often vague, a basic ennumeration of possibilities. A second type of variation provides a much more exact tool for prediction and discovery. That type of variation is known as covariation.
-
-## Covariation and observations
-
-_Covariation_ is the tendency for two or more variables to vary in a systematic way. When two variables covary, their values will seem to correspond to each other. For example, you can see covariation in our data set of force, mass and acceleration. I've added to the data set below to make the covariation clearer.
+For example, you can use the values $$f_{1}$$, $$f_{2}$$, $$f_{3}$$, $$m_{1}$$, $$m_{2}$$, $$m_{3}$$, $$a_{1}$$, $$a_{2}$$, and $$a_{3}$$ to compose a data set, like the one below. 
 
 obs | $$F$$     | $$M$$     | $$A$$    
 --- | --------- | --------- | ---------
@@ -144,168 +68,187 @@ obs | $$F$$     | $$M$$     | $$A$$
 2   | $$f_{2}$$ | $$m_{2}$$ | $$a_{2}$$
 3   | $$f_{3}$$ | $$m_{3}$$ | $$a_{3}$$
 
+Each value is associated with a variable as well as an observation. 
 
-If you examine the data, you may notice that the value of $$A$$ is high whenever the value of $$F$$ is high, and the value of $$A$$ is low when the value of $$F$$ is low. In other words, $$F$$ and $$A$$ covary. 
+Now that you know the vocabulary of data science, let's learn the method. 
 
-If you also examine the values of the particle's mass ($$M$$), you will observe an even more striking form of covariation. In each row, the value of $$F$$ exactly equals the value of $$M$$ times the value of $$A$$. This covariation is no surprise. The variables are shaped by the law $$F=MA$$, and the law has left its fingerprints in the data.
+## Data Science
 
-Covariation provides a way to discover natural laws. If a law exists between two variables, their values will covary.
+Data science begins with the structure of data. Recall that data sets contain values that are associated with variables and observations. This organization makes data sets particularly useful for discovering natural laws. If a natural law exists between the variables in a data set, the law will appear as a pattern that reoccurs in each observation. Or to put it more simply, natural laws appear as patterns in data.
 
-If you collect many different observations, the law will appear as a pattern of covariation in your data. You can find patterns of covariation by searching through your raw data, or you can employ two tools that are better suited for the job.
+In our example data set, the relationship described by the law $$F = MA$$ will be present in each observation. As a result, the data set will reveal what the natural law implies:
 
-First, you can visualize your data, which makes low dimensional patterns more apparent. For example, the relationship between $$F$$, $$M$$, and $$A$$ appears as a plane in a three dimensional graph.
+obs | $$F$$     | $$M$$     | $$A$$    
+--- | --------- | --------- | ---------
+1   | $$f_{1}$$ | $$= m_{1}$$ | $$\times \; a_{1}$$
+2   | $$f_{2}$$ | $$= m_{2}$$ | $$\times \; a_{2}$$
+3   | $$f_{3}$$ | $$= m_{3}$$ | $$\times \; a_{3}$$
 
-![](images/fma.png)
+This is easy to verify if you measure the real forces, masses, and accelerations associated with several dozen particles, like in the data set below. Each row of values displays the relationship $$F = MA$$.
 
-Second, you can also search through your data with pattern recognition algorithms, like those of statistical modelling and machine learning. Data scientists describe these techniques in terms of statistics, but the techniques are at heart just computerized methods of spotting patterns in data.
+obs | $$F$$     | $$M$$     | $$A$$    
+--- | --------- | --------- | ---------
+1   | $$3.01$$ | $$0.98$$ | $$3.08$$
+2   | $$2.35$$ | $$0.91$$ | $$2.58$$
+3   | $$5.57$$ | $$1.01$$ | $$5.52$$
+4   | $$0.62$$ | $$1.09$$ | $$0.56$$
+5   | $$4.15$$ | $$0.89$$ | $$4.69$$
+6   | $$5.07$$ | $$1.05$$ | $$4.84$$
+7   | $$7.56$$ | $$0.93$$ | $$8.12$$
+8   | $$4.04$$ | $$1.09$$ | $$3.70$$
+...   | $$...$$ | $$...$$ | $$...$$
 
-This is the basic method of data science: to spot patterns in data that reveal natural laws. It works because the structure of data parallels the structure of natural laws. Data reveals the effects of natural laws.
+This phenomenon is the heart of data science. You can discover a natural law by collecting data and exploring the data for patterns. Patterns can be difficult to notice in raw data, but you can optimize how you search for patterns. 
 
-But data science requires more planning. Just as an experimenter cannot run an unplanned trial and see what happens, a data scientist cannot look at data and draw a unobscured conclusion.
+First, you can visualize raw data to make patterns easier to spot. For example, the pattern between $$F$$, $$M$$, and $$A$$ becomes easy to spot when you visualize the data with a three dimensional, or even a two dimensional, graph.
 
-Let's make this clear with a concrete example. The example is simple, but it will help us tackle more complicated ideas in the next sections. 
+![](/images/fma.png)
 
-### Case study
+Second, you can use a computer algorithm to search for patterns within data, which is exactly what data scientists do when they use statistical modeling or machine learning techniques.
 
-Suppose your friend teaches you a new game that involves dice. On each turn, you roll one die and receive a score based on your roll. However, your friend forgets to explain how your score is determined. Luckily, you've written down the value of your die ($$D$$) and your score ($$S$$) as you've played. In other words, you've collected some data.
+Searching for patterns in data is a fairly robust way to find laws between variables. There are only a couple of things that can prevent you from finding a law when it exists, but neither needs to be a cause for defeat.
 
-obs | $$D$$ | $$S$$ 
---- | --- | --- 
-1   | 1 | 7 
-2   | 4 | 19
-3   | 3 | 15
-4   | 6 | 27
-5   | 2 | 11
-6   | 5 | 23
-7   | 5 | 23
-8   | 5 | 23
-9   | 1 | 7
-10  | 5 | 23 
+First, your values may be contaminated by measurement errors, (in other words, your data may be inaccurate). In this case, the errors will add noise to your data. As long as the errors are relatively small, a law will emerge as a discernable, but noisy pattern.
 
-Unless the game is random, the values of $$D$$ and $$S$$ must be connected by some type of relationship, even if you do not know what the relationship is. The relationship between $$D$$ and $$S$$ is akin to a natural law because the relationship will hold whenever we examine $$D$$ and $$S$$ at the same time. 
+You can see measurement errors at work in the graph below. The graph on the left displays values such that $$Y = X$$, but the measurements were made in a sloppy fashion that resulted in inaccurate values. The graph on the left displays the same data after the measurement errors have been corrected. Notice that you can still perceive the underlying pattern even when it has been contaminated by measurement errors.
 
-Your data gives you clues about the relationship between $$D$$ and $$S$$. When you rearrange the values, you can see strong covariation. For example, the score increases as the die value increases. Also, everytime you roll a 1, the score is 7 and everytime you roll a 5 the score is 23. 
+![](/images/xy.png)
 
-obs | $$D$$ | $$S$$ 
---- | --- | --- 
-1   | 1 | 7 
-9   | 1 | 7
-5   | 2 | 11
-3   | 3 | 15
-2   | 4 | 19
-6   | 5 | 23
-7   | 5 | 23
-8   | 5 | 23
-10   | 5 | 23
-4  | 6 | 27 
+Second, your data may not contain every variable in a law (in other words, your data may be incomplete). In this case, a pattern will still exist between the variables that you have measured. The influence of the missing variables will appear as noise in the pattern. You can see this happen in the two dimensional graph between $$F$$ and $$A$$. The $$M$$ variable adds noise to the pattern between $$F$$ and $$A$$, but the pattern is still discernable.
 
-You can plot the data to make the relationship even more clear. This reveals that the relationship is linear.
+![](/images/fa.png)
 
-<img src="/images/dice-plot.png"><img src="/images/dice-fit.png">
+As long as you capture the most influential variables in a law, and do not let measurement errors get so big that they swamp your data, you are likely to find a pattern in your data that will point to the law.
 
-Since the relationship is linear, you can model it with linear regression, which returns an exact formula for the relationship, $$S = 3 + 4D$$. You now know all you need to play the game. This formula acts as a law between $$S$$ and $$D$$; the score will always equal three plus four times the amount of the die, unless someone is cheating. 
+You now know the basis of data science. Data scientists search for evidence of natural laws by looking for patterns in data. This may sound simple, but in practice it is slightly more complicated. You will face two challenges when you search for evidence of natural laws.
 
-### Distribution
+First, patterns can be difficult to discover. Some patterns are subtle (or complicated), and others come filtered through the noise of measurement errors and missing variables. As a data scientist, you can use the techniques of exploratory data analysis (EDA) to discover hard to spot patterns. You can transform or visualize your data to make patterns more apparent, or you can use statistical modeling to help spot a pattern admidst noise.
 
-What if you forgot to collect data about $$D$$? Then your data set would look like this. Could you still use your data to discover insights about $$S$$?
+The second challenge is a little more difficult. Sometimes data sets display patterns that do not exist in real life. These patterns are illusions and lead to false results. How can you tell whether the patterns that you do find are real and not an illusion? Before we answer that question, let's examine why a data set might contain patterns that do not exist in real life.
 
-obs | $$S$$ 
---- | --- 
-1   | 7 
-9   | 7
-5   | 11
-3   | 15
-2   | 19
-6   | 23
-7   | 23
-8   | 23
-10   | 23
-4  | 27 
+## Sampling
 
-You do not have enough data to look for covarition that might reveal a natural law. However, you can look for clues about the laws that control $$S$$ by looking at the distribution of values of $$S$$.
+Most data sets are much smaller than they could be. For example, if you wanted to research a question like, "How is an adult's height related to their age?," you could collect a very big data set: the measurements of every single adult on the planet. But that wouldn't be necessary. A pattern between height and age would become clear well before you finish measuring every adult on the planet (and if it doesn't, a pattern between your data collection efforts and your quality of life certainly would).
 
+Data scientists refer to the universe of possible observations that could be collected as a _population_, and the set of observations that are actually collected as a _sample_. The process of collecting a sample of data is known as _sampling_, and it has important consequences for data science. Sampling opens the door for illusions to creep into a data set. 
 
+Consider the two data sets visualized below. 
 
-So the basic idea of data science is simple: to search for patterns of covariation in data that reveal natural laws. However, the practice of data science is more complicated than that. With enough data, the laws of the universe become clear; but data scientists rarely get to work with enough data. As a general rule, you will work with data sets that cover too few variables and too few observations to easily reveal natural laws.
+![](/images/heights-all.png)
 
-Under these conditions, data creates several illusions that are well known to scientists and statisticians. To make the most of real world data, you will need to spot these illusions and work around them. 
+The graph on the left shows the relationship between the $$age$$ and $$height$$ of 1000 adults. In adults, these two variables are not closely related. As a result, the points appear as an unstructured cloud, with no patterns.
 
-The first illusion is caused by studying too few variables. You can handle it with a technique known as _modelling_.
+The graph on the right displays the relationship between $$height$$ and $$weight$$ for the same adults. An adult's height is related to their weight, and the data points display a pattern as a result. The pattern is noisy because other variables (such as diet and exercise) also play a role in a person's weight, and their effect appears here as noise in the pattern.
 
-# Modelling
+Let's do a simple thought experiment. Imagine that these 1000 adults are the only adults on the planet. In other words, imagine that these data sets display the entire population of adults. Now suppose that you only observed 50 of these adults. What would your data look like?
 
-Unfortunately, in practice, you will never get to work with enough data. As a rule, you must make inferences from too few variables or too few observations, which introduces the chance for error and illusion.
+We can randomly select 50 of the data points above to see. More than likely, the 50 points would display a less dense, but still unstructured cloud on the left and a less dense, but still noticeable pattern on the right. For example, here are 50 points randomly selected from the original data sets.
 
-It is especially common to work with too few variables when studying a natural law. Natural laws explain natural behavior in terms of variables, but you cannot know which variables are in a law until _after_ you discover the law. This makes it difficult to collect relevant data.
+![](/images/heights-random.png)
 
-Second, it takes time and money to collect data. Sometimes you do not even get to collect data, you inherit it. In both cases, you are unlikely to measure every variable that you want to.
+However, by coincidence you might collect 50 observations that display an illusion. For example, any of the collections below would suggest that a natural law exists between $$height$$ and $$age$$. 
 
-Third, many physical systems are quite complicated and involve many variables. Consider flipping a coin.
+![](/images/heights-age.png)
 
-As a result, we ususally look for natural laws in data that can only hope to reveal part of the law, a relationship between several variables that occur in a law alongside other variables. What effect will this have on your research?
+And any of the collections below would suggest that a natural law does not exist between $$height$$ and $$weight$$—or worse, the last pattern suggests that an inverse relationship exists between $$height$$ and $$weight$$. 
 
-To find out, consider our dice game from before. Suppose that we modify the game so that on each turn two dice are rolled. You roll one and your friend rolls one. In this version of the game, the final score is equal to three plus four times your dice ($$D_{1}$$) plus five times your friend's dice ($$D_{2}$$), i.e. $$S = 3 + 4D_{1} + 5D_{2}$$.
+![](/images/heights-weight.png)
 
-$$S$$ is no longer solely determined by $$D_{1}$$, but it is related to $$D_{1}$$. As $$D_{1}$$ gets bigger, $$S$$ should get bigger, all else being equal. This insight could be useful. Perhaps it could form the basis of a game of Liar's dice. 
+These patterns are illusions. They are not caused by natural laws, they are caused by omission and coincidence. We did not collect all of the possible observations (which would've shown the true pattern). The observations that we did collect happened to make an unusual set. 
 
-If you collect data on each of $$S$$, $$D_{1}$$, and $$D_{2}$$, this relationship will appear as a pattern between the three variables in the data set, although you may not recognize the pattern with the naked eye.
+Notice how diabolical this situation can be. The individual measurements in each of these samples are correct, and yet the patterns displayed by the measurements do not exist in real life.
 
-You can visualize the data with a three dimensional graph. The pattern will appear as a plane, the three dimensional equivalent of a linear relationship.
+Due to sampling effects, data sets often display patterns that do not exist in real life, which creates a challenge for data scientists. As a data science, your main source of evidence for natural laws will be patterns (or descriptions of patterns) that you find in data. Will you be able to tell when your patterns are caused by natural laws and when they are caused by sampling effects?
 
-Consider what happens however, if you only collect data on $$D_{1}$$. However, you are unlikely to notice, let alone accurately describe the partial relationship between $$S$$ and $$D_{1}$$ because the effect of $$D_{1}$$ on $$S$$ is swamped by the effect of $$D_{2}$$ on $$S$$, which you have no way of examining. The effect of $$D_{2}$$ acts as noise in the data.
+In theory, there is no way to use a data set to determine whether the patterns contained in the data exist in real life. Or, more precisely, there is no way to determine _with absolute certainty_ whether the patterns exist in real life.
 
-In many scientific analysis, things are similar but better. Suppose we modify the dice game, so your dice has the numbers 101 to 200 on it and your friends dice still has the numbers 1 to 6 on it. Now the effect of $$D_{2}$$ is small compared to the effect of $$D_{1}$$. It still appears as noise in the data, but it doesn't overwhelm the partial relationship between $$S$$ and $$D_{1}$$. We can make pretty accurate guesses about the partial relationship.
+In practice, there _is_ a way forward. You can calculate the probability that a pattern is the result of random chance. 
 
-Data scientists deal with unmeasured variables by modelling the relationships (or partial relationships) that are revealed in the data. A model is an estimate of a relationship that divides the variation in the y variable into variation that can be explained by the x variables and variation that cannot be explained by the x variables, which is known as _unexplained variation_. For example, we can model the dice data as
+## Probability
 
-Data scientists use the greek letter epsilon, $$\epsilon$$, to symbolize the unexplained variation in a model. You can treat this unexplained variation as random noise. So the estimate that your model would give is y plus some random noise. But be aware that there's no reason to think that this noise is random. As you saw in the dice example, the unexplained variation can be caused by unmeasured variables that have a small influence on the outcome.
+_Probability_ is the branch of mathematics that describes random behavior. We will take a look at probability later in the book, but for now let's consider how you can use probability to spot real patterns.
 
-Since the physical universe is very interconnected (for example, each particle technically exerts a gravitational pull on every other particle), there can be _many_ unmeasured variables that have a small influence on the system that you are studying. Consider a coin flip.
+Recall that sampling is the source of illusions when illusions appear in your data. In other words, which observations you decide to collect will determine which patterns you see (if any).
 
-However, studying all of these small influences would not be productive. Experimental scientists try to avoid such labors by collecting data under experimental conditions, which prevent variation in unmeasured variables. Data scientists free themselves with the idea of randomness.
+If you use a random method to select observations, then random chance will be the only mechanism that could cause sampling effects to appear in the data. You could then calculate the probability that a pattern in the data is a result of random chance, and not a natural law.
 
-There's an old joke about physicists.
+This system reduces patterns in data from _proofs_ of natural laws to _evidence_ of natural laws. Each pattern that you find is evidence of a natural law. If the pattern is likely to be caused by random chance, then the evidence is weak. If the pattern is not likely to be caused by random chance, then the evidence is strong. 
 
-Randomness is a simplifying assumption just like the idea of a perfect sphere or a perfect vacuum is. It is difficult to find a perfect sphere or a perfect vacuum in reality, but it is easy to think about and reason with such things. It is difficult to find a perfectly random situation in reality. In fact, its unclear whether we havee _ever_ observed random behavior. The closest contender is quantum behavior, but even that is debated.
+A probability calculation will tell you exactly how weak or how strong your evidence is. As a data scientist, you will need to decide for yourself how strong the evidence must be before you are willing to believe it.
 
-We can lump complicated, but small influences together as "random behavior" and then explain the variation that they cause with probability.
+It is important to realize that probability does not eliminate the uncertainty associated with patterns. There will always be a small possibility that even the most striking patterns are caused by random chance. Probability calculations do not eliminate this possibility; they quantify it, which makes it easier for you to reason about your evidence.
 
+Data scientists use probability calculations to augment the simple system of discovery presented by data. This arrangement creates the method of data science, which can be described with a basic outline.
 
+## The Method of Data Science
 
+Data scientists search for evidence of natural laws in the structure of data. They then judge the strength of the evidence that they find. To do this, they:
 
+1. **Collect data** in a way that minimizes the chance that patterns will appear by coincidence. Often this involves some type of random selection.
 
+2. **Search for patterns** that provide evidence of natural laws. During this search a data scientist will often:
+    + **Wrangle data** - make patterns more apparent by reshaping, subsetting, or transforming the data.
+    + **Visualize data** - display data in a graph, which exposes patterns to the human visual system.
+    + **Model data** - search for patterns with computer algorithms that can be automated, calibrated, and optimized.
 
+3. **Judge patterns** - calculate the probability that a pattern is due to coincidence, and not a natural law. You can view this step as measuring the strength of the evidence provided by an analysis.
 
-If you don't identify all of the variables in your law, your data will have noise.
+Data science requires a different way of thinking than other types of science because the evidence provided by a data set may be unreliable. A data scientist must be curious enough to explore their data thoroughly, exposing any patterns that are there, but a data scientist must also be skeptical enough to question every pattern that they find and to search for alternative explanations.
 
-This noise can even come from variables that affect your measurement, but not your quantity of interest, e.g. measurement error.
+Above all, a data scientist must have a high tolerance for uncertainty. In many ways, data scientists are specialists in uncertainty. They do not work with proofs, like a mathematician, but with evidence that may or may not be reliable.
 
-You can divide variation into a model: the variation that you can explain, and the variation that you cannot.
+Given this ambiguity, you may wonder why anyone would practice data science. There are some very good reasons.
 
-You can describe what is left over with probability and randomness.
+## Why do Data Science?
 
-Randomness does not need to imply random.
+Data science complements other methods of scientific inquiry. To see the strengths of data science, let's compare it to experimental science, a well known way to do science. To summarize loosely, experimental scientists use the following method to learn about natural laws:
 
-# Model selection
+1. *Formulate a hypothesis* about a natural law. 
 
-You would need an infinite number of data points to clearly see the correct model, and noise doesn't help.
+2. *Make a testable prediction* deduced from the hypothesis.
 
-As a result, your data will support multiple models.
+3. *Conduct an experiment* to test the prediction.
 
-Data scientists use inference to the best explanation, they select the "best" model.
+4. *Reject the hypothesis* if the prediction is incorrect. 
 
-Which model is "best" will depend on the situation.
+### Discovery and confirmation
 
-It can be the model that best incorporates previous beliefs or assumptions.
+You may notice that the experimental method begins with a hypothesis and then uses observations to test the hypothesis. This approach makes the experimental method very good for _confirming_ hypotheses. Experimental scientists can quickly winnow false hypotheses from very plausible hypotheses.
 
-Or the model that has the best predictive accuracy, which you may need to estimate.
+However, the experimental method does not answer a very important question: how should scientists think up useful hypotheses to test? Data science provides the answer. A scientist can begin with observations and then search them for patterns that suggest hypotheses about natural laws. In short, data science provides a system of discovery for scientists to use. 
 
-# Inference
+### Causation and prediction
 
-Too few observations can also expose you to sample bias.
+Experiments are designed to show causation, a specific type of relationship between variables. An experimenter manipulates an _explanatory variable_ to observe the effect that the manipulation causes in a _response variable_. This design makes experiments less effective at discovering non-causal relationships.
 
-You'll sometimes want to make inferences about causality.
+Why would you want to discover a non-causal relationship? Whenever a relationship exists between variables, you can use the relationship to make better predictions. You can use the value of one variable to predict the value of another variable that it is related to. This works even if the relationship is a non-causal correlation.
 
-# Summary
+Consider, for example, how Netflix knows which movies you will like. By studying data, Netflix has learned that people who like _The Matrix_ also tend to like _The Terminator_ and vice versa. This relationship is very useful, but it is not causal: your opinion of _The Matrix_ does not cause your opinion of the _The Terminator_.
 
-So to do data science: you need to be able to discover structure in variation, handle the noise created by data, pick the best model from a set of options, check that you are not being fooled by sample bias, and report your results. 
+In contrast to experimental science, data science makes it easy to spot any type of relationship between variables. Data science will expose both non-causal and causal relationships as patterns in the data. Data science will not tell you which relationships are causal and which are not, but if you are only interested in making accurate predictions, you may not mind.
+
+### Flexibility and control
+
+Consider for a moment why experiments prove causation. An experimenter does more than manipulate an explanatory variable to see the effect on a response variable. An experimenter also holds constant any other variable that could influence the response during the experiment. For example, an experimenter will ensure that the temperature, humidity, local magnetic fields, etc. do not fluctuate during an experiment.
+
+As a result, the experimenter can rule out the posibility that something other than the explanatory variable caused the effect in the response variable. This method is almost foolproof, but it requires a tremendous amount of control over the process being studied. 
+
+In many research settings, this amount of control is impossible or unethical. For example, you could not control each of the variables that influences something like the stock market, or a nation's economy. Nor should you control things like how much alcohol a pregnant woman ingests or how much pollution an asthmatic inhales if doing so would cause unnecessary harm to a person.
+
+Data science requires much less control than experimental science, which makes data science adaptable to a broader range of research questions.
+
+## Summary and Parting Advice
+
+The method of data science is very simple and very effective. Data scientists search for evidence of natural laws in the structure of data. If a natural law exists between the variables in a data set, it will appear as a pattern in the data.
+
+This method is very useful for discovering laws and for collecting information that can lead to better predictions. Moreover, you can apply data science to any situation in which you can collect data.
+
+But data can be very deceptive. Coincidences—or biases—that occur when you collect your data can introduce patterns into your data that do not occur in real life. We are starting to learn just how unprepared previous data scientists have been to deal with this.
+
+In 2012, Amgen determined that _only_ 6 of  53 "landmark" medical studies had results that could be reproduced. From a scientific point of view, this means that these studies should be considered unreliable, if not wrong. In 2011, the Bayer company found it could only reproduce 25% of published findings in cardiovascular disease, cancer, and women's health studies. Bayer shelved development of  two thirds of its new drug projects as a result. 
+
+Even famous statisticians can get data wrong. Sir Ronald Fisher invented much of modern statistics, but he spent the end of his career using data to show that cigarettes do not cause cancer. 
+
+This doesn't mean you should avoid data. Looking at data will always create better understanding than ignoring it, but remember that data is not a cure-all. Good science also requires good reasoning and a knowledge of what you are up against. 
+
+John Tukey, one of the first data scientists, often compared data science to detective work. I like this metaphor because detective work is risky business, and so is data science. But I would extend the metaphor further: if you think of yourself as a detective, you should think of data as the mysterious blonde who walks into your office: sexy on the surface, murky and treacherous beneath. 

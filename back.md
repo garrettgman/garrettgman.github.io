@@ -4,19 +4,18 @@ title: Back Cover
 weight: 1
 ---
 
-We all know what _Science_ is: the scholarly way of learning that depends on reasoning and observation. A scientist conducts experiments, makes measurements and thereby learns about the world. But what is _Data Science_?
+What exactly is data science? With this book, you’ll gain a clear understanding of this discipline for discovering natural laws in the structure of data. Along the way, you’ll learn how to use the versatile R programming language for data analysis. 
 
-Data science begins with the second measurement. Whenever you measure the same thing twice—provided you measure it precisely enough—you will get two results. This phenomenon creates uncertainy, and it creates opportunity.
+Whenever you measure the same thing twice, you get two results—as long as you measure precisely enough. This phenomenon creates uncertainty and opportunity. Author Garrett Grolemund, Master Instructor at RStudio, shows you how data science can help you work with the uncertainty and capture the opportunities. 
 
-This book will teach you how to work with that uncertainty and how to capture those opportunities. It will also teach you how to handle the other things that come along with the second measurement (and all the measurements that follow). Things like:
+You’ll learn about: 
 
-* **Data Carpentry** - You now have a history of observations to keep track of. How do you do it?
-* **Data Wrangling** - Your data sets contain more information than they display. How do you access it?
-* **Data Visualization** - Patterns are easy to miss in data, but easy to spot in graphs. How do you draw them?
-* **Exploratory Data Analysis** - Your measurements may contain evidence of relationships. What should you look for?
-* **Modelling** - Data puts a wealth of information at your fingertips. How can you turn it into insights and predictions? 
-* **Inference** - Unlike experiments, data analyses cannot provide full proof results. How do you avoid being fooled?
+* **Data Wrangling**—how to manipulate datasets to reveal new information
+* **Data Visualization**—how to create graphs and other visualizations 
+* **Exploratory Data Analysis**—how to find evidence of relationships in your measurements 
+* **Modelling**—how to derive insights and predictions from your data 
+* **Inference**—how to avoid being fooled by data analyses that cannot provide fool­proof results 
 
-With this book, you will gain a clear understanding of data science. Data science is a method of reasoning that matches the structure of data to the structure of scientific laws. Along the way, you will learn the statstistical world view, a way of seeing the world that permits understanding in the face of uncertainty, and simplicity in the face of complexity. You will also learn how to use R, a very versatile computer language.
+Through the course of the book, you’ll also learn about the statistical worldview, a way of seeing the world that permits understanding in the face of uncertainty, and simplicity in the face of complexity.
 
 
