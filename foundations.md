@@ -22,8 +22,6 @@ A _natural law_ is a rule that describes a part of the natural world, like $$E =
 
 You can write down a natural law as a relationship between variables. For example, $$E = Mc^2$$ is a natural law that states that the energy content of a system ($$E$$) is always equal to the mass of the system ($$M$$) multiplied by the speed of light squared ($$c^{2}$$). $$F = MA$$ is a natural law that explains that a force ($$F$$) exerted upon an object will cause the object to accelerate ($$A$$) at a rate proportional to the mass of the object ($$M$$), an insight that has many applications in the field of physics. 
 
-These two laws describe causal, and physical, relationships between variables, but natural laws do not need to be so exact. As a data scientist, you will encounter many laws that only describe associations, relationships that exist between variables but cannot be explained as one variable causing the other.
-
 Natural laws deal with variables, values, and observations. We use these terms in everyday speech, but they have a technical meaning when associated with science.
 
 * A _variable_ is a quantity, quality, or property that can be measured. 
@@ -56,9 +54,9 @@ Observations play a very important role in science. A natural law implies that a
 
 Natural laws provide a goal for science. Scientists attempt to discover natural laws and thereby explain natural phenomena. You can think of science as a collection of methods that use observations to discover natural laws. 
 
-Data science is one of those methods. It uses a specific tool to reveal natural laws, and that tool is data—or, more specificaly, data sets.
+Data science is one of those methods. It uses a specific tool to reveal natural laws, and that tool is data.
 
-A _data set_ is a collection of values that have been organized in a specific way: each value in a data set is associated with a variable and an observation. 
+_Data_, or more precisely a _data set_, is a collection of values that have been organized in a specific way: each value in a data set is associated with a variable and an observation. 
 
 For example, you can use the values $$f_{1}$$, $$f_{2}$$, $$f_{3}$$, $$m_{1}$$, $$m_{2}$$, $$m_{3}$$, $$a_{1}$$, $$a_{2}$$, and $$a_{3}$$ to compose a data set, like the one below. 
 
@@ -70,7 +68,7 @@ obs | $$F$$     | $$M$$     | $$A$$
 
 Now that you know the vocabulary of data science, let's look at the method.
 
-## Data
+## Patterns
 
 Recall that a data set organizes values so that each value is associated with a variable as well as an observation. This organization makes data sets particularly useful for discovering natural laws. If a natural law exists between the variables in a data set, the law will appear as a pattern that reoccurs in each observation. Or to put it more simply, a natural law will appear as a pattern in data.
 
@@ -98,47 +96,66 @@ obs | $$F$$     | $$M$$     | $$A$$
 
 A data set transforms a law into a pattern, which makes data a very useful tool for science. The tool isn't perfect, patterns are very difficult to spot in raw data, but you can optimize how you search for patterns. 
 
-First, you can visualize raw data to make patterns easier to spot. Notice how the pattern between $$F$$, $$M$$, and $$A$$ becomes obvious when you visualize the data with a three dimensional, or even a two dimensional, graph. The relationship $$F = MA$$ appears as a three dimensional plane that each of the data points falls on. This plane resembles a line when it is projected into a two-dimensional graph.
+First, you can transform your variables or compute summary statistics in a way that would make patterns easier to spot. Data scientists often transform their data, a process known as _data wrangling_, to prepare for the steps that follow.
+
+Second, you can visualize raw data to make patterns easier to spot. Notice how the pattern between $$F$$, $$M$$, and $$A$$ becomes obvious when you visualize the data with a three dimensional, or even a two dimensional, graph. The relationship $$F = MA$$ appears as a three dimensional plane that each of the data points falls on. This plane resembles a line when it is projected into a two-dimensional graph.
 
 ![](/images/fma.png)
 
-Second, you can use a computer algorithm to search for patterns within data, which is exactly what data scientists do when they use statistical modeling or machine learning techniques.
+Third, you can use a computer algorithm to search for patterns within data, which is exactly what data scientists do when they use statistical modeling or machine learning techniques.
 
-Data provides a basis for data science. You can discover natural laws by collecting data and exploring the data for patterns. This may sound simple, but in practice it is slightly more complicated. 
+Data provides a basis for data science. You can discover natural laws by collecting data and exploring the data for patterns. Moreover, this is a fairly robust way to discover laws. Consider what would happen if your data failed in some way, for example, if your measurements were inaccurate, or if your data did not contain all of the variables in a law.
 
-Each of the components of a data set can fail. You can collect the wrong variables, the wrong values, or the wrong set of observations. Each type of failure creates a different problem for data scientists. How you deal with these failures is as much a part of data science as is the idea that data can reveal natural laws.
 
-Let's examine these failures one at a time.
-
-## Exploration: the wrong variables
-
-What would it mean to collect the wrong variables for a data set? As a scientist, you will have a research question that can be answered by a natural law, if only you can discover the law. Presumably, only one set of variables will reveal this law. You won't discover a pattern that suggests $$F = MA$$ if you only collect data on $$G$$, $$N$$, and $$B$$.
-
-In practice, you are unlikely to collect a set of completely irrelevant variables. Your research question will lead you to information that is relevant to its answer. You are much more likely to collect an incomplete set of variables, a data set that contains some, but not all, of the variables in a law. 
-
-When this happens, a pattern will still appear between the variables in the law. The influence of the missing variables will appear as noise in the pattern. You can see this happen in the two dimensional graph between $$F$$ and $$A$$. The $$M$$ variable adds noise to the pattern between $$F$$ and $$A$$, but the pattern is still discernable.
-
-![](/images/fa.png)
-
-Missing variables are not the only reason noise may appear in your data.
-
-## Noise: the wrong values
-
-The values in your data set will be inaccurate if your data is contaminated by measurement errors. In this case, the errors will add noise to your data. As long as the errors are relatively small, laws will still emerge in your data as discernable, but noisy patterns.
+If your values are contaminated by measurement errors, the errors will add noise to your data. As long as the errors are relatively small, laws will still emerge in your data as discernable, but noisy patterns.
 
 You can see measurement errors at work in the graphs below. The graph on the left displays two variables that are related by the law $$Y = X$$. However, the measurements were made in a sloppy fashion that resulted in inaccurate values. The graph on the left displays the same data after the measurement errors have been corrected. Notice that you can still perceive the underlying pattern even when it has been contaminated by measurement errors.
 
 ![](/images/xy.png)
 
-Noise in your data is not a cause for defeat. As long as you capture the most influential variables in a law, and do not let measurement errors get so big that they swamp your data, you are likely to find a pattern that will point to the law. You can also use statistical modeling to help spot and describe patterns that are shrouded in noise.
+You will face a similar situation if your data contains some, but not all, of the variables in a law. When this happens, a pattern will still appear between the variables in your data set that are connected by a law. The influence of the missing variables will appear as noise in the pattern. 
 
-A more subtle difficulty can occur if your data happens to contain an unusual set of observations. 
+You can see this happen in the two dimensional graph between $$F$$ and $$A$$. The graph ignores the $$M$$ variable, as if it were not part of the data set. As a result, the $$M$$ variable adds noise to the linear pattern between $$F$$ and $$A$$, but the pattern is still discernable.
 
-## Sample effects: the wrong observations
+![](/images/fa.png)
+
+Noise in your data is not a cause for defeat. As long as you capture the most influential variables in a law, and do not let measurement errors get so big that they swamp your data, you are likely to find a pattern that will point to the law. 
+
+## Correlations
+
+So far we have considered how data will display $$F = MA$$, a natural law that describes a causal relationship between physical variables. But now we can see that data will also display patterns that do not involve causal relationships (or physical variables).
+
+Consider two everyday variables that are strongly correlated. For example, consider the price of Chevron stock and the price of BP stock. These two companies compete against each other, but the prices of their stocks tend to rise and fall at the same times. This is because the companies both sell oil. As the price of oil rises, so does the price of each stock.
+
+This correlation forms a relationship between the prices, but the relationship is not causal. The price of BP stock does not cause the price of Chevron stock.
+
+Will data display a non-causal relationship between variables? Yes it will, and it is easy to see why. The price of each stock is caused by the price of oil plus some company specific variables that determine how profitable each company is, i.e.
+
+$$ price_{Chevron} = price_{Oil} + \text{Chevron specific variables} $$
+
+and 
+
+$$ price_{BP} = price_{Oil} + \text{BP specific variables} $$
+
+Simple algebraic substitution shows that this arrangement implies a relationship between the price of Chevron and BP stock.
+
+$$ price_{Chevron} = price_{BP} + \text{BP specific variables} + \text{Chevron specific variables} $$
+
+This relationship will appear as a pattern whenever you collect data on Chevron and BP stock. Since we do not collect data on the BP specific and Chevron specific variables, these variables will show up as noise in the pattern. In short, our graph may look something like the noisy graph between $$X$$ and $$Y$$ above.
+
+To summarize, data will display any sort of relationship between variables as a pattern, whether or not that relationship involves a causal association.
+
+To account for this, I will use the term "natural law" loosely in this book. A natural law is a description of any type of relationship between variables. You might argue that correlations are not natural laws but are more like "natural shorthand rules." You are right, but data scientists tend to make as much use of correlations as other scientists do of causal laws (and a correlation does suggest the operation of some unidentified causal law).
+
+## Sample effects
+
+You have seen that data provides a simple way to spot natural laws, and that this method works in a variety of situations. Why then, does data science have such a fearsome reputation?
+
+Unfortunately, natural laws are not the only thing that can cause patterns to appear in data. Sometimes data sets display patterns that do not exist in real life. These patterns are illusions and lead to false results. How can you tell whether the patterns that you do find are real and not an illusion? Before we answer that question, let's examine why a data set might contain patterns that do not exist in real life.
 
 Most data sets are much smaller than they could be. For example, if you wanted to research a question like, "How is an adult's height related to their age?," you could collect a very big data set: the measurements of every single adult on the planet. But that wouldn't be necessary. A pattern between height and age would become clear well before you finish measuring every adult on the planet (and if it doesn't, a pattern between your data collection efforts and your quality of life certainly would).
 
-Data scientists refer to the universe of possible observations that could be collected as a _population_, and the set of observations that are actually collected as a _sample_. The process of collecting a sample of data is known as _sampling_, and it has important consequences for data science. Sampling opens the door for illusions to creep into a data set. 
+Data scientists refer to the universe of possible observations that you could collect as a _population_, and the set of observations that you actually collect as a _sample_. The process of collecting a sample of data is known as _sampling_, and it has important consequences for data science. Sampling opens the door for illusions to creep into a data set. 
 
 Consider the two data sets visualized below. 
 
@@ -162,7 +179,7 @@ And any of the collections below would suggest that a natural law does not exist
 
 ![](/images/heights-weight.png)
 
-These patterns are illusions. They are not caused by natural laws, they are caused by omission and coincidence. We did not collect all of the possible observations (which would've shown the true pattern). The observations that we did collect happened to make an unusual set. 
+These patterns are illusions. They are not caused by natural laws, they are caused by omission and coincidence. We did not collect all of the possible observations (which would've revealed the true law). The observations that we did collect happened to make an unusual set. 
 
 Notice how diabolical this situation can be. The individual measurements in each of these samples are correct, and yet the patterns displayed by the measurements do not exist in real life.
 
@@ -201,7 +218,7 @@ Data scientists search for evidence of natural laws in the structure of data. Th
 
 3. **Judge patterns** - calculate the probability that a pattern is due to random chance, and not a natural law. You can view this step as measuring the strength of the evidence provided by an analysis.
 
-This method involves a level of uncertainty. In many ways, data scientists are specialists in uncertainty. They do not work with proofs, like a mathematician, but with evidence that comes with a certain probability that it might be wrong.
+This method involves a level of uncertainty. In many ways, as a data scientist, you will be a specialist in uncertainty. You will not work with proofs, like a mathematician, but with evidence that comes with a certain probability that it might be wrong.
 
 Given this ambiguity, you may wonder why anyone would practice data science. There are some very good reasons.
 
@@ -239,21 +256,9 @@ Consider for a moment why experiments prove causation. An experimenter does more
 
 As a result, the experimenter can rule out the posibility that something other than the explanatory variable caused the effect in the response variable. This method is almost foolproof, but it requires a tremendous amount of control over the process being studied. 
 
-In many research settings, this amount of control is impossible or unethical. For example, you could not control each of the variables that influences something like the stock market, or a nation's economy. Nor should you control things like how much alcohol a pregnant woman ingests or how much pollution an asthmatic inhales if doing so would cause unnecessary harm to a person.
+In many research settings, this amount of control is impossible or unethical. For example, you could not control each of the variables that influences something like the stock market, or a nation's economy. Nor should you control variables like how much alcohol a pregnant woman ingests or how much pollution an asthmatic person inhales if doing so would cause unnecessary harm.
 
 Data science requires much less control than experimental science, which makes data science adaptable to a broader range of research questions.
-
-## Summary and Parting Advice
-
-The method of data science is very simple and very effective. Data scientists search for evidence of natural laws in the structure of data. If a natural law exists between the variables in a data set, it will appear as a pattern in the data.
-
-This method is very useful for discovering laws and for collecting information that can lead to better predictions. Moreover, you can apply data science to any situation in which you can collect data.
-
-But data can be very deceptive. Patterns can be hidden in noise and may not appear at first glance. Moreover, coincidences—or biases—that occur when you collect your data can introduce patterns into your data that do not occur in real life. Let the sidebar serve as a cautionary tale before you read on to begin your career as a data scientist.
-
-How can you do better than the people mentioned in the sidebar? You already have one advantage. Many people who practice (and fail) at data science, do not study data science. You can also become a better data scientist by adopting two traits that will safeguard your work. You must be _curious_ enough to explore a data set thoroughly, exposing any patterns that are there. Then you must be _skeptical_ enough to question every pattern that you find and to search for alternative explanations.
-
-John Tukey, one of the first data scientists, often compared data science to detective work. I like this metaphor because detectives are both curious and skeptical. Also, detective work is risky business, and so is data science. But I would extend the metaphor further. If you think of yourself as a detective, you should think of data as the mysterious blonde who walks into your office: sexy on the surface, murky and treacherous beneath. 
 
 ****
 
@@ -268,3 +273,16 @@ Even famous statisticians can get data wrong. Sir Ronald Fisher invented much of
 This doesn't mean you should avoid data. Looking at data will always create better understanding than ignoring it, but remember that data is not a cure-all. Good science also requires good reasoning and skepticism.
 
 **** 
+
+## Summary and Parting Advice
+
+The method of data science is very simple and very effective. Data scientists search for evidence of natural laws in the structure of data. If a natural law exists between the variables in a data set, it will appear as a pattern in the data.
+
+This method is very useful for discovering laws and for collecting information that can lead to better predictions. Moreover, you can apply data science to any situation in which you can collect data.
+
+But data can be very deceptive. Patterns can be hidden in noise and may not appear at first glance. Moreover, coincidences—or biases—that occur when you collect your data can introduce patterns into your data that do not occur in real life. These things cause formidable challenges; let the sidebar serve as a cautionary tale.
+
+How can you do better than the people mentioned in the sidebar? You already have one advantage. Many people who practice (and fail) at data science, do not study data science and might not appreciate how deceptive data can be. You can further protect yourself by adopting two traits that will safeguard your work. You can be _curious_ enough to explore a data set thoroughly, exposing any patterns that are there. Then you can be _skeptical_ enough to question every pattern that you find and to search for alternative explanations.
+
+John Tukey, one of the first data scientists, often compared data science to detective work. I like this metaphor because detectives are both curious and skeptical. Also, detective work is risky business, and so is data science. But I would extend the metaphor further. If you think of yourself as a detective, you should think of data as the mysterious blonde who walks into your office: sexy on the surface, murky and treacherous beneath. 
+
