@@ -13,7 +13,7 @@ You’ll learn about:
 * **Data Wrangling**—how to manipulate datasets to reveal new information
 * **Data Visualization**—how to create graphs and other visualizations 
 * **Exploratory Data Analysis**—how to find evidence of relationships in your measurements 
-* **Modelling**—how to derive insights and predictions from your data 
+* **Modeling**—how to derive insights and predictions from your data 
 * **Inference**—how to avoid being fooled by data analyses that cannot provide fool­proof results 
 
 Through the course of the book, you’ll also learn about the statistical worldview, a way of seeing the world that permits understanding in the face of uncertainty, and simplicity in the face of complexity.
