@@ -10,9 +10,9 @@ At one level, data science is a _body of knowledge_, a collection of useful info
 
 At another level, data science is a way of doing science. Data scientists use data, models, and visualizations to make scientific discoveries, just as other scientists use experiments. In fact, you can think of data science as a _method_ of science that complements experimental science. Experimental scientists use the experimental method to solve scientific problems, and data scientists use the data science method. Many scientists use both. 
 
-This book will teach you the method of data science. You will learn how to use data to make scientific discoveries, and to justify those discoveries once they are made. Along the way, you will learn how to visualize data, build models, and make predictions.
+This book will teach you the method of data science. You will learn how to use data to make discoveries, and to justify those discoveries once they are made. Along the way, you will learn how to visualize data, build models, and make predictions.
 
-In this chapter, you will learn the strategy behind data science: data scientists search for evidence of natural laws in the structure of data. They then judge the strength of the evidence that they find. This strategy guides the techniques that you will learn in later chapters—techniques like data wrangling, exploratory data analysis (EDA), bootstrap sampling, and cross-validation.
+In this chapter, you will learn the strategy behind data science: data scientists search for evidence of natural laws in the structure of data. They then judge the strength of the evidence that they find, and are able to develop insights based on the laws they discover. This strategy guides the techniques that you will learn in later chapters—techniques like data wrangling, exploratory data analysis (EDA), bootstrap sampling, and cross-validation.
 
 ## The scientific worldview
 
@@ -104,7 +104,7 @@ Second, you can visualize raw data to make patterns easier to spot. Notice how t
 
 Third, you can use a computer algorithm to search for patterns within data, which is exactly what data scientists do when they use statistical modeling or machine learning techniques.
 
-Data provides a basis for data science. You can discover natural laws by collecting data and exploring the data for patterns. Moreover, this is a fairly robust way to discover laws. Consider what would happen if your data failed in some way, for example, if your measurements were inaccurate, or if your data did not contain all of the variables in a law.
+Moreover, you can count on laws to appear as patterns in data under a wide variety of conditions. Consider what would happen if your data failed in some way, for example, if your measurements were inaccurate, or if your data did not contain all of the variables in a law.
 
 
 If your values are contaminated by measurement errors, the errors will add noise to your data. As long as the errors are relatively small, laws will still emerge in your data as discernable, but noisy patterns.
@@ -145,7 +145,7 @@ This relationship will appear as a pattern whenever you collect data on Chevron 
 
 To summarize, data will display any sort of relationship between variables as a pattern, whether or not that relationship involves a causal association.
 
-To account for this, I will use the term "natural law" loosely in this book. A natural law is a description of any type of relationship between variables. You might argue that correlations are not natural laws but are more like "natural shorthand rules." You are right, but data scientists tend to make as much use of correlations as other scientists do of causal laws (and a correlation does suggest the operation of some unidentified causal law).
+To account for this, I will use the term "natural law" loosely in this book. A natural law is a causal relationship or reliable correlation between variables. You might argue that correlations are not natural laws but are more like "natural shorthand rules." You are right, but correlations do provide valuable information. As you will see later in the chapter, data scientists tend to make as much use of correlations as other scientists do of causal laws (and a correlation can suggest the operation of some unidentified causal law).
 
 ## Sample effects
 
@@ -257,8 +257,8 @@ Consider for a moment why experiments prove causation. An experimenter does more
 As a result, the experimenter can rule out the posibility that something other than the explanatory variable caused the effect in the response variable. This method is almost foolproof, but it requires a tremendous amount of control over the process being studied. 
 
 In many research settings, this amount of control is impossible or unethical. For example, you could not control each of the variables that influences something like the stock market, or a nation's economy. Nor should you control variables like how much alcohol a pregnant woman ingests or how much pollution an asthmatic person inhales if doing so would cause unnecessary harm.
-
-Data science requires much less control than experimental science, which makes data science adaptable to a broader range of research questions.
+ 
+Data science requires much less control than experimental science, which makes data science adaptable to a broader range of research questions. As a data scientist, you do not need to intervene in a process to study it. You can collect data passively by observing nature as it is, which can free you from the ethical and logistical burdens that an experimental scientists would face.  
 
 ****
 
