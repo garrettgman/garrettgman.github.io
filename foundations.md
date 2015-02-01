@@ -4,27 +4,29 @@ title: Foundations of Data Science
 weight: 3
 ---
 
-O'Reilly publishes nine books on data science and one of them is titled "What is Data Science?" When you open any of these books you should ask yourself what you are getting into. As a term, data science has come to mean several things. 
+We are starting to learn that most published data science findings may be wrong. In 2012, Amgen determined that _only_ 6 of  53 "landmark" medical studies had results that could be reproduced. From a scientific point of view, this means that these studies should be considered unreliable, if not wrong. In 2011, the Bayer company found it could only reproduce 25% of published findings in cardiovascular disease, cancer, and women's health studies. Bayer shelved development of  two thirds of its new drug projects as a result. 
 
-First, data science has come to mean a _body of knowledge_, a collection of useful information related to a specific task. In this way, data science is like library science or managerial science. Library science collects the best ways to run a library, and managerial science collects the best ways to run a business. Data science collects the best ways to store, retrieve, and manage data. As a result, a data scientist might know how to set up a hadoop cluster or run the latest type of non-relational database. This is not the type of data science that you will find here.
+Data science goes wrong in other fields too. The 2008 Financial Crisis was enabled by a misapplication of the Gaussian copula, a data analysis technique. In another case, NASA analyzed global ozone data for seven years without noticing the hole in the ozone layer. The most famous data analysis failure probably happened in 1983. Engineers at Morton Thiokol, the builder of space shuttle booster rockets, predicted that the _Challenger_ would explode on launch. They had a chance to prevent the launch, but changed their minds after misreading data that proved them right.
 
-Second, data science has come to describe a way of doing science. Data scientists use data, models, and visualizations to make scientific discoveries, just as other scientists use experiments. In fact, you can think of data science as a _method_ of science that complements experimental science. Experimental scientists use the experimental method to solve scientific problems, and data scientists use the data science method. Many scientists use both. 
+Even famous statisticians can get data wrong. Sir Ronald Fisher invented much of modern statistics, but he spent the end of his career using data to show that cigarettes do not cause cancer. 
 
-This is the type of data science you will learn in this book. You will learn how to use data to make scientific discoveries, and how to justify those discoveries once they are made. Along the way, you will learn how to visualize data, build models, and make predictions.
+This doesn't mean you should avoid data. Looking at data will always create better understanding than ignoring it, but remember that data is not a cure-all. Good science also requires good reasoning and skepticism.
 
-This first chapter describes the strategy behind data science. You will learn the principles that determine why data science works when it does (and fails when it does not), which will make you a versatile and perceptive scientist. These principles will guide the techniques that you will learn later—techniques like exploratory data analysis (EDA), statistical modeling, bootstrap sampling, and cross-validation. 
+This book will show you how to do good science with data. With it, you will learn how to use data to make scientific discoveries, and how to justify those discoveries once they are made. Along the way, you will learn how to visualize data, build models, and make predictions.
+
+This first chapter describes the strategy behind data science. You will learn the principles that determine why data science works when it does (and fails when it does not). These principles will guide the techniques that you will learn later—techniques like exploratory data analysis (EDA), hypothesis testing, statistical modeling, and machine learning. 
 
 ## Outline
 
-In _Section 1.1_, you will learn the vocabulary and general strategy of data science. Data sets display natural laws and statistical associations as patterns in values, which creates a method for scientific discovery. 
+In _Section 1.1_, you will learn the vocabulary and general strategy of data science. Data sets display natural laws as patterns in values, which creates a method for scientific discovery. 
 
-_Section 1.2_ explains why data science is difficult. Data sets can display illusory patterns, which creates uncertainty. You also face uncertainty when you try to apply a statistical relationship to an individual case.
+_Section 1.2_ explains why data science is difficult. Patterns in data do not always correspond to patterns in the natural world, which creates uncertainty. You also face uncertainty when you try to apply a statistical relationship to an individual case.
 
-_Section 1.3_ discusses when you should use data science and when you should use an alternative method of research, like the experimental method.
+_Section 1.3_ discusses how you can use data science to complement alternative methods of research, such as the experimental science.
 
-## The scientific worldview
+## 1.1 General Strategy
 
-As a method of science, data science is based on two simple ideas. First, that the best way to learn about the word is to observe it. And second, that the universe operates according to natural laws. These ideas summarize the worldview shared by many scientists, and they provide a the vocabulary that will help us talk about data science.
+As a method of science, data science is based on two simple ideas. First, that the best way to learn about the word is to observe it. And second, that the universe operates according to natural laws. These ideas summarize the worldview shared by many scientists, and they provide a vocabulary that will help us talk about data science.
 
 A _natural law_ is a rule that describes a part of the natural world, like $$E = Mc^{2}$$ or $$F = MA$$. Natural laws help scientists understand, control, and make predictions about natural processes. 
 
@@ -56,17 +58,17 @@ In the notation above, the lowercase letters denote specific values of the varia
 
 The subscripts denote which observation each of the values belongs to. If a set of values belongs to the same observation, it implies that the values were measured under similar conditions.
 
-To see how this works, consider what the three observations above may represent. The observations may have been taken at three different times. For example, $$f_{1}$$, $$m_{1}$$, and $$a_{1}$$ may have been measured at time one, $$f_{2}$$, $$m_{2}$$, and $$a_{2}$$ measured at time two, and so on.  Alternatively, the observations may describe three different particles. For example, $$f_{1}$$, $$m_{1}$$, and $$a_{1}$$ may have been measured on one particle, $$f_{2}$$, $$m_{2}$$, and $$a_{2}$$ may may have been measured on a second particle, and $$f_{3}$$, $$m_{3}$$, and $$a_{3}$$ may have been measured on a third particle. 
+To see how this works, consider what the three observations above may represent. The observations may have been taken at three different times. For example, $$f_{1}$$, $$m_{1}$$, and $$a_{1}$$ may have been measured at time one, $$f_{2}$$, $$m_{2}$$, and $$a_{2}$$ measured at time two, and so on.  Alternatively, the observations may describe three different particles. For example, $$f_{1}$$, $$m_{1}$$, and $$a_{1}$$ may have been measured on one particle, $$f_{2}$$, $$m_{2}$$, and $$a_{2}$$ may have been measured on a second particle, and $$f_{3}$$, $$m_{3}$$, and $$a_{3}$$ may have been measured on a third particle. 
 
 Observations play a very important role in science. A natural law implies that a relationship will exist between values of variables that appear _in the same observation_. However, a natural law does not imply that a relationship will exist between values in _different_ observations. You wouldn't think that the force you exert on one object would equal the mass times the acceleration that you measure on a different object. Or, in the notation above, you wouldn't think that $$f_{1}$$ should equal $$m_{2}$$ times $$a_{2}$$. You would expect $$f_{1}$$ to equal $$m_{1}$$ times $$a_{1}$$. 
 
-Natural laws provide a goal for science. Scientists attempt to discover natural laws and thereby explain natural phenomena. You can think of science as a collection of methods that use observations to discover natural laws. 
+Natural laws provide a goal for science. Scientists attempt to discover natural laws and thereby explain natural phenomena. You can think of science as a collection of methods that use observations to discover natural laws. Data science is one of those methods. It uses a specific tool to reveal natural laws, and that tool is data.
 
-Data science is one of those methods. It uses a specific tool to reveal natural laws, and that tool is data.
+### 1.1.2 Data
 
-_Data_, or more precisely a _data set_, is a collection of values that have been organized in a specific way: each value in a data set is associated with a variable and an observation. 
+_Data_, or more precisely a _data set_, is a collection of values that have been organized in a specific way: each value in a data set is associated with a variable and an observation. This organization makes data sets particularly useful for discovering natural laws. If a natural law exists between the variables in a data set, the law will appear as a pattern that reoccurs in each observation. Or to put it more simply, a natural law will appear as a pattern in data.
 
-For example, you can use the values $$f_{1}$$, $$f_{2}$$, $$f_{3}$$, $$m_{1}$$, $$m_{2}$$, $$m_{3}$$, $$a_{1}$$, $$a_{2}$$, and $$a_{3}$$ to compose a data set, like the one below. 
+To see this, compose an example data set with the values $$f_{1}$$, $$f_{2}$$, $$f_{3}$$, $$m_{1}$$, $$m_{2}$$, $$m_{3}$$, $$a_{1}$$, $$a_{2}$$, and $$a_{3}$$, like the data set below. 
 
 obs | $$F$$     | $$M$$     | $$A$$    
 --- | --------- | --------- | ---------
@@ -74,13 +76,7 @@ obs | $$F$$     | $$M$$     | $$A$$
 2   | $$f_{2}$$ | $$m_{2}$$ | $$a_{2}$$
 3   | $$f_{3}$$ | $$m_{3}$$ | $$a_{3}$$
 
-Now that you know the vocabulary of data science, let's look at the method.
-
-## Patterns
-
-Recall that a data set organizes values so that each value is associated with a variable as well as an observation. This organization makes data sets particularly useful for discovering natural laws. If a natural law exists between the variables in a data set, the law will appear as a pattern that reoccurs in each observation. Or to put it more simply, a natural law will appear as a pattern in data.
-
-In our example data set, the relationship described by the law $$F = MA$$ will be present in each observation. As a result, the data set will reveal what the natural law implies:
+The relationship described by the law $$F = MA$$ will be present in each observation. As a result, the data set will reveal what the natural law implies:
 
 obs | $$F$$     | $$M$$     | $$A$$    
 --- | --------- | --------- | ---------
@@ -88,7 +84,7 @@ obs | $$F$$     | $$M$$     | $$A$$
 2   | $$f_{2}$$ | $$= m_{2}$$ | $$\times \; a_{2}$$
 3   | $$f_{3}$$ | $$= m_{3}$$ | $$\times \; a_{3}$$
 
-This is easy to verify if you measure the real forces, masses, and accelerations associated with several dozen particles, like in the data set below. Each row of values displays the relationship $$F = MA$$.
+For example, the data set below contains real measurements of the force, mass, and acceleration associated with several particles. Each row of values displays the relationship $$F = MA$$.
 
 obs | $$F$$     | $$M$$     | $$A$$    
 --- | --------- | --------- | ---------
@@ -102,18 +98,13 @@ obs | $$F$$     | $$M$$     | $$A$$
 8   | $$4.04$$ | $$1.09$$ | $$3.70$$
 ...   | $$...$$ | $$...$$ | $$...$$
 
-A data set transforms a law into a pattern, which makes data a very useful tool for science. The tool isn't perfect, patterns are very difficult to spot in raw data, but you can optimize how you search for patterns. 
-
-First, you can transform your variables or compute summary statistics in a way that would make patterns easier to spot. Data scientists often transform their data, a process known as _data wrangling_, to prepare for the steps that follow.
-
-Second, you can visualize raw data to make patterns easier to spot. Notice how the pattern between $$F$$, $$M$$, and $$A$$ becomes obvious when you visualize the data with a three dimensional, or even a two dimensional, graph. The relationship $$F = MA$$ appears as a three dimensional plane that each of the data points falls on. This plane resembles a line when it is projected into a two-dimensional graph.
+The patterns in a data set become even more clear when you visualize the data. Notice how the pattern between $$F$$, $$M$$, and $$A$$ becomes obvious when you visualize the data with a three dimensional, or even a two dimensional, graph. The relationship $$F = MA$$ appears as a three dimensional plane that each of the data points falls on. This plane resembles a line when it is projected into a two-dimensional graph.
 
 ![](/images/fma.png)
 
-Third, you can use a computer algorithm to search for patterns within data, which is exactly what data scientists do when they use statistical modeling or machine learning techniques.
+To summarise, data sets reveal natural laws as patterns between values, which makes data a very useful tool for science. To search for a law, you can collect data and study it for patterns. You can visualize the data to make patterns more obvious, or you can search for patterns in the data with a computer algorithm, which is exactly what data scientists do when they use statistical modeling or machine learning techniques.
 
 Moreover, you can count on laws to appear as patterns in data under a wide variety of conditions. Consider what would happen if your data failed in some way, for example, if your measurements were inaccurate, or if your data did not contain all of the variables in a law.
-
 
 If your values are contaminated by measurement errors, the errors will add noise to your data. As long as the errors are relatively small, laws will still emerge in your data as discernable, but noisy patterns.
 
@@ -128,6 +119,12 @@ You can see this happen in the two dimensional graph between $$F$$ and $$A$$. Th
 ![](/images/fa.png)
 
 Noise in your data is not a cause for defeat. As long as you capture the most influential variables in a law, and do not let measurement errors get so big that they swamp your data, you are likely to find a pattern that will point to the law. 
+
+### 1.1.3 Statistical associations
+
+Data sets reveal more than natural laws. They also display a second type of relationship between variables, known as a _statistical association_. You can think of a statistical association as a natural law that operates at the group level. 
+
+For example, there is a statistical association between the height of a child and the heights of his or her parents. Children of tall parents tend to be tall and children of short parents tend to be short. However, there is no law that determine a child's exact height.
 
 ## Correlations
 
@@ -267,20 +264,6 @@ As a result, the experimenter can rule out the posibility that something other t
 In many research settings, this amount of control is impossible or unethical. For example, you could not control each of the variables that influences something like the stock market, or a nation's economy. Nor should you control variables like how much alcohol a pregnant woman ingests or how much pollution an asthmatic person inhales if doing so would cause unnecessary harm.
  
 Data science requires much less control than experimental science, which makes data science adaptable to a broader range of research questions. As a data scientist, you do not need to intervene in a process to study it. You can collect data passively by observing nature as it is, which can free you from the ethical and logistical burdens that an experimental scientists would face.  
-
-****
-
-### Take Caution
-
-We are starting to learn that most published data science findings may be wrong. In 2012, Amgen determined that _only_ 6 of  53 "landmark" medical studies had results that could be reproduced. From a scientific point of view, this means that these studies should be considered unreliable, if not wrong. In 2011, the Bayer company found it could only reproduce 25% of published findings in cardiovascular disease, cancer, and women's health studies. Bayer shelved development of  two thirds of its new drug projects as a result. 
-
-Data science goes wrong in other fields too. The 2008 Financial Crisis was enabled by a misapplication of the Gaussian copula, a data analysis technique. In another case, NASA analyzed global ozone data for seven years without noticing the hole in the ozone layer. The most famous data analysis failure probably happened in 1983. Engineers at Morton Thiokol, the builder of space shuttle booster rockets, predicted that the _Challenger_ would explode on launch. They had a chance to prevent the launch, but changed their minds after misreading data that proved them right.
-
-Even famous statisticians can get data wrong. Sir Ronald Fisher invented much of modern statistics, but he spent the end of his career using data to show that cigarettes do not cause cancer. 
-
-This doesn't mean you should avoid data. Looking at data will always create better understanding than ignoring it, but remember that data is not a cure-all. Good science also requires good reasoning and skepticism.
-
-**** 
 
 ## Summary and Parting Advice
 
