@@ -4,15 +4,23 @@ title: Foundations of Data Science
 weight: 3
 ---
 
-O'Reilly publishes nine books on data science and one of them is named "What is Data Science?" When you open any of these books you should ask yourself what you are getting into. As a term, data science has come to mean several things. 
+O'Reilly publishes nine books on data science and one of them is titled "What is Data Science?" When you open any of these books you should ask yourself what you are getting into. As a term, data science has come to mean several things. 
 
-At one level, data science is a _body of knowledge_, a collection of useful information related to a specific task. For example, library science and managerial science are bodies of knowledge. Library science collects the best ways to run a library, and managerial science collects the best ways to run a business. Data science collects the best ways to store, retrieve, and manage data. As a result, a data scientist might know how to set up a hadoop cluster or run the latest type of non-relational database. This is probably what most people think of when they think of "data science," but this is not the type of data science that I will teach you.
+First, data science has come to mean a _body of knowledge_, a collection of useful information related to a specific task. In this way, data science is like library science or managerial science. Library science collects the best ways to run a library, and managerial science collects the best ways to run a business. Data science collects the best ways to store, retrieve, and manage data. As a result, a data scientist might know how to set up a hadoop cluster or run the latest type of non-relational database. This is not the type of data science that you will find here.
 
-At another level, data science is a way of doing science. Data scientists use data, models, and visualizations to make scientific discoveries, just as other scientists use experiments. In fact, you can think of data science as a _method_ of science that complements experimental science. Experimental scientists use the experimental method to solve scientific problems, and data scientists use the data science method. Many scientists use both. 
+Second, data science has come to describe a way of doing science. Data scientists use data, models, and visualizations to make scientific discoveries, just as other scientists use experiments. In fact, you can think of data science as a _method_ of science that complements experimental science. Experimental scientists use the experimental method to solve scientific problems, and data scientists use the data science method. Many scientists use both. 
 
-This book will teach you the method of data science. You will learn how to use data to make discoveries, and to justify those discoveries once they are made. Along the way, you will learn how to visualize data, build models, and make predictions.
+This is the type of data science you will learn in this book. You will learn how to use data to make scientific discoveries, and how to justify those discoveries once they are made. Along the way, you will learn how to visualize data, build models, and make predictions.
 
-In this chapter, you will learn the strategy behind data science: data scientists search for evidence of natural laws in the structure of data. They then judge the strength of the evidence that they find, and are able to develop insights based on the laws they discover. This strategy guides the techniques that you will learn in later chapters—techniques like data wrangling, exploratory data analysis (EDA), bootstrap sampling, and cross-validation.
+This first chapter describes the strategy behind data science. You will learn the principles that determine why data science works when it does (and fails when it does not), which will make you a versatile and perceptive scientist. These principles will guide the techniques that you will learn later—techniques like exploratory data analysis (EDA), statistical modeling, bootstrap sampling, and cross-validation. 
+
+## Outline
+
+In _Section 1.1_, you will learn the vocabulary and general strategy of data science. Data sets display natural laws and statistical associations as patterns in values, which creates a method for scientific discovery. 
+
+_Section 1.2_ explains why data science is difficult. Data sets can display illusory patterns, which creates uncertainty. You also face uncertainty when you try to apply a statistical relationship to an individual case.
+
+_Section 1.3_ discusses when you should use data science and when you should use an alternative method of research, like the experimental method.
 
 ## The scientific worldview
 
