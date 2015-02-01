@@ -102,7 +102,38 @@ The patterns in a data set become even more clear when you visualize the data. N
 
 ![](/images/fma.png)
 
-To summarise, data sets reveal natural laws as patterns between values, which makes data a very useful tool for science. To search for a law, you can collect data and study it for patterns. You can visualize the data to make patterns more obvious, or you can search for patterns in the data with a computer algorithm, which is exactly what data scientists do when they use statistical modeling or machine learning techniques.
+## 1.1.3 Statistical associations
+
+As a data scientist, you will spend your time working with laws that are more subtle than $$F = MA$$ or $$E = Mc^{2}$$. Both of these laws describe causal relationships that apply to individual observations, so they are easy to spot with simple observation and experimentation. In practice, data science is reserved for laws that describe group characteristics, which is another name for a _statistic_.
+
+A statistic is a quantity that describes a group of observations. We use statistics all of the time. For example, average height is a statistic. In the United States, the average height of a man is 5'9" (x meters). The average height does not describe any specific man (some men may be 5'9", but many aren't); it describes the group of men in the United States. Taken together their average height in 5'9". 
+
+Statistics are variables, just like any other quantity, quality, or property that you can measure. If you measured the average height of another group, say all of the women in the United States, you could observe a different value. In this case, you would observe that the average height of women in the United States in 5'4" (y meters).
+
+Natural laws connect statistics in the same way that they connect other variables. For example, there is a natural law that connects the average height of children to the height of their parents. You could spot this law in data, if you collected many observations of the height of parents and their children. This would create a graph, that looks like this
+
+[children.png]
+
+Then you would need to group the children according to the height of their parents. For each height on the x axis, calculate the average height of all of the children whose parents had that height. When you do this for every height on the X axis, you will have a pattern that reflects the natural law between the height of parents and the average height of their children.
+
+[children2.png]
+
+Or presumably, you would. This calculation would require a lot of data, much more than data 
+
+
+
+Other natural laws deal with group characteristics, such as average tendencies. These characteristics only become visible when you collect large amounts of data.
+
+
+This behaviour forms the basic strategy of data science. To search for a natural law, you can collect data and study it for patterns. You can visualize the data to make patterns more obvious, or you can search for patterns in the data with a computer algorithm, which is exactly what data scientists do when they use statistical modeling or machine learning techniques. We will add a final step to this strategy in _Section 1.2_: determine how likely the patterns that you discover are to reflect the real world.
+
+## 1.1.3 Statistical associations
+
+As a data scientist, you will spend your time working with laws that are more subtle than $$F = MA$$ or $$E = Mc^{2}$$. Both of these laws describe causal relationships that apply to individual observations, which makes them easy to spot with simple observation and experimentation. Other natural laws deal with group characteristics, such as average tendencies. These characteristics only become visible when you collect large amounts of data.
+
+
+
+
 
 Moreover, you can count on laws to appear as patterns in data under a wide variety of conditions. Consider what would happen if your data failed in some way, for example, if your measurements were inaccurate, or if your data did not contain all of the variables in a law.
 
