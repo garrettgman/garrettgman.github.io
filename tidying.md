@@ -6,7 +6,7 @@ weight: 4
 
 > "Tidy datasets are all alike but every messy dataset is messy in its own way." – Hadley Wickham
 
-Data science, at its heart, is a computer programming exercise. Data scientists use computers to store, transform, visualize, and model their data. As a result, every data science project begins with the same first step: you must prepare your data to use it with a computer. In the wild, data sets come in many different formats, but each computer program expects your data to be organized in a predetermined way, which may vary from program to program.
+Data science, at its heart, is a computer programming exercise. Data scientists use computers to store, transform, visualize, and model their data. As a result, every data science project begins with the same task: you must prepare your data to use it with a computer. In the wild, data sets come in many different formats, but each computer program expects your data to be organized in a predetermined way, which may vary from program to program.
 
 In this book, we will use R to do data science. R is an excellent language for data science because with R you can do everything from collect your data (from the web or a database), to transform it, visualize it, explore it, model it, and run statistical tests on it. You can also use R to report your results when you are finished, and you can run R interactively, as if you were operating a calculator and not writing computer code. Best of all, R is free.
 
@@ -16,19 +16,19 @@ In this chapter, you will learn the best way to organize your data for R, a task
 
 You will need to have R installed on your computer to run the code in this chapter, as well as the RStudio IDE, a free program that makes it easier to use R. You can learn how to install both in _Appendix A: Getting Started_.
 
-You will also need to install the `tidyr`, `devtools`, and `DSR` packages, which contain the functions and data sets we will use. To install, `tidyr` and `devtools`, open RStudio and run the command
+You will also need to install the `tidyr`, `devtools`, and `DSR` packages, which contain the functions and data sets that we will use. To install, `tidyr` and `devtools`, open RStudio and run the command
     
     install.packages(c("tidyr", "devtools"))
 
 R will download the packages from CRAN, the online R package repository. 
 
-`DSR` is a collection of data sets that I have assembled for this book and saved online as a github repository (http://github.com/garrettgman/DSR). To install `DSR`, run the command
+`DSR` is a collection of data sets that I have assembled for this book and saved online as a github repository ([github.com/garrettgman/DSR](http://github.com/garrettgman/DSR)). To install `DSR`, run the command
 
     devtools::install_github("garrettgman/DSR")
 
 ## 2.1 Problem
 
-The `who` data set in the `DSR` package contains cases of tuberculosis (TB) reported between 1995 and 2013 sorted by country, age, and gender. The data comes in the _2014 World Health Organization Global Tuberculosis Report_, available for download at http://www.who.int/tb/country/data/download/en/. The data provides a wealth of epidemiological information, but would be difficult to work with in R.
+The `who` data set in the `DSR` package contains cases of tuberculosis (TB) reported between 1995 and 2013 sorted by country, age, and gender. The data comes in the _2014 World Health Organization Global Tuberculosis Report_, available for download at [www.who.int/tb/country/data/download/en/](http://www.who.int/tb/country/data/download/en/). The data provides a wealth of epidemiological information, but would be difficult to work as it is.
 
 To see the data in its raw form, load `DSR` with `library(DSR)` then run
 
@@ -42,6 +42,74 @@ _A subset of the `who` data frame displayed with `View()`._
 `who` provides a realistic example of tabular data in the wild. It contains redundant columns, odd variable codes, and many missing values. In short, `who` is messy. It will be difficult to work with the data in R, if we leave it in this format. How can you reorganize the data to make it easy to work with in R? 
 
 ## 2.2 Background
+
+You can organize tabular data in many ways. For example, consider the four data sets below. Each displays the same data in a different format (the third data set is a collection of two tables). The data sets are derived from `who`; they describe the number of cases of TB reported in several countries over several years.
+
+[DATA TABLES]
+![](/images/blank.png)
+
+
+You might think that these data sets are interchangeable since they display the same information. Each data set shows the same values of four variables _country_, _year_, _population_, and _cases_. However, data set one has a tidy layout, but the other data sets do not. As a result, data set one will be much easier to manipulate in R than the others. 
+
+Why should this be? Each computer language is organized around a set of conventions that make the language unique. these conventions determine which types of data will be easiest to work with in the langauge, because the conventions determine how the language:
+
+* assembles information into data structures
+* accesses information that is stored in data structures
+* manipulates information once it is accessed 
+
+R follows a set of conventions that makes one layout of tabular data much easier to work with than any other. Your data will be easier to work with in R if it has a _tidy_ layout. A layout is tidy if
+
+1. Each variable in the data set is placed in its own column
+2. Each observation in the data set is placed in its own row
+3. Each value is placed in its own cell*
+
+Notice that `table1` has a tidy layout. 
+
+[TIDY LAYOUT]
+![](/images/blank.png)
+
+The tidy arrangement builds on an unstated premise of data science that _data sets contain both values and relationships_. Tidy data displays the relationships in a data set as consistently as it displays the values in a data set. 
+
+Tidy data works well with R because R is a _vectorized programming language_. This means that R is designed to work with vectors, one dimensional groups of elements. Each data structure in R is built from a combination of one or two types of vectors. A vector can be a
+
+1. _Atomic vector_ - a sequence of elements that each have the same data type. For example, a group of integers, a group of doubles (numeric), a group of character strigns, or a group of logical vectors. In R, scalars (single numbers) are saved as atomic vectors of length one.
+
+2. _List_ - a sequence of elements that can each be a different type. An element of a list can even be another list or atomic vector.
+
+R stores tabular data as a data frame, a list of atomic vectors. Each column in a data frame is an atomic vector in the list. This structure parallels the structure of data in a tidy data set. Recall that each data set is a collection of values associated with a variable and an observation. In tidy data, each variable is assigned to its own column. 
+
+[STRUCTURE OF A DATA FRAME]
+![](/images/blank.png)
+
+As a result, it is easy to extract the values of a variable in a tidy data set with R's list syntax,
+
+    table1$cases
+
+R will return the values an an atomic vector, one of the most versatile data structures in R. Many functions in R are written to take atomic vectors as input, as are R's mathematical operators. As a result, it is easy to extract and then manipulate the variables of a tidy data set with R, e.g.,
+
+    mean(table1$cases)
+    ##
+
+    table1$cases / table1$population * 10000
+
+Tidy data also takes advantage of R's vectorized operations. R executes operations between vectors in element-wise fashion. When you compute an operation between vectors, R will first perform the operation with the first elements of each vector involved. Then R will repeat the operation with the second elements of each vector involved, and so on until R reaches the end of the vectors. If one vector is shorter than the others, R will recycle its values as needed until execution is complete (according to a set of predetermined rules). 
+
+As a result of element-wise execution, each operation between vectors returns a new vector of values. The _nth_ value of the results vector will depend on only the _nth_ elements of the input vectors.
+
+[FIGURE ELEMENT-WISE OPERATIONS]
+![](/images/blank.png)
+
+Tidy data takes advantage of element-wise execution by organizing each observation in the data set into its own row. This arrangement ensures that the _nth_ value of each variable correspond with the _nth_ observation. As a result, operations between variables will preserve observations. Values from one observation will only be paired with other values in the same observation. 
+
+This is exactly what you want. It makes sense to divide the number of cases of TB in Afghanistan in 1999 by the population of Afghanistan in 1999 to calculate a rate, but it does not make sense to divide across countries or years. The number of cases in Afghanistan in 1999 divided by the population of Brazil in 1999 does not return a meaningful result. 
+
+Your data will be easy to manipulate in R if it has a tidy layout. The next sections will show you how to transform untidy data sets into tidy data sets.
+
+***
+Tidy data was popularized by Hadley Wickham, and it serves as the basis for many R packages and functions. You can learn more about tidy data by reading _Tidy Data_ a paper written by Hadley Wickham and published in the Journal of Statistical Software. _Tidy Data_ is available online at http://www.jstatsoft.org/v59/i10/paper.
+***
+
+
 
 ### 2.2.1 Tidy Data
 
