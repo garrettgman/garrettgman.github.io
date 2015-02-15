@@ -16,40 +16,36 @@ In this chapter, you will learn the best way to organize your data for R, a task
 
 You will need to have R installed on your computer to run the code in this chapter, as well as the RStudio IDE, a free program that makes it easier to use R. You can learn how to install both in _Appendix A: Getting Started_.
 
-You will also need to install the `tidyr`, `devtools`, and `DSR` packages, which contain the functions and data sets that we will use. To install, `tidyr` and `devtools`, open RStudio and run the command
+You will also need to install the `tidyr`, `devtools`, and `DSR` packages. To install, `tidyr` and `devtools`, open RStudio and run the command
     
     install.packages(c("tidyr", "devtools"))
-
-R will download the packages from CRAN, the online R package repository. 
 
 `DSR` is a collection of data sets that I have assembled for this book and saved online as a github repository ([github.com/garrettgman/DSR](http://github.com/garrettgman/DSR)). To install `DSR`, run the command
 
     devtools::install_github("garrettgman/DSR")
 
-## 2.1 Problem
+## Outline
 
-The `who` data set in the `DSR` package contains cases of tuberculosis (TB) reported between 1995 and 2013 sorted by country, age, and gender. The data comes in the _2014 World Health Organization Global Tuberculosis Report_, available for download at [www.who.int/tb/country/data/download/en/](http://www.who.int/tb/country/data/download/en/). The data provides a wealth of epidemiological information, but would be difficult to work as it is.
+In _Section 2.1_, you will learn how the features of R determine the best layout for your data. This section introduces "tidy data," a way to organize your data that works particularly well with R.
 
-To see the data in its raw form, load `DSR` with `library(DSR)` then run
+_Section 2.2_ teaches the basic method for making untidy data tidy. In this section, you will learn how to reorganize the values in your data set with the  the `gather()` and `spread()` functions of the `tidyr` package.
 
-    View(who)
+_Section 2.3_ explains how to split apart and combine values in your data set to make it easier to access variables.
 
-The `View()` function opens a data viewer in the RStudio IDE. Here you can examine the data set, search for values, and filter the display based on logical conditions. Notice that the `View()` function begins with a capital V.
+_Section 2.4_ concludes the chapter, combining everything you've learned about `tidyr` to tidy a real data set on tuberculosis rates collected by the _World Health Organization_.
 
-![](/images/blank.png)
-_A subset of the `who` data frame displayed with `View()`._
 
-`who` provides a realistic example of tabular data in the wild. It contains redundant columns, odd variable codes, and many missing values. In short, `who` is messy. It will be difficult to work with the data in R, if we leave it in this format. How can you reorganize the data to make it easy to work with in R? 
 
-## 2.2 Background
+## 2.1 Tidy data
 
-You can organize tabular data in many ways. For example, the four data sets below each display the same data in a different format (the third data set is a collection of two tables). You can access these tables in the `DSR` package, where they are saved as `table1`, `table2`, `table3`, `table4`, and `table5`.
+You can organize tabular data in many ways. For example, the data sets below show the same data organized into four different layouts. 
 
 [DATA TABLES]
+Each data set shows the same values of four variables _country_, _year_, _population_, and _cases_, but each data set uses a different layout (the third data set is a collection of two tables).
 ![](/images/blank.png)
 
 
-You might think that these data sets are interchangeable since they display the same information. Each data set shows the same values of four variables _country_, _year_, _population_, and _cases_. However, the first data set will be much easier to work with in R than the others.
+You might think that these data sets are interchangeable since they display the same information, but one data set will be much easier to work with in R than the others.
 
 Why should this be? 
 
@@ -336,3 +332,79 @@ We can use `unite()` to rejoin the _century_ and _year_ columns that we created 
 You can also use integers or the syntax of the `dplyr::select` to specify columns to unite in a more concise way. We'll learn about `select` in Section 3.1.
 
 ## 2.3 Solution
+
+The `who` data set in the `DSR` package contains cases of tuberculosis (TB) reported between 1995 and 2013 sorted by country, age, and gender. The data comes in the _2014 World Health Organization Global Tuberculosis Report_, available for download at [www.who.int/tb/country/data/download/en/](http://www.who.int/tb/country/data/download/en/). The data provides a wealth of epidemiological information, but would be difficult to work with as it is.
+
+To see the data in its raw form, load `DSR` with `library(DSR)` then run
+
+    View(who)
+
+![](/images/blank.png)
+_A subset of the `who` data frame displayed with `View()`._
+
+`who` provides a realistic example of tabular data in the wild. It contains redundant columns, odd variable codes, and many missing values. In short, `who` is messy.
+
+***
+
+*TIP*
+
+The `View()` function opens a data viewer in the RStudio IDE. Here you can examine the data set, search for values, and filter the display based on logical conditions. Notice that the `View()` function begins with a capital V.
+
+***
+
+The most unique feature of `who` is its coding system. Columns five through sixty encode four separate pieces of information in their column names:
+
+1. The first three letters of each column denote whether the column contains new or old cases of TB. In this data set, each column contains new cases.
+
+2. The next two letters describe the variable being measured.
+    + `rel` stands for cases of relapse
+    + `ep` stands for cases of extrapulmonary TB
+    + `sn` stands for cases of pulmonary TB that could not be diagnosed by a pulmonary smear (smear negative)
+    + `sp` stands for cases of pulmonary TB that could be diagnosed be a pulmonary smear (smear positive)
+
+3. The sixth letter describes the sex of TB patients. The data set groups cases by males (`m`) and females (`f`).
+
+4. The remaining numbers describe the age group of TB patients. The data set groups cases into seven age groups:
+    + `014` patients that are 0 to 14 years old
+    + `1524` patients that are 15 to 24 years old
+    + `2534` patients that are 25 to 34 years old
+    + `3544` patients that are 35 to 44 years old
+    + `4554` patients that are 45 to 54 years old
+    + `5564` patients that are 55 to 64 years old
+    + `65` patients that are 65 years old or older
+
+Notice that the `who` data set is untidy in multiple ways. First, the data appears to contain values in its column names. We can move the values into their own column with `gather()`. This will make it easy to separate the values combined in each code.
+
+who <- gather(who, "code", "value", 5:60)
+
+[WHO2]
+![](/images/blank.png)
+
+We can separate the values in each code with two passes of `separate()`. The first pass will split `new_` from the variable code from the combined sex and age codes.
+
+who <- separate(who, code, c("new", "var", "sexage"))
+
+[WHO3]
+![](/images/blank.png)
+
+The second pass will split `sexage` after the first character to create a sex column and an age column.
+
+who <- separate(who, sexage, c(sex", "age"), sep = 1)
+
+[WHO4]
+![](/images/blank.png)
+
+Finally, we can move the `rel`, `ep`, `sn`, and `sp` keys into their own column names with `spread()`. 
+
+who <- spread(who, var, value)
+
+[WHO5]
+![](/images/blank.png)
+
+The `who` data set is now tidy. It is far from sparkling (for example, it contains several redundant columns), but it will now be much easier to work with in R. We will continue to work with this new version of `who` in Section 3.7, where we will remove the redundant columns and calculate new variables.
+
+
+
+
+
+
