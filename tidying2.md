@@ -160,7 +160,7 @@ work with in R if it follows three rules
 Data that satisfies these rules is known as *tidy data*. Notice that
 `table1` is tidy data.
 
-[TIDY LAYOUT] ![](images/blank.png)
+[TIDY LAYOUT] ![](/images/blank.png)
 
 Tidy data builds on an unstated premise of data science that *data sets
 contain both values and relationships*. Tidy data displays the
@@ -186,7 +186,7 @@ R stores tabular data as a data frame, a list of atomic vectors arranged
 to look like a table. Each column in the table is an atomic vector in
 the list.
 
-[STRUCTURE OF A DATA FRAME] ![](images/blank.png)
+[STRUCTURE OF A DATA FRAME] ![](/images/blank.png)
 
 This structure parallels the structure of data in a tidy data set.
 Recall that each data set is a collection of values associated with a
@@ -222,7 +222,7 @@ the second elements of each vector involved, and so on until R reaches
 the end of the vectors. If one vector is shorter than the others, R will
 recycle its values as needed (according to a set of recycling rules).
 
-[FIGURE ELEMENT-WISE OPERATIONS] ![](images/blank.png)
+[FIGURE ELEMENT-WISE OPERATIONS] ![](/images/blank.png)
 
 If your data is tidy, element-wise execution will ensure that
 observations are preserved across observations. Each value will only be
@@ -249,7 +249,7 @@ Appendix A: Getting Started.
 
 #### Data set one
 
-[DATA 1 VARS] ![](images/blank.png)
+[DATA 1 VARS] ![](/images/blank.png)
 
 Since `table1` is organized in a tidy fashion, you can calculate the
 rate like this,
@@ -259,7 +259,7 @@ rate like this,
 
 #### Data set two
 
-[DATA 2 VARS] ![](images/blank.png)
+[DATA 2 VARS] ![](/images/blank.png)
 
 Data set two intermingles the values of *population* and *cases* in the
 same columns. As a result, you will need to untangle the values whenever
@@ -274,7 +274,7 @@ You'll need to perform an extra step to calculate the rate.
 
 #### Data set three
 
-[DATA 3 VARS] ![](images/blank.png)
+[DATA 3 VARS] ![](/images/blank.png)
 
 Data set three combines the values of cases and population into the same
 cells. It may seem that this would help you calculate the rate, but that
@@ -287,7 +287,7 @@ with "basic" R syntax.
 
 #### Data set four
 
-[DATA 4 & 5 VARS] ![](images/blank.png)
+[DATA 4 & 5 VARS] ![](/images/blank.png)
 
 Data set four stores each variable in a different format: as a column, a
 set of column names, or a field of cells. As a result, you will need to
@@ -473,12 +473,12 @@ You can see that `spread()` maintains each of the relationships
 expressed in the original data set. The output contains the four
 original variables, *country*, *year*, *population*, and *cases*.
 
-[SPREAD VARS] ![](images/blank.png)
+[SPREAD VARS] ![](/images/blank.png)
 
 And the values of these variables are grouped according to the orginal
 observations, but now the layout of these relationships is tidy.
 
-[SPREAD OBS] ![](images/blank.png)
+[SPREAD OBS] ![](/images/blank.png)
 
 `spread()` takes three optional arguments in addition to `data`, `key`,
 and `value`:
@@ -548,12 +548,12 @@ original data set. This time `table3` only contained three variables,
 *country*, *year* and *cases*. Each of these appears in the output of
 `gather()` in a tidy fashion.
 
-[GATHER VARS] ![](images/blank.png)
+[GATHER VARS] ![](/images/blank.png)
 
 `gather()` also maintains each of the observations in the original data
 set, organizing them in a tidy fashion.
 
-[GATHER OBS] ![](images/blank.png)
+[GATHER OBS] ![](/images/blank.png)
 
 We can use `gather()` to tidy `table4` in a similar fashion.
 
@@ -630,7 +630,7 @@ need to separate `rate` into its component parts, a task you can do with
 columns by splitting the values of the column wherever a separator
 character appears.
 
-[SEPARATE DIAGRAM] ![](images/blank.png)
+[SEPARATE DIAGRAM] ![](/images/blank.png)
 
 To use `separate()` pass separate the name of a data frame to reshape
 and the name of a column to separate. Also give `separate()` an `into`
@@ -723,7 +723,7 @@ name of the data frame to reshape, the name of the new column to create
 columns. If you would like to use a different separator, or no separator
 at all, pass the separator as a character string to `sep`.
 
-[UNITE DESCRIPTION] ![](images/blank.png)
+[UNITE DESCRIPTION] ![](/images/blank.png)
 
 We can use `unite()` to rejoin the *century* and *year* columns that we
 created in the last example.
@@ -782,7 +782,7 @@ To see the data in its raw form, load `DSR` with `library(DSR)` then run
 
     View(who)
 
-![](images/blank.png) *A subset of the `who` data frame displayed with
+![](/images/blank.png) *A subset of the `who` data frame displayed with
 `View()`.*
 
 `who` provides a realistic example of tabular data in the wild. It
@@ -836,7 +836,7 @@ separate the values combined in each code.
 
     who <- gather(who, "code", "value", 5:60)
 
-[WHO2] ![](images/blank.png)
+[WHO2] ![](/images/blank.png)
 
 We can separate the values in each code with two passes of `separate()`.
 The first pass will split `new_` from the variable code from the
@@ -844,21 +844,21 @@ combined sex and age codes.
 
     who <- separate(who, code, c("new", "var", "sexage"))
 
-[WHO3] ![](images/blank.png)
+[WHO3] ![](/images/blank.png)
 
 The second pass will split `sexage` after the first character to create
 a sex column and an age column.
 
     who <- separate(who, sexage, c("sex", "age"), sep = 1)
 
-[WHO4] ![](images/blank.png)
+[WHO4] ![](/images/blank.png)
 
 Finally, we can move the `rel`, `ep`, `sn`, and `sp` keys into their own
 column names with `spread()`.
 
     who <- spread(who, var, value)
 
-[WHO5] ![](images/blank.png)
+[WHO5] ![](/images/blank.png)
 
 The `who` data set is now tidy. It is far from sparkling (for example,
 it contains several redundant columns), but it will now be much easier
