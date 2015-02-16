@@ -1,3 +1,9 @@
+---
+layout: page
+title: Data Tidying
+weight: 4
+---
+
 > "Tidy datasets are all alike but every messy dataset is messy in its
 > own way." – Hadley Wickham
 
