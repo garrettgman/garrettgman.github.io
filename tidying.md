@@ -167,7 +167,8 @@ with in R if it follows three rules
 Data that satisfies these rules is known as *tidy data*. Notice that
 `table1` is tidy data.
 
-[TIDY LAYOUT] ![](images/blank.png) *In `table1`, each variable is
+![](/images/tidy-1.png) 
+*In `table1`, each variable is
 placed in its own column, each observation in its own row, and each
 value in its own cell.*
 
@@ -190,7 +191,8 @@ R stores tabular data as a data frame, a list of atomic vectors arranged
 to look like a table. Each column in the table is an atomic vector in
 the list.
 
-[STRUCTURE OF A DATA FRAME] ![](images/blank.png) *A data frame is a
+![](/images/tidy-2.png) 
+*A data frame is a
 list of vectors that R displays as a table. When your data is tidy, the
 values of each variable fall in their own column vector.*
 
@@ -230,7 +232,7 @@ until R reaches the end of the vectors. If one vector is shorter than
 the others, R will recycle its values as needed (according to a set of
 recycling rules).
 
-[FIGURE ELEMENT-WISE OPERATIONS] ![](images/blank.png)
+![](/images/tidy-3.png) 
 
 If your data is tidy, element-wise execution will ensure that
 observations are preserved across functions and operations. Each value
@@ -259,7 +261,7 @@ Getting Started.
 
 #### Data set one
 
-[DATA 1 VARS] ![](images/blank.png)
+![](/images/tidy-4.png) 
 
 Since `table1` is organized in a tidy fashion, you can calculate the
 rate like this,
@@ -269,7 +271,7 @@ rate like this,
 
 #### Data set two
 
-[DATA 2 VARS] ![](images/blank.png)
+![](/images/tidy-5.png) 
 
 Data set two intermingles the values of *population* and *cases* in the
 same columns. As a result, you will need to untangle the values whenever
@@ -284,7 +286,7 @@ You'll need to perform an extra step to calculate the rate.
 
 #### Data set three
 
-[DATA 3 VARS] ![](images/blank.png)
+![](/images/tidy-6.png) 
 
 Data set three combines the values of cases and population into the same
 cells. It may seem that this would help you calculate the rate, but that
@@ -297,7 +299,7 @@ with "basic" R syntax.
 
 #### Data set four
 
-[DATA 4 & 5 VARS] ![](images/blank.png)
+![](/images/tidy-7.png) 
 
 Data set four stores each variable in a different format: as a column, a
 set of column names, or a field of cells. As a result, you will need to
@@ -472,7 +474,8 @@ column names of the new columns. `spread()` distributes the cells of the
 former value column across the cells of the new columns and truncates
 any non-key, non-value columns in a way that prevents duplication.
 
-[SPREAD GIF] ![](images/blank.png) *`spread()` distributes a pair of
+![](/images/tidy-8.png)  
+*`spread()` distributes a pair of
 key:value columns into a field of cells. The unique values of the key
 column become the column names of the field of cells.*
 
@@ -555,7 +558,7 @@ I've placed "key" in quotation marks because you will usually use
 contain values, not keys. The values will only be keys in the sense that
 they were formally in the column names, a place where keys belong.
 
-[GATHER GIF] ![](images/blank.png)
+![](/images/tidy-9.png) 
 
 Just like `spread()`, gather maintains each of the relationships in the
 original data set. This time `table3` only contained three variables,
