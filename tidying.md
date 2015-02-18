@@ -756,7 +756,8 @@ To see the data in its raw form, load `DSR` with `library(DSR)` then run
 
     View(who)
 
-![](images/blank.png) *A subset of the `who` data frame displayed with
+![](/images/tidy-12.png)  
+*A subset of the `who` data frame displayed with
 `View()`.*
 
 `who` provides a realistic example of tabular data in the wild. It
@@ -811,28 +812,28 @@ separate the values combined in each code.
 
     who <- gather(who, "code", "value", 5:60)
 
-[WHO2] ![](images/blank.png)
+![](/images/tidy-13.png) 
 
 We can separate the values in each code with two passes of `separate()`.
 The first pass will split the codes at each underscore.
 
     who <- separate(who, code, c("new", "var", "sexage"))
 
-[WHO3] ![](images/blank.png)
+![](/images/tidy-14.png) 
 
 The second pass will split `sexage` after the first character to create
 a sex column and an age column.
 
     who <- separate(who, sexage, c("sex", "age"), sep = 1)
 
-[WHO4] ![](images/blank.png)
+![](/images/tidy-15.png) 
 
 Finally, we can move the `rel`, `ep`, `sn`, and `sp` keys into their own
 column names with `spread()`.
 
     who <- spread(who, var, value)
 
-[WHO5] ![](images/blank.png)
+![](/images/tidy-16.png) 
 
 The `who` data set is now tidy. It is far from sparkling (for example,
 it contains several redundant columns), but it will now be much easier
