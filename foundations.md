@@ -1,4 +1,9 @@
-### Chapter 1 - Science
+---
+layout: page
+title: Science
+weight: 3
+---
+
 The two premises of science. How and why to find natural laws.
 
 ***
@@ -51,7 +56,7 @@ The two premises of science. How and why to find natural laws.
         i. collect data
         ii. visualize data
         iii. search for patterns with an algorithm
-    4. This method is ver useful, but has some weaknesses of its own
+    4. This method is very useful, but has some weaknesses of its own
         * Unlike hypothesis testing, this method is not logically foolproof
             * problem of induction
         * a finite set of points cannot uniquely identify a law
@@ -59,11 +64,22 @@ The two premises of science. How and why to find natural laws.
         
 ***
 
+
 4. Summary
     1. Scientists use observations to understand the natural laws of the universe
     2. They iterate between explorations and discovery, and confirmation and testing
     3. These principles provide a program that guides data science.
-        * They guide all of science, not just data science.
+        * The principles guide all of science, not just data science.
         * However, the principles are not well-suited for the universe as it actually is
     4. Data scientists apply the principles of science to a more complex, but realistic context.
         * They adapt the principles of science to variation, a reality that affects all natural phenomena.
+        
+***
+
+5. R 
+    1. R is a computer language for doing data science.
+    2. You can apply R to the principles of science by thinking of a natural law as a function.
+        * `library(mosaic)`
+        * express it as a function with `makeFun()`
+        * plot it as a function with `plotFun()`
+    3. We will build upon this foundation in future chapters, eventually using R to do all of data science.
