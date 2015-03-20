@@ -16,12 +16,12 @@ The two premises of science. How and why to find natural laws.
     3. The best way to learn about natural laws is to observe them  
         a. Value defined  
         b. observation defined 
-            i. values must be similar to be part of an observation
-            ii. observations should match units of analysis to reveal a law
+            * values must be similar to be part of an observation
+            * observations should match units of analysis to reveal a law
     4. Observations provide evidence about natural laws.
         a. Scientists use observations in two ways:
-            i. To test hypotheses
-            ii. To discover laws
+            * To test hypotheses
+            * To discover laws
     
 ***
 
@@ -32,7 +32,7 @@ The two premises of science. How and why to find natural laws.
     2. To test a hypothesis
         a. deduce a testable prediction from the hypothesis
         b. observe whether the prediction is true
-            i. often by designing an experiment
+            * often by designing an experiment
         c. if the prediction is false, disregard the hypothesis ( or the observation)
         d. if the prediction is correct, consider the hypothesis "not yet disproven"
         e. Science progresses by gradually refining our set of ideas about the world
@@ -41,15 +41,15 @@ The two premises of science. How and why to find natural laws.
         b. It will also play an influential role in data science
     4. The method is logically foolproof, but poses some problems
         a. it cannot prove that a hypothesis is correct
-            i. scientists respond by treating everything with skepticism
-            ii. it does not explain how to come up with ideas in the first place
+            * scientists respond by treating everything with skepticism
+            * it does not explain how to come up with ideas in the first place
             
 ***
 
 3. Discovery
     1. Data provides a way to discover new laws
         a. Data defined - A collection of values each associated with a variable and an observation
-            i. Note: this definition does not cover "unstructured 'data'", which we will not consider in this book
+            * Note: this definition does not cover "unstructured 'data'", which we will not consider in this book
     2. Laws appear as patterns in data
         a. the human mind is not well suited to spot patterns in raw data, so scientists rely on several tools
     3. To discover a law:
@@ -58,7 +58,7 @@ The two premises of science. How and why to find natural laws.
         c. search for patterns with an algorithm
     4. This method is very useful, but has some weaknesses of its own
         a. Unlike hypothesis testing, this method is not logically foolproof
-            i. problem of induction
+            * problem of induction
         b. a finite set of points cannot uniquely identify a law
         c. missing variables will appear as noise in a pattern
         
