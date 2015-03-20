@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Data Tidying
-weight: 4
+weight: 10
 ---
 
 > "Tidy datasets are all alike but every messy dataset is messy in its

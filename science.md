@@ -15,13 +15,13 @@ The two premises of science. How and why to find natural laws.
         b. Unit of analysis defined  
     3. The best way to learn about natural laws is to observe them  
         a. Value defined  
-        b. observation defined 
-            * values must be similar to be part of an observation
-            * observations should match units of analysis to reveal a law
-    4. Observations provide evidence about natural laws.
-        a. Scientists use observations in two ways:
-            * To test hypotheses
-            * To discover laws
+        b. observation defined  
+            * values must be similar to be part of an observation  
+            * observations should match units of analysis to reveal a law  
+    4. Observations provide evidence about natural laws.  
+        a. Scientists use observations in two ways:  
+            * To test hypotheses  
+            * To discover laws  
     
 ***
 
