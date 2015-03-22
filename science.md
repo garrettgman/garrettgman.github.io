@@ -1,3 +1,9 @@
+---
+layout: page
+title: Science
+weight: 3
+---
+
 Chapter 1 - Science
 -------------------
 
