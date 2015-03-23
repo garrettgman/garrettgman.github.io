@@ -1,9 +1,3 @@
----
-layout: page
-title: Science
-weight: 3
----
-
 Chapter 1 - Science
 -------------------
 
@@ -16,11 +10,13 @@ phenomena.
 
 ### 1. Scientific worldview
 
-1.  Science is a method of learning about the natural world that has
+1.  The natural world is the world that we can observe and measure.
+2.  Science is a method of learning about the natural world that has
     been extremely successful. It is based on two premises:
-    1.  The world behaves according to natural laws
-    2.  Observations provide the most trustworthy information about
-        these laws
+    1.  The best way to learn about the natural world is to observe it
+    2.  The world behaves according to natural laws
+
+3.  Scientists use observations to learn about natural laws
 
 ------------------------------------------------------------------------
 
@@ -52,8 +48,8 @@ phenomena.
             analysis of the law is *a single object at a single moment
             of time*.
 
-    5.  *Observation* - a set of values a set of values that are
-        measured on multiple variables under similar conditions.
+    5.  *Observation* - a set of values that are measured on multiple
+        variables under similar conditions.
         -   You can think of an observation as a snapshot of the world.
             An observation shows what a group of variables looked like
             together on a specific occasion.
@@ -67,7 +63,9 @@ phenomena.
         -   If *f*<sub>1</sub>, *m*<sub>1</sub>, and *a*<sub>1</sub>
             were all measured on Object 1 at the same time, then the
             values would form an observation whose unit is *a single
-            object at a single moment of time*.  
+            object at a single moment of time*. The unit of an
+            observation should express all of the ways the observations
+            are similar.  
         -   Observations provide evidence about natural laws when they
             share the same unit as the law. If a law exists between
             variables, it will exist between the values of those
@@ -77,7 +75,7 @@ phenomena.
     7.  *Data* - a collection of observations, which you can also think
         of as a collection of values, each associated with a variable
         and an observation.
-        -   This definition of data requires that data contain both
+        -   This definition of data requires a data set to contain both
             values and relationships. As a result, many types of
             *unstructured data* (e.g. a pile of emails to text mine)
             will not meet the definition of data. This is on purpose.
@@ -140,38 +138,51 @@ phenomena.
 1.  Scientists use observations to understand the natural laws of the
     universe  
 2.  They form hypotheses from patterns in data and then test the
-    hypotheses agaisnt new data  
-3.  Data Science does not change this reasoning, it applies it to new
-    areas and new contexts.
-    1.  In fact, there is no delineation between science and data
-        science.
-    2.  You can think of data science as the up to date version of the
-        scientific method.
-        1.  The scientific method was developed during a time when we
-            thought the universe was fairly simple, and our measuring
-            devices were not precise enough to challenge this
-            assumption.
-        2.  As technology increased, scientists began to make more
-            precise measurements and to keep more voluminous records.
-        3.  These changes revealed that the natural world is much more
-            variable and inter-related than we first thought.
-        4.  Data scientists apply the scientific method to this more
-            complex, but realistic worldview. Specifically, they adapt
-            the principles of science to variation, a reality that
-            affects all natural phenomena.
+    hypotheses against new data
 
 ------------------------------------------------------------------------
 
-### 6. R
+### 6. Example with R
 
 1.  R is a computer language for doing data science.  
 2.  You can apply R to the principles of science by thinking of a
-    natural law as a function.
+    natural law as a function.  
+3.  Example - Suppose we collect some data on objects falling in a
+    vacuum (time since we dropped the object, velocity of the object).
     1.  `library(mosaic)`  
     2.  syntax for a law `y ~ x`
-    3.  express it as a function with `makeFun()`  
-    4.  plot it as a function with `plotFun()`  
-    5.  plot it as a set of observations with `xyplot()`
+    3.  plot the data as a set of observations with `xyplot()`
+    4.  infer that `v` and `t` are related by the law `v = 9.8 * t`
+    5.  express law as a function with `makeFun()`  
+    6.  plot it as a function with `plotFun(add = TRUE)`  
+    7.  test our hypotheis against new data
+        1.  prediction: when `t` = 10, `v` = 98
+            1.  a corroborating data point, `(10, 98)`
+            2.  a falsifying data point, `(10, 85)`
 
-3.  We will build upon this foundation in future chapters, eventually
-    using R to do all of data science.
+------------------------------------------------------------------------
+
+### 7. Data Science
+
+1.  Data Science does not change the scientific method, it applies it to
+    bolder questions.
+2.  Consider a new example - Does height affect weight?
+    1.  plot data `xyplot()`
+    2.  Yes, this appears to be a useful "law", but it does not exactly
+        predict the data points. Why not?
+        1.  other things in addition to height affect weight
+        2.  You can think of `weight ~ height` as a partial or
+            incomplete law.
+
+    3.  Complete laws predict individual values
+    4.  Incomplete laws predict distributions, a collection of points
+        centered around a range of values
+
+3.  The example shows that distributions can be useful to work with, but
+    they disrupt the scientific method
+    1.  Which function best explains the results?
+    2.  Does this data confirm or refute the hypothesis?
+
+4.  Data science applies the scientific method to incomplete laws
+
+------------------------------------------------------------------------
