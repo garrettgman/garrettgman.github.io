@@ -7,26 +7,177 @@ weight: 3
 Chapter 1 - Science
 -------------------
 
-The principles of science guide data science. Scientists use
-observations to discover natural laws, which are relationships between
-variables that help scientists explain, predict, and control natural
-phenomena.
+------------------------------------------------------------------------
+
+### 1. What is data science?
+
+1.  As a term, data science has come to be used in different ways
+2.  This book will teach you the *method of science* known as data
+    science
+    1.  The method is a straight forward extension of the scientific
+        method
+    2.  In fact, it *is* the scientific method: the scientific method
+        applied to modern measurements, which are more precise and more
+        voluminous than last century's measurements.
+    3.  As a result, you can explain the method with some simple ideas.
 
 ------------------------------------------------------------------------
 
-### 1. Scientific worldview
+### 2. The scientific method
 
-1.  The natural world is the world that we can observe and measure.
-2.  Science is a method of learning about the natural world that has
-    been extremely successful. It is based on two premises:
-    1.  The best way to learn about the natural world is to observe it
-    2.  The world behaves according to natural laws
+1.  Scientists study the natural world, i.e. the world that can be
+    observed
+    1.  They believe that the best way to learn about the world is to
+        observe it
+    2.  And they seem to agree that observations suggest that the world
+        behaves according to natural laws, things like
+        *E* = *M**C*<sup>2</sup> and *F* = *M**A*.
+        1.  These laws provide a goal for science. they help scientists
+            understand, predict, and sometimes control natural phenomena
 
-3.  Scientists use observations to learn about natural laws
+    3.  Science is a method for using observations to identify natural
+        laws
+
+2.  Example - Suppose you notice that objects tend to fall in a
+    consistent way when you drop them. You suspect that a law governs
+    the movement of a body in free fall, and you would like to know what
+    that law is.
+    1.  You can learn about free fall by observing some objects as they
+        fall and taking some measurements. But what exactly will you
+        measure?
+        1.  In this case, let's measure velocity and time.
+        2.  Velocity and time are *variables*, quantities, qualities, or
+            properties that can measurement.
+        3.  When you measure a variable, you get a *value*, the apparent
+            state of a variable when you measure it. The value of a
+            variable can change from measurement to measurement.
+        4.  Natural laws describe the behavior of variables. They
+            explain how the values of a variable will change in response
+            to changes in the values of other variables. Recall
+            *E* = *m**c*<sup>2</sup> and *F* = *M**A*. You can express a
+            natural law as a function from a set of explanatory
+            variables to a set of response variables.
+            1.  Here we expect the value of velocity to change (i.e.
+                respond) as time changes. Let's collect some data and
+                see if this is the case.
+
+    2.  But what data should we collect? Here are a few examples of what
+        we should not collect.
+        1.  We should not drop an object and measure the time at
+            different points of its fall and then measure the velocity
+            of a second object that we have not dropped. We wouldn't
+            expect the time that object one has spent falling to relate
+            to the velocity of object 2.
+        2.  We should not drop an object and measure its velocity
+            several times, and then redrop the object and measure the
+            time a few times. You shouldn't expect the velocity
+            measurements of the first trial to relate to the time
+            easurements of the second trial.
+        3.  In the first case, we decided not to compare measurements
+            taken on two different objects. In the second case, we
+            decided not to take measurments taken at two different
+            times. Why shouldn't we do these things? Because we do not
+            believe that the law that relates velocity to time in free
+            fall would apply in these situations.
+        4.  A natural law has units. These units define the situations
+            in which the law applies. Our law applies to values measured
+            *on the same object at the same time*. Those are the units
+            of a law.
+
+    3.  When you measure several values together, like we thought about
+        doing above, you create an *observation*.
+        1.  A group of observations forms a *data set*.
+        2.  Like a natural law, an observation also has units. The units
+            of an observation are the similar conditions that unite the
+            values in the observation.
+            1.  In our first example, we created observations that had
+                the unit *the same moment of time*. Although each of
+                those values measured a different object, each value was
+                measured at the same time.
+            2.  In our second example, we created observations that had
+                the unit *the same object*. We measured out values at
+                different times, but each value was measured on the same
+                object.
+
+    4.  Observations provide evidence about natural laws *when the
+        observations have the same unit as the natural law*.
+        1.  If a law exists between variables, it will exist between the
+            values of those variables when they appear in the same
+            observation.
+        2.  In other words, *natural laws deal with variables, but they
+            apply to values that appear in the same observation*.
+
+    5.  Now that we know what data to collect, how can we identify our
+        law?
+        1.  Data as a data frame
+        2.  Natural laws appear as patterns in data. You can discover
+            the patterns by
+            1.  Inspecting raw data
+            2.  Visualizing the data
+                1.  `library(mosaic)`
+                2.  `xyplot()`
+
+            3.  Running a function estimation algorithm on the data
+                1.  `lm()`
+                2.  `goal(formula, data)` - Project Mosaic
+
+    6.  Our data suggests the pattern $V = 9.8 \\dot T$. Is our
+        investigation over? Not really. You can induce a pattern from
+        data, but you cannot use the data to prove that the pattern is
+        true. To see why not, consider what could go wrong.
+        1.  The pattern could be due to random chance
+        2.  The pattern could be due to confounding
+        3.  The pattern could have an unexpected form at unobserved
+            points
+        4.  Induction might fail
+            1.  This last problem might seem the most trivial, but it
+                gives the scientific method it's familiar shape. It is
+                known as *the problem of induction*. Scientists avoid it
+                by never relying on induction for proof (In theory,
+                scientists do not prove anything. They leave that to the
+                mathmeticians).
+
+    7.  Now that our data has lead us to a hypothesis, we can test it
+        with "the scientific method."
+        1.  Formulate the hypothesis: $V = 9.8 \\dot T$
+        2.  Deduce a testable prediction that must be true if the
+            hypothesis is true: *V* = 98 *when* *T* = 10.
+        3.  Collect data that would test the hypothesis.
+        4.  Reject the hypothesis if the data refutes the prediction
+        5.  Consider the hypothesis "not yet disproven" if the data
+            corroborates the prediction
+        6.  Whenever necessary, rely on a well tested, not yet disproven
+            hypothesis to make decisions
+        7.  Remain skeptical about all hypotheses
+            1.  Note scientists do not believe that any hypothesis or
+                any formulation of a law is absolutely correct.
+            2.  A law is useful approximation of how the world works.
+                The approximation is accurate enough to be correct, but
+                could possibly be improved upon.
+            3.  science progresses by replacing hypotheses with more
+                accurate hypotheses. Consider the history of physics:
+                1.  Aristotellian
+                2.  Newtonian Mechanics
+                3.  Einsteinian Relativity
+                4.  Quantum Weirdness
+                5.  String theory?
+
+    8.  In our case, any data we collect will verify our hypothesis.
+        This law was discovered by Galileo 500 years ago, and every
+        experiment since then has found that it is approximately true.
 
 ------------------------------------------------------------------------
 
-### 2. Vocabulary
+### 3. Summary
+
+1.  Scientists use observations to understand the natural laws of the
+    universe  
+2.  They form hypotheses from patterns in data and then test the
+    hypotheses against new data
+
+------------------------------------------------------------------------
+
+### 4. Vocabulary
 
 1.  Science uses many terms that we use in everyday speech; however,
     these terms have a specific meaning in the field of science.
@@ -91,84 +242,7 @@ phenomena.
 
 ------------------------------------------------------------------------
 
-### 3. Discovery
-
-1.  Data can help scientists discover natural laws
-    1.  Natural laws appear as patterns in data
-    2.  You can discover these patterns by
-        1.  examining raw data
-        2.  visualizing data
-        3.  analyzing data with function estimation algorithms
-
-2.  Data can display a natural law if it exists, but data cannot prove
-    that the law exists.
-    1.  In practice, you cannot rule out that a pattern was caused by
-        confounding relationships or random chance
-    2.  In theory, you cannot use a finite data set to *prove* the
-        existence of a general law with absolute certainty.
-        1.  However, you can *disprove* the existence of a natural law
-            with absolute certainty. This fact shapes the scientific
-            method which drives all science, including data science.
-
-------------------------------------------------------------------------
-
-### 4. The Scientific method
-
-1.  To test a hypothesis about a natural law
-    1.  deduce a testable prediction from the hypothesis  
-    2.  observe whether the prediction is true
-        -   often by designing an experiment  
-
-    3.  if the prediction is false, disregard the hypothesis ( or the
-        observation)  
-    4.  if the prediction is correct, consider the hypothesis "not yet
-        disproven"  
-
-2.  The scientific method is asymmetrical: we do not prove, we disprove.
-    1.  As a result, scientists view all hypotheses with skepticism
-    2.  Hypotheses about natural laws are useful approximations to how
-        the world works
-    3.  Science advances by replacing hypotheses with more accurate
-        approximations
-        1.  For example, the laws of physics
-            1.  Aristotelian
-            2.  Newtonian mechanics
-            3.  Einsteinian relativity
-            4.  Quantum weirdness
-            5.  String theory?
-
-------------------------------------------------------------------------
-
-### 5. Summary
-
-1.  Scientists use observations to understand the natural laws of the
-    universe  
-2.  They form hypotheses from patterns in data and then test the
-    hypotheses against new data
-
-------------------------------------------------------------------------
-
-### 6. Example with R
-
-1.  R is a computer language for doing data science.  
-2.  You can apply R to the principles of science by thinking of a
-    natural law as a function.  
-3.  Example - Suppose we collect some data on objects falling in a
-    vacuum (time since we dropped the object, velocity of the object).
-    1.  `library(mosaic)`  
-    2.  syntax for a law `y ~ x`
-    3.  plot the data as a set of observations with `xyplot()`
-    4.  infer that `v` and `t` are related by the law `v = 9.8 * t`
-    5.  express law as a function with `makeFun()`  
-    6.  plot it as a function with `plotFun(add = TRUE)`  
-    7.  test our hypotheis against new data
-        1.  prediction: when `t` = 10, `v` = 98
-            1.  a corroborating data point, `(10, 98)`
-            2.  a falsifying data point, `(10, 85)`
-
-------------------------------------------------------------------------
-
-### 7. Data Science
+### 5. Data Science
 
 1.  Data Science does not change the scientific method, it applies it to
     bolder questions.
@@ -184,11 +258,26 @@ phenomena.
     4.  Incomplete laws predict distributions, a collection of points
         centered around a range of values
 
-3.  The example shows that distributions can be useful to work with, but
-    they disrupt the scientific method
-    1.  Which function best explains the results?
-    2.  Does this data confirm or refute the hypothesis?
+3.  Modern data has revealed that almost every law we work with will be
+    an incomplete law.
+    1.  The universe is so connected that it is difficult to find events
+        controlled by a small set of variables.
+    2.  Example of law of gravitation (or maybe *F* = *M**A*)
 
-4.  Data science applies the scientific method to incomplete laws
+    <!-- -->
+
+    1.  Example of speed of light
+
+4.  Data science applies the scientific method to incomplete laws. The
+    method remains exactly the same, but now we will need to work with
+    groups of variables, not single variables as our output. This means
+    that we will need to know:
+    1.  How to extract information from distributions
+    2.  How to identify patterns that involve distributions (i.e. how to
+        spot patterns in noisy data), and
+    3.  How to confirm or refute hypotheses about distributions
+
+5.  We'll look at each of these starting ith the first in the next few
+    chapters.
 
 ------------------------------------------------------------------------
