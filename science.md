@@ -45,15 +45,16 @@ Chapter 1 - Science
     1.  You can learn about free fall by observing some objects as they
         fall and taking some measurements. But what exactly will you
         measure?
-        1.  In this case, let's measure velocity and time.
+        1.  In this case, let's measure the velocity of an object that
+            we drop and the time that has passed since we dropped it.
         2.  Velocity and time are *variables*, quantities, qualities, or
-            properties that can measurement.
+            properties that you can measure.
         3.  When you measure a variable, you get a *value*, the apparent
             state of a variable when you measure it. The value of a
             variable can change from measurement to measurement.
         4.  Natural laws describe the behavior of variables. They
             explain how the values of a variable will change in response
-            to changes in the values of other variables. Recall
+            to changes in the values of other variables. i.Recall
             *E* = *m**c*<sup>2</sup> and *F* = *M**A*. You can express a
             natural law as a function from a set of explanatory
             variables to a set of response variables.
@@ -63,29 +64,30 @@ Chapter 1 - Science
 
     2.  But what data should we collect? Here are a few examples of what
         we should not collect.
-        1.  We should not drop an object and measure the time at
-            different points of its fall and then measure the velocity
-            of a second object that we have not dropped. We wouldn't
-            expect the time that object one has spent falling to relate
-            to the velocity of object 2.
-        2.  We should not drop an object and measure its velocity
-            several times, and then redrop the object and measure the
-            time a few times. You shouldn't expect the velocity
-            measurements of the first trial to relate to the time
-            easurements of the second trial.
+        1.  We should not measure the time that has passed since we
+            dropped object 1, and then measure the velocity of object 2,
+            an object that we have not dropped. We wouldn't expect the
+            time that object 1 has spent falling to relate to the
+            velocity of object 2.
+        2.  We should not drop object 1 to measure the time as it passes
+            and then redrop object 1 to take measurements on its
+            velocity. You shouldn't expect the velocity measurements of
+            the second trial to relate to the time measurements of the
+            first trial.
         3.  In the first case, we decided not to compare measurements
             taken on two different objects. In the second case, we
-            decided not to take measurments taken at two different
-            times. Why shouldn't we do these things? Because we do not
-            believe that the law that relates velocity to time in free
-            fall would apply in these situations.
+            decided not to compare measurments taken in two different
+            trials (e.g. at two different times). Why shouldn't we do
+            these things? Because we do not believe that the law that
+            relates velocity to time in free fall would apply in these
+            situations.
         4.  A natural law has units. These units define the situations
             in which the law applies. Our law applies to values measured
             *on the same object at the same time*. Those are the units
-            of a law.
+            of our law.
 
-    3.  When you measure several values together, like we thought about
-        doing above, you create an *observation*.
+    3.  When you group together values measured on different variables,
+        you create an *observation*.
         1.  A group of observations forms a *data set*.
         2.  Like a natural law, an observation also has units. The units
             of an observation are the similar conditions that unite the
@@ -119,7 +121,9 @@ Chapter 1 - Science
 
             3.  Running a function estimation algorithm on the data
                 1.  `lm()`
-                2.  `goal(formula, data)` - Project Mosaic
+                2.  `est <- goal(formula, data)` - Project Mosaic
+                3.  `fun <- makeFun(est)`
+                4.  `plotFun(fun, add = TRUE)`
 
     6.  Our data suggests the pattern $V = 9.8 \\dot T$. Is our
         investigation over? Not really. You can induce a pattern from
@@ -162,8 +166,8 @@ Chapter 1 - Science
                 4.  Quantum Weirdness
                 5.  String theory?
 
-    8.  In our case, any data we collect will verify our hypothesis.
-        This law was discovered by Galileo 500 years ago, and every
+    8.  In our case, any data we collect will verify our hypothesis. Our
+        law was discovered by Galileo 500 years ago, and every
         experiment since then has found that it is approximately true.
 
 ------------------------------------------------------------------------
@@ -244,22 +248,33 @@ Chapter 1 - Science
 
 ### 5. Data Science
 
-1.  Data Science does not change the scientific method, it applies it to
-    bolder questions.
+1.  If the above method is science, what is data science? The same
+    thing. Data Science does not change the scientific method, it
+    applies it to messier questions.
 2.  Consider a new example - Does height affect weight?
-    1.  plot data `xyplot()`
+    1.  plot data `xyplot(weight ~ height, data = )`
     2.  Yes, this appears to be a useful "law", but it does not exactly
-        predict the data points. Why not?
+        predict the data points.
+        1.  Each value of height is associated with multiple values of
+            weight, a group of values
+        2.  But the group of values at *h**e**i**g**h**t*<sub>1</sub> is
+            different from the group of values at
+            *h**e**i**g**h**t*<sub>2</sub>. In other words, the range of
+            possible values for weight is different at different
+            heights. If you are clever, you can use height to predict
+            the range of possible weights.
+
+    3.  If a natural law connects height and weight, why don't the
+        values of height exactly predict the values of weight?
         1.  other things in addition to height affect weight
         2.  You can think of `weight ~ height` as a partial or
             incomplete law.
+            1.  Complete laws predict individual values
+            2.  Incomplete laws predict distributions, a collection of
+                points centered around a range of values
 
-    3.  Complete laws predict individual values
-    4.  Incomplete laws predict distributions, a collection of points
-        centered around a range of values
-
-3.  Modern data has revealed that almost every law we work with will be
-    an incomplete law.
+3.  Modern measurements have revealed that almost every law we work with
+    will be an incomplete law.
     1.  The universe is so connected that it is difficult to find events
         controlled by a small set of variables.
     2.  Example of law of gravitation (or maybe *F* = *M**A*)
@@ -267,17 +282,20 @@ Chapter 1 - Science
     <!-- -->
 
     1.  Example of speed of light
+    2.  imprecise measurements hide this fact, hence, the rise of data
+        science alongside better measurement technology
 
 4.  Data science applies the scientific method to incomplete laws. The
     method remains exactly the same, but now we will need to work with
-    groups of variables, not single variables as our output. This means
-    that we will need to know:
-    1.  How to extract information from distributions
-    2.  How to identify patterns that involve distributions (i.e. how to
+    groups of values, not single values as our output. This means that
+    we will need to know:
+    1.  How to reason about groups of values
+    2.  How to identify patterns that involve group output (i.e. how to
         spot patterns in noisy data), and
-    3.  How to confirm or refute hypotheses about distributions
+    3.  How to confirm or refute hypotheses about groups of values
 
-5.  We'll look at each of these starting ith the first in the next few
-    chapters.
+5.  Chapter two will complete the foundation of what we call "data
+    science." It explains how to reason about and work with
+    distributions of values.
 
 ------------------------------------------------------------------------
