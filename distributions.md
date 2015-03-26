@@ -67,6 +67,8 @@ Chapter 2 - Distributions
         1.  `range()`  
         2.  `var()`  
         3.  `sd()`  
+        4.  `IQR()`
+        5.  `bwplot()`
 
 4.  Probability
     1.  You can use probability to reason from a distribution to
@@ -90,6 +92,8 @@ Chapter 2 - Distributions
 1.  You saw in the end of Chapter 1 that incomplete laws map input
     values to output distributions, which you can now see is a useful
     thing to do.
+    1.  `bwplot(horizontal = FALSE)`
+
 2.  There is a relationship between how complete a law is and how much
     variation is in the output distributions.
     1.  As a law becomes more complete, the variation diminishes.
@@ -131,9 +135,12 @@ Chapter 2 - Distributions
         that describes the best guess of *Y* and *ϵ* is an error term
         that explains what type of distribution *Y* has and how much
         variation is in the distribution,
-        $$\\bar{Y} + \\epsilon = \\alpha + \\beta\_{1} X\_{1} + \\beta\_{2} X\_{2} + ...$$
-    2.  but it is more common to see models written like this
-        $$\\bar{Y} = \\alpha + \\beta\_{1} X\_{1} + \\beta\_{2} X\_{2} + ... + \\epsilon$$
+
+    $$\\bar{Y} + \\epsilon = \\alpha + \\beta\_{1} X\_{1} + \\beta\_{2} X\_{2} + ...$$
+
+    1.  but it is more common to see models written like this
+
+    $$\\bar{Y} = \\alpha + \\beta\_{1} X\_{1} + \\beta\_{2} X\_{2} + ... + \\epsilon$$
 
 6.  Data scientists attempt to use data to find, improve, and test
     models, just as other scientists use observations to find, improve,
@@ -154,9 +161,8 @@ Chapter 2 - Distributions
 
 ### 5. Parametric distributions
 
-1.  This way of reasoning causes a problem: how do you know that you've
-    collected enough data to have an accurate picture of a variable's
-    distribution?  
+1.  How do you know that you've collected enough data to have an
+    accurate picture of a variable's distribution?  
 2.  In some situations, you can deduce the type of distribution that
     your data follows
     1.  `plotDist()`  
