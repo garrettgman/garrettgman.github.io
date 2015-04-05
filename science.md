@@ -7,6 +7,10 @@ weight: 3
 Chapter 1 - Science
 -------------------
 
+Summary: Scientists search for natural laws. A complete law provides a
+function between values and a value. An incomplete law is a model. It
+provides a function between values and a distribution.
+
 ------------------------------------------------------------------------
 
 ### 1. What is data science?
@@ -14,34 +18,40 @@ Chapter 1 - Science
 1.  As a term, data science has come to be used in different ways
 2.  This book will teach you the *method of science* known as data
     science
-    1.  The method is a straight forward extension of the scientific
+    1.  The method is a straightforward extension of the scientific
         method
     2.  In fact, it *is* the scientific method: the scientific method
-        applied to modern measurements, which are more precise and more
-        voluminous than last century's measurements.
+        applied to modern questions, which are messier and more
+        ambitious than last century's questions.
     3.  As a result, you can explain the method with some simple ideas.
 
-------------------------------------------------------------------------
+3.  This chapter describes the scientific method, which is the
+    foundation for all of data science. You may be tempted to skip this
+    chapter, but do not. It provides the vocabulary that we will use
+    throughout the book. It also establishes the link between data
+    science and science, which will help you apply the things that you
+    already know about science to data science.  
+    \*\*\*
 
 ### 2. The scientific method
 
 1.  Scientists study the natural world, i.e. the world that can be
     observed
-    1.  They believe that the best way to learn about the world is to
-        observe it
+    1.  They believe that the best way to learn about the natural world
+        is to observe it
     2.  And they seem to agree that observations suggest that the world
         behaves according to natural laws, things like
         *E* = *M**C*<sup>2</sup> and *F* = *M**A*.
-        1.  These laws provide a goal for science. they help scientists
+        1.  These laws provide a goal for science. They help scientists
             understand, predict, and sometimes control natural phenomena
 
-    3.  Science is a method for using observations to identify natural
-        laws
+    3.  The scientific method is a method for using observations to
+        identify natural laws
 
 2.  Example - Suppose you notice that objects tend to fall in a
     consistent way when you drop them. You suspect that a law governs
     the movement of a body in free fall, and you would like to know what
-    that law is.
+    the law is.
     1.  You can learn about free fall by observing some objects as they
         fall and taking some measurements. But what exactly will you
         measure?
@@ -54,11 +64,11 @@ Chapter 1 - Science
             variable can change from measurement to measurement.
         4.  Natural laws describe the behavior of variables. They
             explain how the values of a variable will change in response
-            to changes in the values of other variables. i.Recall
-            *E* = *m**c*<sup>2</sup> and *F* = *M**A*. You can express a
-            natural law as a function from a set of explanatory
-            variables to a set of response variables.
-            1.  Here we expect the value of velocity to change (i.e.
+            to changes in the values of other variables.
+            1.  Recall *E* = *m**c*<sup>2</sup> and *F* = *M**A*. You
+                can express a natural law as a function from a set of
+                explanatory variables to a set of response variables.
+            2.  Here we expect the value of velocity to change (i.e.
                 respond) as time changes. Let's collect some data and
                 see if this is the case.
 
@@ -76,7 +86,7 @@ Chapter 1 - Science
             first trial.
         3.  In the first case, we decided not to compare measurements
             taken on two different objects. In the second case, we
-            decided not to compare measurments taken in two different
+            decided not to compare measurements taken in two different
             trials (e.g. at two different times). Why shouldn't we do
             these things? Because we do not believe that the law that
             relates velocity to time in free fall would apply in these
@@ -125,7 +135,7 @@ Chapter 1 - Science
                 3.  `fun <- makeFun(est)`
                 4.  `plotFun(fun, add = TRUE)`
 
-    6.  Our data suggests the pattern $V = 9.8 \\dot T$. Is our
+    6.  Our data suggests the pattern *V* = 9.8 ⋅ *T*. Is our
         investigation over? Not really. You can induce a pattern from
         data, but you cannot use the data to prove that the pattern is
         true. To see why not, consider what could go wrong.
@@ -143,7 +153,7 @@ Chapter 1 - Science
 
     7.  Now that our data has lead us to a hypothesis, we can test it
         with "the scientific method."
-        1.  Formulate the hypothesis: $V = 9.8 \\dot T$
+        1.  Formulate the hypothesis: *V* = 9.8 ⋅ *T*
         2.  Deduce a testable prediction that must be true if the
             hypothesis is true: *V* = 98 *when* *T* = 10.
         3.  Collect data that would test the hypothesis.
@@ -155,7 +165,7 @@ Chapter 1 - Science
         7.  Remain skeptical about all hypotheses
             1.  Note scientists do not believe that any hypothesis or
                 any formulation of a law is absolutely correct.
-            2.  A law is useful approximation of how the world works.
+            2.  A law is a useful approximation of how the world works.
                 The approximation is accurate enough to be correct, but
                 could possibly be improved upon.
             3.  science progresses by replacing hypotheses with more
@@ -170,14 +180,63 @@ Chapter 1 - Science
         law was discovered by Galileo 500 years ago, and every
         experiment since then has found that it is approximately true.
 
+3.  Summary
+    1.  Scientists use observations to understand the natural laws of
+        the universe b. They form hypotheses from patterns in data and
+        then test the hypotheses against new data
+
 ------------------------------------------------------------------------
 
-### 3. Summary
+### 4. Data Science
 
-1.  Scientists use observations to understand the natural laws of the
-    universe  
-2.  They form hypotheses from patterns in data and then test the
-    hypotheses against new data
+1.  If the above method is science, what is data science? The same
+    thing. Data Science does not change the scientific method, it
+    applies it to messier questions.
+2.  Consider a new example - Does height affect weight?
+    1.  plot data `xyplot(weight ~ height, data = )`
+    2.  Yes, this appears to be a useful "law", but it does not exactly
+        predict the data points.
+        1.  Each value of height is associated with multiple values of
+            weight, a group of values
+        2.  But the group of values at *h**e**i**g**h**t*<sub>1</sub> is
+            different from the group of values at
+            *h**e**i**g**h**t*<sub>2</sub>. In other words, the range of
+            possible values for weight is different at different
+            heights. If you are clever, you can use height to predict
+            the range of possible weights.
+
+    3.  If a natural law connects height and weight, why don't the
+        values of height exactly predict the values of weight?
+        1.  other things in addition to height affect weight
+        2.  You can think of `weight ~ height` as a partial or
+            incomplete law.
+            1.  Complete laws predict individual values
+            2.  Incomplete laws predict distributions, a collection of
+                points centered around a range of values
+
+3.  Modern measurements have revealed that almost every law we work with
+    will be an incomplete law.
+    1.  The universe is so connected that it is difficult to find events
+        controlled by a small set of variables.
+    2.  Example of law of gravitation (or maybe *F* = *M**A*)
+
+    <!-- -->
+
+    1.  Example of speed of light
+    2.  imprecise measurements hide this fact, hence, the rise of data
+        science alongside better measurement technology
+
+4.  Data science applies the scientific method to incomplete laws. The
+    method remains exactly the same, but now we will need to work with
+    groups of values, not single values as our output. This means that
+    we will need to know:
+    1.  How to reason about groups of values
+    2.  How to identify patterns that involve group output (i.e. how to
+        spot patterns in noisy data), and
+    3.  How to confirm or refute hypotheses about groups of values
+
+5.  Before we move on to look at these topics, let's consolidate what
+    we've learned into a vocabulary that we can use throughout the book.
 
 ------------------------------------------------------------------------
 
@@ -243,59 +302,5 @@ Chapter 1 - Science
             You cannot use the techniques covered in this book on
             unstructured data until the data has been reorganized around
             values and the relationships between those values.
-
-------------------------------------------------------------------------
-
-### 5. Data Science
-
-1.  If the above method is science, what is data science? The same
-    thing. Data Science does not change the scientific method, it
-    applies it to messier questions.
-2.  Consider a new example - Does height affect weight?
-    1.  plot data `xyplot(weight ~ height, data = )`
-    2.  Yes, this appears to be a useful "law", but it does not exactly
-        predict the data points.
-        1.  Each value of height is associated with multiple values of
-            weight, a group of values
-        2.  But the group of values at *h**e**i**g**h**t*<sub>1</sub> is
-            different from the group of values at
-            *h**e**i**g**h**t*<sub>2</sub>. In other words, the range of
-            possible values for weight is different at different
-            heights. If you are clever, you can use height to predict
-            the range of possible weights.
-
-    3.  If a natural law connects height and weight, why don't the
-        values of height exactly predict the values of weight?
-        1.  other things in addition to height affect weight
-        2.  You can think of `weight ~ height` as a partial or
-            incomplete law.
-            1.  Complete laws predict individual values
-            2.  Incomplete laws predict distributions, a collection of
-                points centered around a range of values
-
-3.  Modern measurements have revealed that almost every law we work with
-    will be an incomplete law.
-    1.  The universe is so connected that it is difficult to find events
-        controlled by a small set of variables.
-    2.  Example of law of gravitation (or maybe *F* = *M**A*)
-
-    <!-- -->
-
-    1.  Example of speed of light
-    2.  imprecise measurements hide this fact, hence, the rise of data
-        science alongside better measurement technology
-
-4.  Data science applies the scientific method to incomplete laws. The
-    method remains exactly the same, but now we will need to work with
-    groups of values, not single values as our output. This means that
-    we will need to know:
-    1.  How to reason about groups of values
-    2.  How to identify patterns that involve group output (i.e. how to
-        spot patterns in noisy data), and
-    3.  How to confirm or refute hypotheses about groups of values
-
-5.  Chapter two will complete the foundation of what we call "data
-    science." It explains how to reason about and work with
-    distributions of values.
 
 ------------------------------------------------------------------------
